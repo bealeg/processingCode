@@ -1,0 +1,34 @@
+<package format="2">
+  <name>excuse_me_pkg</name>
+  <version>0.0.0</version>
+  <description>The excuse_me_process package</description>
+  <maintainer email="gbeale@todo.todo">gbeale</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>autoware_build_flags</buildtool_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>autoware_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>geographiclib</build_depend>
+  
+  <build_export_depend>autoware_msgs</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
+  <build_export_depend>tf</build_export_depend>
+  <build_export_depend>geographiclib</build_export_depend>
+  
+  <exec_depend>autoware_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>geographiclib</exec_depend>
+  
+</package>

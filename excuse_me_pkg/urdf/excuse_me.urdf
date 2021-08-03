@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<robot name="origins">
+
+  <link name="map1">
+    <visual>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link> -->
+
+  <!-- Honda Odyssey 2018 -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="5.161 1.993 1.734"/> <!-- 2.999 rear to front axle -->
+      </geometry>
+      <!--origin rpy="0 0 0" xyz="1.398 0 0.349"/-->
+      <origin rpy="0 0 0" xyz="1.398 0 0.49743"/> <!-- (height / 2) - tire radius -->
+    </visual>
+  </link>
+  <joint name="base_link_to_mapVeh" type="fixed">
+    <parent link="map1"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint> -->
+
+  <link name="base_link_ground">
+    <visual>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="base_link_ground_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_link_ground"/>
+    <!--origin rpy="0 0 0" xyz="0 0 -0.349"/--> <!-- using base_link -z -->
+    <!--origin rpy="0 0 0" xyz="0 0 -0.36957"/--> <!-- using tire radius as z -->
+    <origin rpy="0 0 0" xyz="0 0 -0.36957"/>
+  </joint> -->
+
+  <link name="tire_rl">
+    <visual>
+      <geometry>
+        <cylinder length="0.23622" radius="0.36957"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="tire_rl_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="tire_rl"/>
+    <origin rpy="0 0 0" xyz="0 0.87839 0"/>
+  </joint>
+
+  <link name="tire_rr">
+    <visual>
+      <geometry>
+        <cylinder length="0.23622" radius="0.36957"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="tire_rr_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="tire_rr"/>
+    <origin rpy="0 0 0" xyz="0 -0.87839 0"/>
+  </joint>
+
+  <link name="tire_fl">
+    <visual>
+      <geometry>
+        <cylinder length="0.23622" radius="0.36957"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="tire_fl_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="tire_fl"/>
+    <origin rpy="0 0 0" xyz="2.999 0.87839 0"/>
+  </joint>
+
+  <link name="tire_fr">
+    <visual>
+      <geometry>
+        <cylinder length="0.23622" radius="0.36957"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="tire_fr_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="tire_fr"/>
+    <origin rpy="0 0 0" xyz="2.999 -0.87839 0"/>
+  </joint>
+
+  <link name="bollard_1">
+    <visual>
+      <geometry>
+        <cylinder length="1.0922" radius="0.0476"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.5334"/>
+    </visual>
+  </link>
+  <joint name="bollard_1_joint" type="fixed">
+    <parent link="base_link_ground"/>
+    <child link="bollard_1"/>
+    <!-- origin rpy="0 0 0" xyz="0 5.2637 0"/ -->
+    <origin rpy="0 0 0" xyz="0 5.4542 0"/> <!-- 5/19/2021 -->
+  </joint>
+
+  <link name="bollard_2">
+    <visual>
+      <geometry>
+        <cylinder length="1.0922" radius="0.0476"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.5334"/>
+    </visual>
+  </link>
+  <joint name="bollard_2_joint" type="fixed">
+    <parent link="base_link_ground"/>
+    <child link="bollard_2"/>
+    <!-- origin rpy="0 0 0" xyz="0.625 5.2637 0"/ -->
+    <!-- origin rpy="0 0 0" xyz="1.4995 4.0445 0"/ -->
+    <origin rpy="0 0 0" xyz="1.4995 4.2572 0"/> <!-- 5/19/2021 -->
+  </joint>
+
+  <link name="bollard_3">
+    <visual>
+      <geometry>
+        <cylinder length="1.0922" radius="0.0476"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.5334"/>
+    </visual>
+  </link>
+  <joint name="bollard_3_joint" type="fixed">
+    <parent link="base_link_ground"/>
+    <child link="bollard_3"/>
+    <!-- origin rpy="0 0 0" xyz="2.999 5.2637 0"/ -->
+    <origin rpy="0 0 0" xyz="2.999 5.4669 0"/> <!-- 5/19/2021 -->
+  </joint>
+
+  <!-- Devices -->
+
+  <link name="lidar_front_left">
+    <visual>
+      <geometry>
+        <cylinder length="0.087" radius="0.052"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.00465"/>
+    </visual>
+  </link>
+  <joint name="lidar_front_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_front_left"/>
+    <origin rpy="0 0.013 0.05" xyz="3.760787 1.0 0.313944"/>
+  </joint>
+
+  <link name="lidar_front_right">
+    <visual>
+      <geometry>
+        <cylinder length="0.087" radius="0.052"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.00465"/>
+    </visual>
+  </link>
+  <joint name="lidar_front_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_front_right"/>
+    <origin rpy="0 0.013 0.05" xyz="3.760787 -1.0 0.313944"/>
+  </joint>
+
+  <link name="lidar_top_left">
+    <visual>
+      <geometry>
+        <cylinder length="0.141" radius="0.083"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.00454"/>
+    </visual>
+  </link>
+  <joint name="lidar_top_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_top_left"/>
+    <origin rpy="-0.017 -0.017 0" xyz="0.620966 0.446881 1.96574"/>
+  </joint>
+
+  <link name="lidar_top_right">
+    <visual>
+      <geometry>
+        <cylinder length="0.141" radius="0.083"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.00454"/>
+    </visual>
+  </link>
+  <joint name="lidar_top_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_top_right"/>
+    <origin rpy="-0.017 -0.017 0" xyz="0.620966 -0.446881 1.96574"/>
+  </joint>
+
+  <link name="lidar_rear_left">
+    <visual>
+      <geometry>
+        <cylinder length="0.144" radius="0.043"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.019"/>
+    </visual>
+  </link>
+  <joint name="lidar_rear_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_rear_left"/>
+    <!-- origin rpy="-0.524 0.547 1.57" xyz="-0.759 0.546 1.386"/ -->
+    <origin rpy="-0.367 0.349 1.571" xyz="-0.73 0.552 1.4"/> <!-- 5/19/2021 -->
+  </joint>
+
+  <link name="lidar_rear_right">
+    <visual>
+      <geometry>
+        <cylinder length="0.144" radius="0.043"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.019"/>
+    </visual>
+  </link>
+  <joint name="lidar_rear_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_rear_right"/>
+    <!-- origin rpy="-0.524 -0.547 1.57" xyz="-0.759 -0.546 1.386"/ -->
+    <origin rpy="-0.367 -0.349 1.571" xyz="-0.73 -0.552 1.4"/> <!-- 5/19/2021 -->
+  </joint>
+
+  <link name="camera_fwd">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_fwd_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_fwd"/>
+    <origin rpy="0 0.07 0" xyz="2.032 0.019 1.270"/>
+  </joint>
+
+  <link name="camera_rear">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_rear_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_rear"/>
+    <origin rpy="0 0.24 3.14" xyz="-0.654 0 1.359"/>
+  </joint>
+
+  <link name="camera_driver_side">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_driver_side_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_driver_side"/>
+    <origin rpy="0 0.35 1.57" xyz="1.245 0.711 1.384"/>
+  </joint>
+
+  <link name="camera_driver_side_fwd">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_driver_side_fwd_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_driver_side_fwd"/>
+    <origin rpy="0 0.16 1.01" xyz="1.962 0.622 1.289"/>
+  </joint>
+
+  <link name="camera_driver_side_rear">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_driver_side_rear_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_driver_side_rear"/>
+    <origin rpy="0 0.19 2.23" xyz="-0.483 0.533 1.346"/>
+  </joint>
+
+  <link name="camera_passenger_side">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_passenger_side_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_passenger_side"/>
+    <origin rpy="0 0.33 -1.57" xyz="1.213 -0.711 1.391"/>
+  </joint>
+
+  <link name="camera_passenger_side_fwd">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_passenger_side_fwd_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_passenger_side_fwd"/>
+    <origin rpy="0 0.17 -0.66" xyz="1.943 -0.597 1.283"/>
+  </joint>
+
+  <link name="camera_passenger_side_rear">
+    <visual>
+      <geometry>
+        <sphere radius="0.051"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="camera_passenger_side_rear_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_passenger_side_rear"/>
+    <origin rpy="0 0.19 -2.27" xyz="-0.533 -0.546 1.330"/>
+  </joint>
+
+  <link name="mobileye">
+    <visual>
+      <geometry>
+        <box size="0.122 0.079 0.043"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <joint name="mobileye_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="mobileye"/>
+    <origin rpy="0 0 0" xyz="2.400 0.0 1.105"/>
+  </joint>
+
+  <link name="gps">
+    <visual>
+      <geometry>
+        <box size="0.147 0.125 0.055"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 -0.014 0.0055"/>
+    </visual>
+  </link>
+  <joint name="gps" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps"/>
+    <!-- <origin rpy="0 0 -1.57" xyz="0 0 0.689"/> -->
+    <origin rpy="0 0 0" xyz="0 0 0.689"/>
+  </joint>
+
+</robot>
