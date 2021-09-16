@@ -85,7 +85,7 @@ private:
                                       autoware_msgs::DetectedObjectArray& transformed_input)
 	{
 		transformed_input.header.stamp = input.header.stamp;
-		transformed_input.header.frame_id = "map1";
+		transformed_input.header.frame_id = "map";
 		for (auto const &object: input.objects)
 		{
 			geometry_msgs::Pose out_pose = getTransformedPose(object.pose, local2global_);
@@ -105,8 +105,8 @@ private:
 		try
 		{
 			//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-			tf_listener_ptr_->lookupTransform("map1", "base_link_ground", ros::Time(0), local2global_);
-			tf_listener_ptr_->lookupTransform("earth", "map1", ros::Time(0), map2llh_);
+			tf_listener_ptr_->lookupTransform("map", "base_link_ground", ros::Time(0), local2global_);
+			tf_listener_ptr_->lookupTransform("earth", "map", ros::Time(0), map2llh_);
 			tf_listener_ptr_->lookupTransform("earth", "base_link_ground", ros::Time(0), local2llh_);
 			
 		}
@@ -218,8 +218,8 @@ public:
   void Run()
   {
 		
-		result_file_path_ = "/home/gbeale/autoware.ai/src/excuse_me_addon/excuse_me_pkg/trackingResult.csv";
-		result_file_path_ego = "/home/gbeale/autoware.ai/src/excuse_me_addon/excuse_me_pkg/trackingResultEgoVeh.csv";
+		result_file_path_ = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/trackingResult.csv";
+		result_file_path_ego = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/trackingResultEgoVeh.csv";
 		
 		ROS_INFO("Ready");
 		

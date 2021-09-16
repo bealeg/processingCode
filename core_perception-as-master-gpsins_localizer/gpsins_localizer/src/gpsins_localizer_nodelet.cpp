@@ -177,7 +177,7 @@ void GpsInsLocalizerNl::oem7BestposCb(const novatel_oem7_msgs::BESTPOS::ConstPtr
 void GpsInsLocalizerNl::broadcastTf(tf2::Transform transform, ros::Time stamp)
 {
     geometry_msgs::TransformStamped map_baselink_tf;
-    map_baselink_tf.header.frame_id = "map1";
+    map_baselink_tf.header.frame_id = "map";
     map_baselink_tf.child_frame_id = "base_link";
     map_baselink_tf.header.stamp = stamp;
     tf2::convert(transform, map_baselink_tf.transform);
@@ -189,7 +189,7 @@ void GpsInsLocalizerNl::publishPose(tf2::Transform pose, ros::Time stamp)
     // Publish pose in the map frame
     geometry_msgs::PoseStamped pose_stamped;
     pose_stamped.header.stamp = stamp;
-    pose_stamped.header.frame_id = "map1";
+    pose_stamped.header.frame_id = "map";
     tf2::toMsg(pose, pose_stamped.pose);
     this->pose_pub.publish(pose_stamped);
 }
@@ -223,7 +223,7 @@ void GpsInsLocalizerNl::createMapFrame(const novatel_oem7_msgs::INSPVA::ConstPtr
     geometry_msgs::TransformStamped earth_map_tfs_msg;
     earth_map_tfs_msg.header.stamp = inspva_msg->header.stamp;
     earth_map_tfs_msg.header.frame_id = "earth";
-    earth_map_tfs_msg.child_frame_id = "map1";
+    earth_map_tfs_msg.child_frame_id = "map";
     tf2::convert(new_earth_map_tf, earth_map_tfs_msg.transform);
     this->stf_bc.sendTransform(earth_map_tfs_msg);
     this->create_map_frame = false;

@@ -131,7 +131,7 @@ private:
 			
 			geometry_msgs::PointStamped out_point;
 			out_point.header = base_msg.header;
-			out_point.header.frame_id = "map1";
+			out_point.header.frame_id = "map";
 			
 			for (int j(0); j < (int)v_pre_cloud_cluster.size(); ++j){
 				double dist;
@@ -141,13 +141,13 @@ private:
 					
 					geometry_msgs::PointStamped pre_out_point;
 					out_point.header = v_pre_cloud_cluster.at(j).header;
-					out_point.header.frame_id = "map1";
+					out_point.header.frame_id = "map";
 					
 					try
 					{
 						//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-						tf_listener_ptr_->lookupTransform("map1", "base_link_ground", base_msg.header.stamp, local2global_);
-						tf_listener_ptr_->transformPoint("map1", base_msg.header.stamp, base_msg.clusters.at(i).centroid_point, "map1", out_point);
+						tf_listener_ptr_->lookupTransform("map", "base_link_ground", base_msg.header.stamp, local2global_);
+						tf_listener_ptr_->transformPoint("map", base_msg.header.stamp, base_msg.clusters.at(i).centroid_point, "map", out_point);
 					}
 					catch (tf::TransformException ex)
 					{
@@ -158,8 +158,8 @@ private:
 					try
 					{
 						//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-						tf_listener_ptr_->lookupTransform("map1", "base_link_ground", ros::Time::now()-ros::Duration(0.1), local2global_);
-						tf_listener_ptr_->transformPoint("map1", v_pre_cloud_cluster.at(j).header.stamp, v_pre_cloud_cluster.at(j).centroid_point, "map1", pre_out_point);
+						tf_listener_ptr_->lookupTransform("map", "base_link_ground", ros::Time::now()-ros::Duration(0.1), local2global_);
+						tf_listener_ptr_->transformPoint("map", v_pre_cloud_cluster.at(j).header.stamp, v_pre_cloud_cluster.at(j).centroid_point, "map", pre_out_point);
 					}
 					catch (tf::TransformException ex)
 					{

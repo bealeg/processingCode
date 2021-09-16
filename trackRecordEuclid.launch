@@ -1,0 +1,173 @@
+<launch>
+	<!-- launch file that connects to excuse me demo data and performs filtering, clustering, tracking, and result recording to a .csv -->
+	<!--param name="/use_sim_time" value="true" /> -->
+	<param name="robot_description" command="$(find xacro)/xacro '$(find excuse_me_pkg)/urdf/excuse_me.urdf'" />
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	
+	<!-- changed the urdf because a lidar positioned changed -->
+	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
+	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 -s 588 -u 28 /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-06-14_17_43_32/VXME_0000_0000_00_210614_1951_00001.bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
+
+	<!-- <arg name="rvizconfig" value="$(find excuse_me)/rviz/excuse_me_post_process.rviz"/> -->
+	<arg name="rvizconfig" value="$(find excuse_me_pkg)/launch/excuseMeTracking.rviz"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+	
+	<node name="lidar_front_transformer" pkg="points_preprocessor" type="cloud_transformer" output="screen">
+		<param name="input_point_topic" value="/lidar_front/velodyne_points" />
+		<param name="output_point_topic" value="/lidar_front/velodyne_points_transformed" />
+		<param name="target_frame" value="base_link_ground"/>
+	</node>
+
+	<node name="lidar_top_transformer" pkg="points_preprocessor" type="cloud_transformer" output="screen">
+		<param name="input_point_topic" value="/lidar_top/velodyne_points"/>
+		<param name="output_point_topic" value="/lidar_top/velodyne_points_transformed"/>
+		<param name="target_frame" value="base_link_ground"/>
+	</node>
+
+	<node name="lidar_rear_transformer" pkg="points_preprocessor" type="cloud_transformer" output="screen">
+		<param name="input_point_topic" value="/lidar_rear/velodyne_points"/>
+		<param name="output_point_topic" value="/lidar_rear/velodyne_points_transformed"/>
+		<param name="target_frame" value="base_link_ground"/>
+	</node>
+
+	<node ns="mobileye" name="mobileye_viz" pkg="mobileye_visualizer" type="mobileyeVisualizer.py" output="screen">
+		<remap from="Obstacles" to="/mobileye/Obstacles"/>
+		<remap from="RoadGeometry" to="/mobileye/RoadGeometry"/>
+		<remap from="NextLane" to="/mobileye/NextLane"/>
+		<remap from="TSRs" to="/mobileye/TSRs"/>
+		<param name="frame_id" value="mobileye"/>
+		<param name="target_frame_id" value="base_link"/>
+		<param name="hz" value="40"/>
+	</node>
+	
+	<!-- gps localization node -->
+	<node pkg="gpsins_localizer" type="gpsins_localizer_node" name="gpsins_localizer" output="screen">
+        <rosparam command="load" file="$(find gpsins_localizer)/config/params.yaml" />
+	</node>
+	
+	<!-- ray ground filter for top lidar -->
+	<include ns="top" file="$(find points_preprocessor)/launch/ray_ground_filter.launch">
+		<arg name="input_point_topic" value="/lidar_top/velodyne_points_transformed" />    								<!--  -->
+		<arg name="base_frame" value="base_link_ground" />             			<!-- Coordinate system to perform transform (default base_link) -->
+		<arg name="clipping_height" value="5.0" />              						<!-- Remove Points above this height value (default 2.0 meters) -->
+		<arg name="min_point_distance" value="2.5" />           						<!-- Removes Points closer than this distance from the sensor origin (default 1.85 meters) -->
+		<arg name="radial_divider_angle" value="0.04" />        						<!-- Angle of each Radial division on the XY Plane (default 0.08 degrees)-->
+		<arg name="concentric_divider_distance" value="0.4" />  						<!-- Distance of each concentric division on the XY Plane (default 0.0 meters) -->
+		<arg name="local_max_slope" value="20" />  													<!-- Max Slope of the ground between Points (default 8 degrees) -->
+		<arg name="general_max_slope" value="10" />  												<!-- Max Slope of the ground in the entire PointCloud, used when reclassification occurs (default 5 degrees)-->
+		<arg name="min_height_threshold" value="0.05" />  									<!-- Minimum height threshold between points (default 0.05 meters)-->
+		<arg name="reclass_distance_threshold" value="0.2" />  							<!-- Distance between points at which re classification will occur (default 0.2 meters)-->
+		<arg name="no_ground_point_topic" value="/points_no_ground_top" />
+		<arg name="ground_point_topic" value="/points_ground_top" />
+	</include>
+	
+	<!-- ray ground filter for front lidar -->
+	<include ns="front" file="$(find points_preprocessor)/launch/ray_ground_filter.launch">
+		<arg name="input_point_topic" value="/lidar_front/velodyne_points_transformed" />    <!-- /lidar_top/velodyne_points_transformed used transformed at first, but was only operating at 1 hz, now trying original -->
+		<arg name="base_frame" value="base_link_ground" />             														<!-- Coordinate system to perform transform (default base_link) -->
+		<arg name="clipping_height" value="5.0" />              														<!-- Remove Points above this height value (default 2.0 meters) -->
+		<arg name="min_point_distance" value="1.0" />           														<!-- Removes Points closer than this distance from the sensor origin (default 1.85 meters) -->
+		<arg name="radial_divider_angle" value="0.08" />        														<!-- Angle of each Radial division on the XY Plane (default 0.08 degrees)-->
+		<arg name="concentric_divider_distance" value="0.0" />  														<!-- Distance of each concentric division on the XY Plane (default 0.0 meters) -->
+		<arg name="local_max_slope" value="20" />  																		<!-- Max Slope of the ground between Points (default 8 degrees) -->
+		<arg name="general_max_slope" value="3" />  																	<!-- Max Slope of the ground in the entire PointCloud, used when reclassification occurs (default 5 degrees)-->
+		<arg name="min_height_threshold" value="0.05" />  																<!-- Minimum height threshold between points (default 0.05 meters)-->
+		<arg name="reclass_distance_threshold" value="0.2" />  															<!-- Distance between points at which re classification will occur (default 0.2 meters)-->
+		<arg name="no_ground_point_topic" value="/points_no_ground_front" />
+		<arg name="ground_point_topic" value="/points_ground_front" />
+	</include>
+	
+	<!-- ray ground filter for rear lidar -->
+	<include ns="rear" file="$(find points_preprocessor)/launch/ray_ground_filter.launch">
+		<arg name="input_point_topic" value="/lidar_rear/velodyne_points_transformed" />    <!-- /lidar_top/velodyne_points_transformed used transformed at first, but was only operating at 1 hz, now trying original -->
+		<arg name="base_frame" value="base_link_ground" />             														<!-- Coordinate system to perform transform (default base_link) -->
+		<arg name="clipping_height" value="5.0" />              														<!-- Remove Points above this height value (default 2.0 meters) -->
+		<arg name="min_point_distance" value="1.0" />           														<!-- Removes Points closer than this distance from the sensor origin (default 1.85 meters) -->
+		<arg name="radial_divider_angle" value="0.08" />        														<!-- Angle of each Radial division on the XY Plane (default 0.08 degrees)-->
+		<arg name="concentric_divider_distance" value="0.0" />  														<!-- Distance of each concentric division on the XY Plane (default 0.0 meters) -->
+		<arg name="local_max_slope" value="20" />  																		<!-- Max Slope of the ground between Points (default 8 degrees) -->
+		<arg name="general_max_slope" value="3" />  																	<!-- Max Slope of the ground in the entire PointCloud, used when reclassification occurs (default 5 degrees)-->
+		<arg name="min_height_threshold" value="0.05" />  																<!-- Minimum height threshold between points (default 0.05 meters)-->
+		<arg name="reclass_distance_threshold" value="0.2" />  															<!-- Distance between points at which re classification will occur (default 0.2 meters)-->
+		<arg name="no_ground_point_topic" value="/points_no_ground_rear" />
+		<arg name="ground_point_topic" value="/points_ground_rear" />
+	</include>
+	
+	<!-- point cloud concatenation for top and front lidar -->
+	<include file="$(find points_preprocessor)/launch/points_concat_filter.launch">
+		<arg name="input_topics" default="[/points_no_ground_front, /points_no_ground_top, /points_no_ground_rear]" />
+		<arg name="output_topic" default="/points_no_ground" />
+		<arg name="output_frame_id" default="base_link_ground" />
+
+		<node pkg="points_preprocessor" type="points_concat_filter"
+			name="points_concat_filter" output="screen">
+			<param name="output_frame_id" value="$(arg output_frame_id)" />
+			<param name="input_topics" value="$(arg input_topics)" />
+			<remap from="/points_concat" to="$(arg output_topic)" />
+		</node>
+	</include>
+	
+	<!-- lidar_euclidean_cluster_detect -->
+	<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch">
+		<arg name="points_node" value="/points_no_ground" />		<!-- ray ground filter should be running, takes in raw poitns and publishes points_no_ground and points_lane (second one doesnt use difference of normals, is sometimes better) -->
+		<arg name="remove_ground" value="false" />						<!-- for our case, we don't need to filter the ground because the ray ground filter should already be doing it -->
+		<arg name="downsample_cloud" value="true" /> 					<!-- Apply VoxelGrid Filter with the value given by "leaf_size"-->
+		<arg name="leaf_size" value="0.15" />									<!-- Voxel Grid Filter leaf size-->
+		<arg name="cluster_size_min" value="15" />						<!-- Minimum number of points to consider a cluster as valid-->
+		<arg name="cluster_size_max" value="15000" />					<!-- Maximum number of points to allow inside a cluster-->
+		<arg name="sync" value="false" />
+		<arg name="use_diffnormals" value="true" />						<!-- not sure if this should be on or off, removes points that belong to smooth planes -->
+		<arg name="pose_estimation" value="true" />
+		<arg name="clip_min_height" value="-10" />						<!-- not sure if this needs to be the same as the height from velodyne to baselink or not -->
+		<arg name="clip_max_height" value="10" />						<!-- max height above velodyne i think -->
+
+		<arg name="keep_lanes" value="true" />								<!-- only if we have a vector map -->
+		<arg name="keep_lane_left_distance" value="60" />
+		<arg name="keep_lane_right_distance" value="60" />
+		<arg name="cluster_merge_threshold" value="1.0" />
+		<arg name="clustering_distance" value="0.5" /> 			<!-- should be distance between points to be considered part of the cluster -->
+
+		<arg name="use_vector_map" value="false" />
+		<arg name="wayarea_gridmap_layer" value="wayarea" />
+
+		<arg name="output_frame" value="/base_link_ground" />	 				<!-- not sure best frame to output in, default is velodyne, here I've changed to world -->
+
+		<arg name="remove_points_upto" value="3.0" />  				<!-- remove points closer than this value from clustering -->
+
+		<arg name="use_gpu" value="false" />					 			<!-- i think this only works if you installed with CUDA -->
+
+		<arg name="use_multiple_thres" value="false"/>						<!-- not sure if this will make clustering more accurate, can try toggling on and off for comparison -->
+		<arg name="clustering_ranges" value="[15,30,45,60]"/>				<!-- Distances to segment pointcloud -->
+		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	<!-- Euclidean Clustering threshold distance for each segment -->
+	</include>
+  
+	<!-- Tracking node -->
+	rosrun lidar_tracker lidar_euclidean_track
+	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
+		<param name="threshold_dist" value="3.0" />
+		<param name="color_val" value="2" />  <!-- 1 for blue, anything else green-->
+	</node>
+	
+	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="euclidean_track_viz" output="screen" ns="/detection/object_tracker"/>
+	
+	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="log"/>
+	
+	<!--try vector map loader -->
+	<node pkg="map_file" type="vector_map_loader" name="vector_map_loader" output="screen">
+    <param name="load_mode" value="directory" />
+    <param name="map_dir" value="/home/gbeale/Downloads/VectorMapRoanoke/" />
+  </node>
+  
+  <!--
+	<arg name="file_name" value="/home/gbeale/Downloads/roanokeOSM.osm"/>
+	<node pkg="map_file" type="lanelet2_map_loader" name="lanelet2_map_loader" output="screen">
+		<param name="lanelet2_path" value="$(arg file_name)" />
+	</node>
+	<node pkg="map_file" type="lanelet2_map_visualization" name="lanelet2_map_visualization" output="screen" />
+	-->
+
+
+</launch>
