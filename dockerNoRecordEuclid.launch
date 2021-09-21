@@ -157,7 +157,7 @@
 	<node pkg="map_file" type="vector_map_loader" name="vector_map_loader" output="screen">
     <param name="load_mode" value="directory" />
     <param name="map_dir" value="/home/gbeale/Downloads/VectorMapRoanoke/" />
-  </node>
+	</node>
   
   <!--
 	<arg name="file_name" value="/home/gbeale/Downloads/roanokeOSM.osm"/>
