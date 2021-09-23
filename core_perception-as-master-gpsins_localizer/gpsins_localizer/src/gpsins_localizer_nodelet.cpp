@@ -281,7 +281,7 @@ void GpsInsLocalizerNl::checkInitialize(uint32_t ins_status)
         try
         {
             geometry_msgs::TransformStamped tf_msg =
-                this->tf_buffer.lookupTransform("map1", "earth", ros::Time(0));
+                this->tf_buffer.lookupTransform("map", "earth", ros::Time(0));
             tf2::convert(tf_msg.transform, this->earth_map_tf);
         }
         catch (tf2::TransformException &ex)

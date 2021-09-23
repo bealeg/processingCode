@@ -44,6 +44,7 @@ class dumpResultsNode
 private:
 
   ros::NodeHandle n;
+  ros::NodeHandle private_n;
 	
   ros::Subscriber obj_detected_sub;
   ros::Subscriber veh_pos_sub;
@@ -58,6 +59,7 @@ private:
   tf::StampedTransform map2llh_;
   
   std::string result_file_path_;
+  std::string result_file_path_objs;
   std::string result_file_path_ego;
   std::ofstream outputfile;
   
@@ -122,7 +124,7 @@ private:
 		
 		GeographicLib::Geocentric earth = GeographicLib::Geocentric::WGS84();
 		
-		std::ofstream outputfile(result_file_path_, std::ofstream::out | std::ofstream::app);
+		std::ofstream outputfile(result_file_path_objs, std::ofstream::out | std::ofstream::app);
 		// loop through each object in the object array
 		
 		for (size_t i = 0; i < detected_objects.objects.size(); i++)
@@ -210,18 +212,23 @@ private:
 	}
 public:
 
-  dumpResultsNode(tf::TransformListener* in_tf_listener_ptr):n("~")
+  dumpResultsNode(tf::TransformListener* in_tf_listener_ptr):n("~"), private_n("~")
   {
     tf_listener_ptr_ = in_tf_listener_ptr;
   }
   
   void Run()
   {
+		if (!private_n.getParam("save_path", result_file_path_)) {
+			result_file_path_ = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/";
+		}
 		
-		result_file_path_ = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/trackingResult.csv";
-		result_file_path_ego = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/trackingResultEgoVeh.csv";
+		result_file_path_objs = result_file_path_ + "trackingResult.csv";
+		result_file_path_ego = result_file_path_ + "trackingResultEgoVeh.csv";
 		
 		ROS_INFO("Ready");
+		ROS_INFO("%s", result_file_path_objs.c_str());
+		ROS_INFO("%s", result_file_path_ego.c_str());
 		
 		ros::Subscriber veh_vel_sub = n.subscribe("/current_pose", 1000, &dumpResultsNode::poseCB, this);	
 		ros::Subscriber obj_detected_sub = n.subscribe("/current_velocity", 1000, &dumpResultsNode::velCB, this);
