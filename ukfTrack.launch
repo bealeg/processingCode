@@ -9,7 +9,7 @@
 	<!-- changed the urdf because a lidar positioned changed -->
 	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
 	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.05 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
-	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 -s 588 -u 28 /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-06-14_17_43_32/VXME_0000_0000_00_210614_1951_00001.bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
+	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.1 /vtti/projects05/460966/Working/Snipped_Merges/data_roi_4692_9017.bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
 
 	<!-- <arg name="rvizconfig" value="$(find excuse_me)/rviz/excuse_me_post_process.rviz"/> -->
 	<arg name="rvizconfig" value="$(find excuse_me_pkg)/launch/excuseMeTracking.rviz"/>

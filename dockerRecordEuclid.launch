@@ -151,21 +151,9 @@
 	
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="euclidean_track_viz" output="screen" ns="/detection/object_tracker"/>
 	
-	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen"/>
-	
-	<!--try vector map loader -->
-	<node pkg="map_file" type="vector_map_loader" name="vector_map_loader" output="screen">
-    <param name="load_mode" value="directory" />
-    <param name="map_dir" value="/home/gbeale/Downloads/VectorMapRoanoke/" />
-  </node>
-  
-  <!--
-	<arg name="file_name" value="/home/gbeale/Downloads/roanokeOSM.osm"/>
-	<node pkg="map_file" type="lanelet2_map_loader" name="lanelet2_map_loader" output="screen">
-		<param name="lanelet2_path" value="$(arg file_name)" />
+	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
+		<param name="save_path" value="/vtti/scratch/gbeale/excuseMeStuff/" />
 	</node>
-	<node pkg="map_file" type="lanelet2_map_visualization" name="lanelet2_map_visualization" output="screen" />
-	-->
 
 
 </launch>
