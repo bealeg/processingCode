@@ -223,8 +223,8 @@ public:
 			result_file_path_ = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/";
 		}
 		
-		result_file_path_objs = result_file_path_ + "trackingResult.csv";
-		result_file_path_ego = result_file_path_ + "trackingResultEgoVeh.csv";
+		result_file_path_objs = result_file_path_ + "_trackingResult.csv";
+		result_file_path_ego = result_file_path_ + "_trackingResultEgoVeh.csv";
 		
 		ROS_INFO("Ready");
 		ROS_INFO("%s", result_file_path_objs.c_str());
