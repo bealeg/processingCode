@@ -146,12 +146,11 @@
 	<!--launch vector map loader-->
 	<node pkg="map_file" type="vector_map_loader" name="vector_map_loader" output="screen">
     <param name="load_mode" value="directory" />
-    <param name="map_dir" value="/home/gbeale/Downloads/RS/" />
+    <param name="map_dir" value="/home/gbeale/Downloads/Maps/VectorMapFolders/RS/" />  <!-- change director when creating docker code -->
 	</node>
 	
 	<!-- launch way area node -->
 	<include file="$(find object_map)/launch/wayarea2grid.launch" >
-		<!-- way area (drivable) node parameters -->
 		<arg name="sensor_frame" default="map" />  <!-- change name as we implement transform -->
 		<arg name="grid_frame" default="map" />   <!-- change name as we implement transform -->
 		<arg name="grid_resolution" default="0.3" />
@@ -163,7 +162,7 @@
 	</include>
 	
 	<!-- Tracking node that outputs objects-->
-	rosrun lidar_tracker lidar_euclidean_track
+	<!--rosrun lidar_tracker lidar_euclidean_track -->
 	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
 		<param name="threshold_dist" value="3.0" />
 		<param name="color_val" value="2" />  <!-- 1 for blue, anything else green-->
@@ -177,7 +176,7 @@
 		<param name="objects_src_topic" value="/objects_filtered" />
 	</node>
 	
-	<!-- 
+	<!--
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="euclidean_track_viz" output="screen" ns="/detection/object_tracker">
 		<param name="objects_src_topic" value="/objects" />
 	</node> -->

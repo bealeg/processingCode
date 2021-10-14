@@ -63,9 +63,11 @@ private:
   std::string result_file_path_ego;
   std::ofstream outputfile;
   
+  /*
 	void poseCB(const geometry_msgs::PoseStamped &curr_veh_pose){
 		veh_pose = curr_veh_pose;
 	}
+	*/
 	
 	void velCB(const geometry_msgs::TwistStamped &curr_veh_velo){
 		veh_velo = curr_veh_velo;
@@ -175,8 +177,26 @@ private:
 								
 			outputfile << originalStr << "," << "," << transformedStr << "," << "," << latlongStr << "\n";
 		}
+	}
+		
+	void poseCB(const geometry_msgs::PoseStamped &curr_veh_pose){
+		
+		veh_pose = curr_veh_pose;
+		
+		try
+		{
+			//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
+			tf_listener_ptr_->lookupTransform("earth", "map", ros::Time(0), map2llh_);
+			
+		}
+		catch (tf::TransformException ex)
+		{
+			ROS_ERROR("%s", ex.what());
+		}
 		
 		geometry_msgs::Pose veh_ecef_pose = getTransformedPose(veh_pose.pose, map2llh_);
+		
+		GeographicLib::Geocentric earth = GeographicLib::Geocentric::WGS84();
 		
     // Convert ECEF to LLA
     double v_lat, v_long, v_height;
@@ -225,6 +245,9 @@ public:
 		
 		result_file_path_objs = result_file_path_ + "_trackingResult.csv";
 		result_file_path_ego = result_file_path_ + "_trackingResultEgoVeh.csv";
+		
+		std::ofstream outputfileEgoVehicle(result_file_path_ego, std::ofstream::out | std::ofstream::app);
+		outputfileEgoVehicle << "a, b, c" << "\n";
 		
 		ROS_INFO("Ready");
 		ROS_INFO("%s", result_file_path_objs.c_str());
