@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenDRIVE>
+    <header revMajor="1" revMinor="4" name="" version="1" date="2019-12-04T11:11:54" north="1.7881827767366431e+2" south="-1.8608772876170434e+2" east="4.9770057610848546e+1" west="-1.1107666542561151e+2" vendor="VectorZero">
+        <geoReference><![CDATA[+proj=tmerc +lat_0=37.28266805642265 +lon_0=-79.93853309724196 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +geoidgrids=egm96_15.gtx +vunits=m +no_defs ]]></geoReference>
+        <userData>
+            <vectorScene program="RoadRunner" version="2019.0.6 (build 0c4fa1ec)"/>
+        </userData>
+    </header>
+    <road name="Road 0" length="4.3945717763032434e+1" id="0" junction="-1">
+        <link>
+            <predecessor elementType="junction" elementId="7"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-4.8138696056125130e-1" y="-1.1625354960441381e+2" hdg="-1.8993697822164912e+0" length="1.5742786663540574e+1">
+                <arc curvature="-2.6357247137542169e-2"/>
+            </geometry>
+            <geometry s="1.5742786663540585e+1" x="-8.4642525445991748e+0" y="-1.2969131982627133e+2" hdg="-2.3143063009410323e+0" length="2.4978697578253271e+0">
+                <line/>
+            </geometry>
+            <geometry s="1.8240656421365898e+1" x="-1.0155000030994415e+1" y="-1.3152999496459961e+2" hdg="-2.3143063009410341e+0" length="2.4789358298860137e+1">
+                <arc curvature="-1.6929436796728710e-2"/>
+            </geometry>
+            <geometry s="4.3030014720226049e+1" x="-3.0219167870635346e+1" y="-1.4577692801042951e+2" hdg="-2.7339761754930629e+0" length="9.1570304280638481e-1">
+                <line/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.8963058599024276e+2" b="-1.1513475831552027e-2" c="-1.7070163168462975e-3" d="0.0000000000000000e+0"/>
+            <elevation s="7.3793651965241978e+0" a="2.8945266822145487e+2" b="-3.6706869428420635e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="2.1073483743874007e+1" a="2.8894999999999999e+2" b="-4.9762497860131670e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="2.3235631581084931e+1" a="2.8884240612287749e+2" b="-4.9762497860123184e-2" c="1.8659940661704005e-4" d="0.0000000000000000e+0"/>
+            <elevation s="3.8991335906663068e+1" a="2.8810468477081565e+2" b="-4.3882487704151443e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="1.9634634651994944e+0" b="3.6350660564456169e-2" c="-4.5127924850401740e-4" d="-1.0743580439167793e-5"/>
+            <laneOffset s="2.2383483743874010e+1" a="2.4305330502296454e+0" b="0.0000000000000000e+0" c="-6.2841582356036119e-3" d="1.9429521171198457e-4"/>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="5.8035949005762877e+0" b="3.1709344231464168e-2" c="-1.8854465774323847e-3" d="2.3129565442586144e-5"/>
+                        <width sOffset="2.2383483743874010e+1" a="5.8281017769871211e+0" b="-1.7931232860946195e-2" c="-3.3228582117139443e-4" d="2.3129565442586167e-5"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="125" name="Guard_Rail" s="1.6408493426891546e+0" t="-6.3650898038868107e+0" zOffset="-4.3581643763963029e-1" hdg="1.5636602640151978e+0" roll="2.3029290139675140e-2" pitch="1.2221508950460702e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="124" name="Guard_Rail" s="4.0117663183581982e+0" t="-6.3285525896596369e+0" zOffset="-4.5294083451994993e-1" hdg="1.6095714569091797e+0" roll="9.9445192608982325e-4" pitch="-9.7729102708399296e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="268" name="SignPost_8ft" s="5.8259339293906383e+0" t="6.4528289080870707e+0" zOffset="-3.9783254819587910e-1" hdg="5.3950768709182739e-1" roll="-1.6130959615111351e-2" pitch="2.6932900771498680e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="123" name="Guard_Rail" s="6.3895482090377644e+0" t="-6.2080691082790338e+0" zOffset="-4.3078147382823317e-1" hdg="1.6192127466201782e+0" roll="-5.3509552963078022e-3" pitch="-1.6127094859257340e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="122" name="Guard_Rail" s="8.7266100945547382e+0" t="-6.0280573798429060e+0" zOffset="-4.0429597986241106e-1" hdg="1.6389133930206299e+0" roll="-6.9346949458122253e-3" pitch="-2.4978509172797203e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="121" name="Guard_Rail" s="1.1061735728478038e+1" t="-5.8116389181722425e+0" zOffset="-3.7978024978167468e-1" hdg="1.6532938480377197e+0" roll="5.3223650902509689e-3" pitch="-3.0254158191382885e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="272" name="CoulPine_Sm05" s="1.1177230355602202e+1" t="-1.0949656070309914e+1" zOffset="-6.3661936081103931e-1" hdg="1.0194349288940430e+0" roll="-3.1257171183824539e-2" pitch="1.9217038527131081e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="120" name="Guard_Rail" s="1.3367082302618428e+1" t="-5.5877837394120888e+0" zOffset="-3.6001312489560178e-1" hdg="1.6547570228576660e+0" roll="-8.6358645930886269e-3" pitch="-3.0774492770433426e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="119" name="Guard_Rail" s="1.5666011384359129e+1" t="-5.3558070808325198e+0" zOffset="-3.3836674228382435e-1" hdg="1.6768841743469238e+0" roll="7.1492549031972885e-3" pitch="-3.8879448547959328e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="118" name="Guard_Rail" s="1.7631510520787781e+1" t="-5.1635694130994096e+0" zOffset="-3.3764915387604333e-1" hdg="1.6126658916473389e+0" roll="2.1970583125948906e-2" pitch="-6.1545090284198523e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="117" name="Guard_Rail" s="1.9728192912020130e+1" t="-5.0605192004982342e+0" zOffset="-3.3384952094417031e-1" hdg="1.5924739837646484e+0" roll="-2.9859922506147996e-5" pitch="-7.9565757187083364e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="116" name="Guard_Rail" s="2.1894414560391731e+1" t="-5.0049629312866699e+0" zOffset="-3.1794207662761664e-1" hdg="1.5645893812179565e+0" roll="-7.8326230868697166e-3" pitch="3.0875849188305438e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="115" name="Guard_Rail" s="2.4042402481175206e+1" t="-4.9855292926084189e+0" zOffset="-2.8433258196912448e-1" hdg="1.5573230981826782e+0" roll="-1.2764740735292435e-2" pitch="6.6601682920008898e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="114" name="Guard_Rail" s="2.6200058046891527e+1" t="-4.9908773673716382e+0" zOffset="-2.4861588303235749e-1" hdg="1.5507249832153320e+0" roll="-1.0210796259343624e-2" pitch="9.7609765361994505e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="113" name="Guard_Rail" s="2.8348622717522691e+1" t="-5.0199926859540227e+0" zOffset="-2.1543570006383561e-1" hdg="1.5394763946533203e+0" roll="-1.2887818738818169e-2" pitch="1.4977497048676014e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="112" name="Guard_Rail" s="3.0508295569891242e+1" t="-5.0604120555683210e+0" zOffset="-1.8537284364606421e-1" hdg="1.5219591856002808e+0" roll="-5.0696977414190769e-3" pitch="2.2962733637541533e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="111" name="Guard_Rail" s="3.2670317448881036e+1" t="-5.1192474673733273e+0" zOffset="-1.5656321709991516e-1" hdg="1.4905208349227905e+0" roll="-4.1717840358614922e-3" pitch="3.7073742132633924e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="110" name="Guard_Rail" s="3.4821588687988680e+1" t="-5.2317967227078412e+0" zOffset="-1.2891921256579053e-1" hdg="1.4519164562225342e+0" roll="-4.9442010931670666e-3" pitch="5.3878356702625751e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="273" name="CoulPine_Sm05" s="3.5203449904503110e+1" t="-1.5101784150834206e+1" zOffset="-2.0058099342855940e-1" hdg="2.5081973075866699e+0" roll="-2.6803674176335335e-2" pitch="-3.6480389535427094e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="109" name="Guard_Rail" s="3.6985434972309321e+1" t="-5.4023847896217632e+0" zOffset="-1.0214805615538580e-1" hdg="1.4396595954895020e+0" roll="-9.3118585646152496e-3" pitch="5.8337971568107605e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="108" name="Guard_Rail" s="3.9139424946487559e+1" t="-5.6295570094791429e+0" zOffset="-7.6159708305681306e-2" hdg="1.4098583459854126e+0" roll="-3.1447862274944782e-3" pitch="7.0308744907379150e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="107" name="Guard_Rail" s="4.1308014442911919e+1" t="-5.9135465281025148e+0" zOffset="-4.9234356189856499e-2" hdg="1.3803750276565552e+0" roll="9.2990295961499214e-3" pitch="8.3092479035258293e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="106" name="Guard_Rail" s="4.3423871751805116e+1" t="-6.2576551262067142e+0" zOffset="-2.3138157216124000e-2" hdg="1.3830345869064331e+0" roll="-5.1556164398789406e-3" pitch="8.9428853243589401e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+        <signals>
+            <signal name="Green_Sign" id="269" s="5.7426797677686672e+0" t="6.4377613835079117e+0" zOffset="2.0416229980181697e+0" hOffset="5.3731775283813477e-1" roll="-1.5926489606499672e-2" pitch="2.6724249124526978e-2" orientation="-" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="2.0000000000000000e+0" width="3.0000000000000000e+0"/>
+        </signals>
+    </road>
+    <road name="Road 1" length="8.2697015128650776e+1" id="1" junction="-1">
+        <link>
+            <successor elementType="junction" elementId="19"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-2.1252181529998779e+0" y="1.5864982604980469e+2" hdg="-1.5226486909624057e+0" length="4.4454809101525314e+1">
+                <line/>
+            </geometry>
+            <geometry s="4.4454809101525314e+1" x="1.4348927434967962e-2" y="1.1424653444927830e+2" hdg="-1.5226486909624060e+0" length="3.6867923994821084e-1">
+                <arc curvature="-2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="4.4823488341473528e+1" x="3.1957335156875155e-2" y="1.1387827595339829e+2" hdg="-1.5233860494422569e+0" length="1.9088521896031889e+1">
+                <line/>
+            </geometry>
+            <geometry s="6.3912010237505413e+1" x="9.3661046028137207e-1" y="9.4811203002929688e+1" hdg="-1.5233860494422569e+0" length="1.7221765297942895e+1">
+                <line/>
+            </geometry>
+            <geometry s="8.1133775535448308e+1" x="1.7527932889886779e+0" y="7.7608789056987291e+1" hdg="-1.5233860494422569e+0" length="1.5632395932024679e+0">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9684304809570313e+2" b="-4.3377676127869434e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="6.2760000000000005e+1" a="2.9412066514191804e+2" b="-4.3377676127869053e-2" c="7.2296126879781749e-4" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="shoulder" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                    <lane id="-2" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-3" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-4" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.1883000000000000e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-5" type="border" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.9032486020545978e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="145" name="F_Barrier01" s="2.0776041072581242e+0" t="1.2667670804007809e+0" zOffset="2.9602570407405437e-5" hdg="1.5656826496124268e+0" roll="2.9504124075174332e-2" pitch="1.2402996653690934e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="146" name="F_Barrier01" s="5.1082687729175271e+0" t="1.2565029257437041e+0" zOffset="2.9596979970847315e-5" hdg="1.5656826496124268e+0" roll="2.9504124075174332e-2" pitch="1.2402996653690934e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="147" name="F_Barrier01" s="8.1389321187143260e+0" t="1.2462381855347502e+0" zOffset="6.0123831985947618e-5" hdg="1.5657076835632324e+0" roll="4.4726334512233734e-2" pitch="1.8964117625728250e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="148" name="F_Barrier01" s="1.1169611998273840e+1" t="1.2359727308989346e+0" zOffset="2.9615523146730993e-5" hdg="1.5657076835632324e+0" roll="4.4726334512233734e-2" pitch="1.8964117625728250e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="149" name="F_Barrier01" s="1.4200276664649085e+1" t="1.2257087101968924e+0" zOffset="2.9609938906105526e-5" hdg="1.5657076835632324e+0" roll="4.4726334512233734e-2" pitch="1.8964117625728250e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="150" name="F_Barrier01" s="1.7230941331382262e+1" t="1.2154438434748496e+0" zOffset="2.9619221436405496e-5" hdg="1.5657076835632324e+0" roll="4.4726334512233734e-2" pitch="1.8964117625728250e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="151" name="F_Barrier01" s="2.0261610731089455e+1" t="1.2071802372990774e+0" zOffset="2.9618253449825716e-5" hdg="1.5687460899353027e+0" roll="4.4720139354467392e-2" pitch="2.0325074438005686e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="152" name="F_Barrier01" s="2.3292309961824756e+1" t="1.2100266973070459e+0" zOffset="6.0135492958579562e-5" hdg="1.5748231410980225e+0" roll="4.4706508517265320e-2" pitch="2.3041418753564358e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="153" name="F_Barrier01" s="2.6322945334422315e+1" t="1.2292714737947614e+0" zOffset="2.9628387267166545e-5" hdg="1.5778616666793823e+0" roll="4.4699072837829590e-2" pitch="2.4396730586886406e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="154" name="F_Barrier01" s="2.9353519519933464e+1" t="1.2558048508453972e+0" zOffset="2.9623783746046684e-5" hdg="1.5778616666793823e+0" roll="4.4699072837829590e-2" pitch="2.4396730586886406e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="155" name="F_Barrier01" s="3.2384086097778777e+1" t="1.2823381286107027e+0" zOffset="2.9626628759160667e-5" hdg="1.5775083303451538e+0" roll="4.5534864068031311e-2" pitch="-1.2794877402484417e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="156" name="F_Barrier01" s="3.5414651354329791e+1" t="1.3088715254471506e+0" zOffset="2.9629479229242861e-5" hdg="1.5778297185897827e+0" roll="2.9485955834388733e-2" pitch="1.5985309146344662e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="157" name="F_Barrier01" s="3.8445217932175076e+1" t="1.3354048627480299e+0" zOffset="2.9632327027684369e-5" hdg="1.5778616666793823e+0" roll="4.4699072837829590e-2" pitch="2.4396730586886406e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="158" name="F_Barrier01" s="4.1475792912438713e+1" t="1.3619378279515812e+0" zOffset="2.9635157261509448e-5" hdg="1.5775083303451538e+0" roll="4.5534864068031311e-2" pitch="-1.2794877402484417e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="159" name="F_Barrier01" s="4.4506468528371926e+1" t="1.3884747758575138e+0" zOffset="-1.4453285473337019e-5" hdg="1.5779578685760498e+0" roll="2.3254333063960075e-3" pitch="2.1391606424003839e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="160" name="F_Barrier01" s="4.7536307372012665e+1" t="1.4171441346752349e+0" zOffset="2.8470453571571852e-5" hdg="1.5785988569259644e+0" roll="4.3402448296546936e-2" pitch="2.4386285804212093e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="161" name="F_Barrier01" s="5.0567556602332225e+1" t="1.4459185124251004e+0" zOffset="2.8483325479555788e-5" hdg="1.5785988569259644e+0" roll="4.3402448296546936e-2" pitch="2.4386285804212093e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="162" name="F_Barrier01" s="5.3599163198545511e+1" t="1.4661408770459117e+0" zOffset="2.8494050866356702e-5" hdg="1.5749206542968750e+0" roll="2.8195206075906754e-2" pitch="1.5006959438323975e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="163" name="F_Barrier01" s="5.6631159769706827e+1" t="1.4775063020094317e+0" zOffset="2.8487110057540121e-5" hdg="1.5713016986846924e+0" roll="4.3419558554887772e-2" pitch="2.1357866935431957e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="164" name="F_Barrier01" s="5.9663368817602191e+1" t="1.4841820821033025e+0" zOffset="-2.0222514081069676e-6" hdg="1.5713016986846924e+0" roll="4.3419558554887772e-2" pitch="2.1357866935431957e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="165" name="F_Barrier01" s="6.2695713955033021e+1" t="1.4908583980362069e+0" zOffset="5.9020941193921317e-5" hdg="1.5713019371032715e+0" roll="4.3419558554887772e-2" pitch="2.1405783481895924e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="166" name="F_Barrier01" s="6.5727551169784761e+1" t="1.4975342425294640e+0" zOffset="1.2114847900022596e-2" hdg="1.5709490776062012e+0" roll="4.4147100299596786e-2" pitch="-1.3099186122417450e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="167" name="F_Barrier01" s="6.8760077849888631e+1" t="1.5042109040020657e+0" zOffset="6.9572996317219804e-3" hdg="1.5709490776062012e+0" roll="4.4401705265045166e-2" pitch="-1.3099147006869316e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="168" name="F_Barrier01" s="7.1791968923118077e+1" t="1.5108872000585292e+0" zOffset="2.1698345998686364e-2" hdg="1.5710369348526001e+0" roll="2.9439177364110947e-2" pitch="-1.3829228468239307e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="169" name="F_Barrier01" s="7.4824624595756958e+1" t="1.5175633357589344e+0" zOffset="1.3153082503492897e-2" hdg="1.5711361169815063e+0" roll="1.4462535269558430e-2" pitch="-1.4559268951416016e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="170" name="F_Barrier01" s="7.7857228482201208e+1" t="1.5242401076073282e+0" zOffset="8.3007108808033081e-3" hdg="1.5711363554000854e+0" roll="1.4717152342200279e-2" pitch="-1.4547428116202354e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="171" name="F_Barrier01" s="8.0890279870483525e+1" t="1.5309172279813614e+0" zOffset="2.6244098933148052e-3" hdg="1.5712580680847168e+0" roll="1.4243558049201965e-2" pitch="7.0327863795682788e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <road name="Road 2" length="1.1920994113767063e+2" id="2" junction="-1">
+        <link>
+            <predecessor elementType="junction" elementId="19"/>
+            <successor elementType="junction" elementId="7"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="3.2591458500445132e+0" y="5.0248435269654401e+1" hdg="-1.5151817105572070e+0" length="1.6703043549337480e+1">
+                <line/>
+            </geometry>
+            <geometry s="1.6703043549337480e+1" x="4.1876004181860011e+0" y="3.3571216199139030e+1" hdg="-1.5151817105572065e+0" length="1.8853429494765095e+0">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="1.8588386498813989e+1" x="4.2959477697542638e+0" y="3.1688990209248843e+1" hdg="-1.5114110246582535e+0" length="1.8181038865774319e+1">
+                <line/>
+            </geometry>
+            <geometry s="3.6769425364588301e+1" x="5.3749997615814209e+0" y="1.3540000677108765e+1" hdg="-1.5114110246582535e+0" length="1.7365898674198284e+1">
+                <line/>
+            </geometry>
+            <geometry s="5.4135324038786592e+1" x="6.4056728541700814e+0" y="-3.7952855835428174e+0" hdg="-1.5114110246582535e+0" length="3.5156110826319864e+0">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="5.7650935121418570e+1" x="6.6266617542967330e+0" y="-7.3039369300254080e+0" hdg="-1.5043798024930073e+0" length="1.7980705501143639e+1">
+                <line/>
+            </geometry>
+            <geometry s="7.5631640622562202e+1" x="7.8199999332427979e+0" y="-2.5244999170303345e+1" hdg="-1.5043798024930073e+0" length="9.1886703192296366e+0">
+                <line/>
+            </geometry>
+            <geometry s="8.4820310941791831e+1" x="8.4298309048355318e+0" y="-3.4413410615127248e+1" hdg="-1.5043798024930073e+0" length="2.1096565591456120e+1">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="1.0591687653324797e+2" x="1.0273564111699024e+1" y="-5.5427684428249329e+1" hdg="-1.4621866713100928e+0" length="1.0484086822142039e+1">
+                <line/>
+            </geometry>
+            <geometry s="1.1640096335539002e+2" x="1.1409999847412109e+1" y="-6.5849996566772461e+1" hdg="-1.4621866713100928e+0" length="2.8089777822806070e+0">
+                <line/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9332760712313188e+2" b="-1.8790786682803720e-2" c="-6.1992859461214691e-4" d="0.0000000000000000e+0"/>
+            <elevation s="1.4844394301121071e+1" a="2.9291206426484911e+2" b="-3.7195715676729149e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="9.4159395216648448e+1" a="2.8996188604189564e+2" b="-3.7195715676728781e-2" c="1.1089958180677641e-3" d="0.0000000000000000e+0"/>
+            <elevation s="1.1092939338559373e+2" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="1.1092939521664843e+2" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="shoulder" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                    <lane id="-2" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-3" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-4" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.1883000000000000e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <roadMark sOffset="1.0294394301121073e+1" type="none" material="standard" color="white" laneChange="both"/>
+                        <roadMark sOffset="1.3944394301121079e+1" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <roadMark sOffset="1.1349439430112110e+2" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0121221677630331e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-5" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.9032486020545978e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="181" name="F_Barrier01" s="2.7025488805469391e+0" t="1.4232765165267836e+0" zOffset="2.5207919689876235e-2" hdg="1.5691341161727905e+0" roll="1.3909810222685337e-2" pitch="8.2495639799162745e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="182" name="F_Barrier01" s="5.7359985909594027e+0" t="1.4235097595187538e+0" zOffset="3.1983157502793347e-2" hdg="1.5691341161727905e+0" roll="1.3684639707207680e-2" pitch="8.2533073145896196e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="183" name="F_Barrier01" s="8.7691405933536046e+0" t="1.4237432046243921e+0" zOffset="4.8127901564839703e-2" hdg="1.5691529512405396e+0" roll="2.8687795624136925e-2" pitch="1.6484240768477321e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="184" name="F_Barrier01" s="1.1802240974589326e+1" t="1.4239759836061134e+0" zOffset="6.2136712814151451e-2" hdg="1.5691529512405396e+0" roll="2.8462653979659081e-2" pitch="1.6444072825834155e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="79" name="Guard_Rail" s="1.4010463299324718e+1" t="-1.9704748845953745e+1" zOffset="8.4141932075397108e-2" hdg="1.7135263681411743e+0" roll="1.7055662348866463e-2" pitch="-3.0801570392213762e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="185" name="F_Barrier01" s="1.4835169453070113e+1" t="1.4242091667085717e+0" zOffset="7.8190784165144578e-2" hdg="1.5691529512405396e+0" roll="2.8237523511052132e-2" pitch="1.6447773668915033e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="80" name="Guard_Rail" s="1.5978330178616492e+1" t="-1.9424184369231355e+1" zOffset="9.7388857688144981e-2" hdg="1.6985111236572266e+0" roll="2.9207188636064529e-2" pitch="-2.8377264970913529e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="186" name="F_Barrier01" s="1.7870752943800248e+1" t="1.4230746871213249e+0" zOffset="9.3906406572216383e-2" hdg="1.5668191909790039e+0" roll="-6.7145670764148235e-3" pitch="1.7786902608349919e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="81" name="Guard_Rail" s="1.7901115695121756e+1" t="-1.9180482998056540e+1" zOffset="1.0475375020524780e-1" hdg="1.6810803413391113e+0" roll="-5.5367257446050644e-3" pitch="-4.0929857641458511e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="82" name="Guard_Rail" s="1.9857735837543327e+1" t="-1.8977626885950642e+1" zOffset="1.1234213327088582e-1" hdg="1.6647753715515137e+0" roll="3.1124439090490341e-2" pitch="-1.9208941375836730e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="187" name="F_Barrier01" s="2.0906348281485634e+1" t="1.4123779159670642e+0" zOffset="1.0987000692313131e-1" hdg="1.5653823614120483e+0" roll="2.8417894616723061e-2" pitch="1.6299010021612048e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="83" name="Guard_Rail" s="2.1838957850572594e+1" t="-1.8810683453188439e+1" zOffset="1.2110132698148846e-1" hdg="1.6498024463653564e+0" roll="2.9376460239291191e-2" pitch="-1.6154610784724355e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="84" name="Guard_Rail" s="2.3823010789568130e+1" t="-1.8684284406400256e+1" zOffset="1.2992155998983890e-1" hdg="1.6198285818099976e+0" roll="2.9372537508606911e-2" pitch="-1.0032176214735955e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="188" name="F_Barrier01" s="2.3939016388530430e+1" t="1.4011737897229883e+0" zOffset="1.2567928461328393e-1" hdg="1.5653823614120483e+0" roll="2.8417894616723061e-2" pitch="1.6299010021612048e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="85" name="Guard_Rail" s="2.5808826466122731e+1" t="-1.8594243893995674e+1" zOffset="1.3904699380543661e-1" hdg="1.6048086881637573e+0" roll="3.1116591766476631e-2" pitch="-6.9608831836376339e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="189" name="F_Barrier01" s="2.6971518512471395e+1" t="1.3899695502769971e+0" zOffset="1.4148856619868866e-1" hdg="1.5650603771209717e+0" roll="4.4449381530284882e-2" pitch="-1.2794557027518749e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="86" name="Guard_Rail" s="2.7795640833937320e+1" t="-1.8535602140859798e+1" zOffset="1.4826398806371799e-1" hdg="1.5936342477798462e+0" roll="2.7625279501080513e-2" pitch="-4.6739416575292125e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="87" name="Guard_Rail" s="2.9782820395361089e+1" t="-1.8496207584507907e+1" zOffset="1.5772513864175153e-1" hdg="1.5868322849273682e+0" roll="3.4606326371431351e-2" pitch="-3.2827862014528364e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="190" name="F_Barrier01" s="3.0003795676075679e+1" t="1.3787668520227294e+0" zOffset="1.5732836157656038e-1" hdg="1.5650603771209717e+0" roll="4.4449381530284882e-2" pitch="-1.2794557027518749e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="88" name="Guard_Rail" s="3.1770174376263384e+1" t="-1.8475388072099285e+1" zOffset="1.6700315364221296e-1" hdg="1.5781475305557251e+0" roll="3.1115463003516197e-2" pitch="-1.5047632587084081e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="191" name="F_Barrier01" s="3.3035710265804511e+1" t="1.3675651057616696e+0" zOffset="1.7313763955610284e-1" hdg="1.5653817653656006e+0" roll="2.8417894616723061e-2" pitch="1.6059516929090023e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="89" name="Guard_Rail" s="3.3757528849492097e+1" t="-1.8459516937027260e+1" zOffset="1.7634222367189523e-1" hdg="1.5690991878509521e+0" roll="2.7624750509858131e-2" pitch="3.4735962799459230e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="90" name="Guard_Rail" s="3.5744831512809228e+1" t="-1.8459421698498801e+1" zOffset="1.8580337393962054e-1" hdg="1.5690991878509521e+0" roll="2.5879422202706337e-2" pitch="3.4734339351416565e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="192" name="F_Barrier01" s="3.6067457767136432e+1" t="1.3563642548928607e+0" zOffset="1.8894691959906140e-1" hdg="1.5653817653656006e+0" roll="2.8417894616723061e-2" pitch="1.6059516929090023e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="91" name="Guard_Rail" s="3.7732072629899847e+1" t="-1.8464155264360176e+1" zOffset="1.9529563424066509e-1" hdg="1.5630898475646973e+0" roll="2.5783453136682510e-2" pitch="1.6512625734321773e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="193" name="F_Barrier01" s="3.9098657865759229e+1" t="1.3409570616883189e+0" zOffset="2.0472629920647023e-1" hdg="1.5633308887481689e+0" roll="4.4331245124340057e-2" pitch="-1.2893971987068653e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="92" name="Guard_Rail" s="3.9719225279508841e+1" t="-1.8476004423560308e+1" zOffset="2.0481785806981634e-1" hdg="1.5630899667739868e+0" roll="3.2764766365289688e-2" pitch="1.6516001778654754e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="93" name="Guard_Rail" s="4.1706276942291304e+1" t="-1.8491854887965708e+1" zOffset="2.1434008018673012e-1" hdg="1.5601525306701660e+0" roll="3.2764825969934464e-2" pitch="2.2811249436927028e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="194" name="F_Barrier01" s="4.2129449405296299e+1" t="1.3245236921113843e+0" zOffset="2.2056615065889673e-1" hdg="1.5634156465530396e+0" roll="2.9117478057742119e-2" pitch="-1.3697247020900249e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="94" name="Guard_Rail" s="4.3693281136666528e+1" t="-1.8509541320696187e+1" zOffset="2.2386230523920858e-1" hdg="1.5601525306701660e+0" roll="3.2764825969934464e-2" pitch="2.2811249436927028e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="195" name="F_Barrier01" s="4.5159935893516426e+1" t="1.3080913877295650e+0" zOffset="2.3637548064738212e-1" hdg="1.5636531114578247e+0" roll="2.8324687853455544e-2" pitch="1.5359851531684399e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="95" name="Guard_Rail" s="4.5680285331041752e+1" t="-1.8527227753426661e+1" zOffset="2.3341504779875777e-1" hdg="1.5601525306701660e+0" roll="3.2764825969934464e-2" pitch="2.2811249436927028e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="96" name="Guard_Rail" s="4.7667292274738735e+1" t="-1.8543369945542651e+1" zOffset="2.4296778962832377e-1" hdg="1.5632908344268799e+0" roll="2.5783449411392212e-2" pitch="1.6082000001915731e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="196" name="F_Barrier01" s="4.8190346814457563e+1" t="1.2916600353409544e+0" zOffset="2.5215429324970273e-1" hdg="1.5636531114578247e+0" roll="2.8324687853455544e-2" pitch="1.5359851531684399e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="97" name="Guard_Rail" s="4.9654308709655297e+1" t="-1.8554818769435631e+1" zOffset="2.5249001225688517e-1" hdg="1.5632908344268799e+0" roll="2.5783449411392212e-2" pitch="1.6082000001915731e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="197" name="F_Barrier01" s="5.1220757913650708e+1" t="1.2752282034181803e+0" zOffset="2.6796362342616931e-1" hdg="1.5636531114578247e+0" roll="2.8324687853455544e-2" pitch="1.5359851531684399e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="98" name="Guard_Rail" s="5.1641358084345612e+1" t="-1.8559812501550006e+1" zOffset="2.6195119506917308e-1" hdg="1.5694345235824585e+0" roll="4.3236684054136276e-2" pitch="2.9197424282756401e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="99" name="Guard_Rail" s="5.3628445284332493e+1" t="-1.8559050128520404e+1" zOffset="2.7141235512033290e-1" hdg="1.5694345235824585e+0" roll="4.3236684054136276e-2" pitch="2.9197424282756401e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="198" name="F_Barrier01" s="5.4251191757591123e+1" t="1.2587815426314997e+0" zOffset="2.8405574420133917e-1" hdg="1.5634241104125977e+0" roll="-6.7110517993569374e-3" pitch="1.7948277527466416e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="100" name="Guard_Rail" s="5.5569155604208930e+1" t="-1.8549737984008271e+1" zOffset="2.7893546558425442e-1" hdg="1.5732078552246094e+0" roll="-9.2531992122530937e-3" pitch="-8.9669403678271919e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="267" name="Freeway_Sign" s="5.5895591757015502e+1" t="-2.0652766303717325e+1" zOffset="2.9352344466371960e-1" hdg="-1.6826480627059937e+0" roll="3.6946464329957962e-2" pitch="-4.1488772258162498e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="199" name="F_Barrier01" s="5.7288840382596618e+1" t="1.2323757903287973e+0" zOffset="2.9982366170685282e-1" hdg="1.5573514699935913e+0" roll="-6.7087020725011826e-3" pitch="2.0206391345709562e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="101" name="Guard_Rail" s="5.7486153104347018e+1" t="-1.8541662952573478e+1" zOffset="2.8561443650181673e-1" hdg="1.5744864940643311e+0" roll="-9.2530539259314537e-3" pitch="-1.3721652794629335e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="102" name="Guard_Rail" s="5.9458954731312247e+1" t="-1.8531486340630671e+1" zOffset="2.9451530293738415e-1" hdg="1.5741580724716187e+0" roll="2.5856636464595795e-2" pitch="-6.9568245635309722e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="200" name="F_Barrier01" s="6.0320483849088525e+1" t="1.1947561186417115e+0" zOffset="3.1542138665236052e-1" hdg="1.5566222667694092e+0" roll="2.8398077934980392e-2" pitch="1.5500121517106891e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="103" name="Guard_Rail" s="6.1445554934401095e+1" t="-1.8512142653566336e+1" zOffset="3.0373228052513923e-1" hdg="1.5792716741561890e+0" roll="2.5856701657176018e-2" pitch="-1.7539110558573157e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="201" name="F_Barrier01" s="6.3350703680588339e+1" t="1.1570131953264555e+0" zOffset="3.3123067911867565e-1" hdg="1.5566222667694092e+0" roll="2.8398077934980392e-2" pitch="1.5500121517106891e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="104" name="Guard_Rail" s="6.3431975273183582e+1" t="-1.8487236257470638e+1" zOffset="3.1288824181802966e-1" hdg="1.5843865871429443e+0" roll="2.5856817141175270e-2" pitch="-2.8123406082158908e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="265" name="CoulPine_Sm05" s="6.4332966656009205e+1" t="-3.2316316968192410e+1" zOffset="3.7008246042802284e-1" hdg="1.9074906110763550e+0" roll="-1.9524930976331234e-3" pitch="-6.8341463338583708e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="105" name="Guard_Rail" s="6.5418221770788819e+1" t="-1.8456767453107840e+1" zOffset="3.2195264318016825e-1" hdg="1.5843865871429443e+0" roll="2.5856817141175270e-2" pitch="-2.8123406082158908e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="202" name="F_Barrier01" s="6.6381021914218010e+1" t="1.1270432970204851e+0" zOffset="3.4703996750647548e-1" hdg="1.5634460449218750e+0" roll="2.8386352583765984e-2" pitch="1.7439663643017411e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="31" name="F_Barrier01" s="6.8971977818247495e+1" t="-1.8707814521526757e+1" zOffset="3.4011196175055147e-1" hdg="-1.5694373846054077e+0" roll="-3.1860135495662689e-2" pitch="-2.0630024373531342e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="203" name="F_Barrier01" s="6.9411463419404811e+1" t="1.1151089262537557e+0" zOffset="3.6281874059761776e-1" hdg="1.5679951906204224e+0" roll="2.8377801179885864e-2" pitch="1.8730644369497895e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="32" name="F_Barrier01" s="7.1854361452791522e+1" t="-1.8704007780947276e+1" zOffset="3.5421214202006013e-1" hdg="-1.5694373846054077e+0" roll="-3.1860135495662689e-2" pitch="-2.0630024373531342e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="204" name="F_Barrier01" s="7.2441923606403947e+1" t="1.1203690922230836e+0" zOffset="3.7862803040110293e-1" hdg="1.5725443363189697e+0" roll="2.8368664905428886e-2" pitch="2.0021223463118076e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="33" name="F_Barrier01" s="7.4736637557407079e+1" t="-1.8684714646937771e+1" zOffset="3.6934999627078469e-1" hdg="-1.5625388622283936e+0" roll="-4.5903738588094711e-2" pitch="-1.8593862652778625e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="205" name="F_Barrier01" s="7.5472292640872382e+1" t="1.1444031661116787e+0" zOffset="3.9443732120514596e-1" hdg="1.5816427469253540e+0" roll="2.8348626568913460e-2" pitch="2.2601068485528231e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="34" name="F_Barrier01" s="7.7618760367742183e+1" t="-1.8649934617464556e+1" zOffset="3.8457355488208123e-1" hdg="-1.5565140247344971e+0" roll="-2.9851986095309258e-2" pitch="-2.4011433124542236e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="206" name="F_Barrier01" s="7.8502452217972078e+1" t="1.1874582685187365e+0" zOffset="4.1027301198249688e-1" hdg="1.5861909389495850e+0" roll="2.6358632370829582e-2" pitch="2.3585420567542315e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="35" name="F_Barrier01" s="8.0502101273090602e+1" t="-1.8599669752024568e+1" zOffset="3.6082750712671441e-1" hdg="-1.5500524044036865e+0" roll="-2.9835928231477737e-2" pitch="-2.5714116636663675e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="207" name="F_Barrier01" s="8.1532318099649956e+1" t="1.2477040380447297e+0" zOffset="4.2608337310616662e-1" hdg="1.5907398462295532e+0" roll="2.6347307488322258e-2" pitch="2.4784058332443237e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="36" name="F_Barrier01" s="8.3384118111975425e+1" t="-1.8536965657772491e+1" zOffset="3.6564982393144874e-1" hdg="-1.5465499162673950e+0" roll="-2.8446976095438004e-2" pitch="-1.7851667478680611e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="208" name="F_Barrier01" s="8.4561928776589511e+1" t="1.3192345098446454e+0" zOffset="4.4186322974883296e-1" hdg="1.5930143594741821e+0" roll="2.6341440156102180e-2" pitch="2.5380803272128105e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="37" name="F_Barrier01" s="8.6221368299407715e+1" t="-1.8470052396734175e+1" zOffset="3.7535276371079362e-1" hdg="-1.5492010116577148e+0" roll="-1.0496127419173717e-2" pitch="-1.8523652106523514e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="209" name="F_Barrier01" s="8.7598668012483046e+1" t="1.3839567767736254e+0" zOffset="4.5825939069442256e-1" hdg="1.5874528884887695e+0" roll="-6.7849992774426937e-3" pitch="2.0086714066565037e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="38" name="F_Barrier01" s="8.8996888597521590e+1" t="-1.8417203493260690e+1" zOffset="3.8222281660097224e-1" hdg="-1.5546573400497437e+0" roll="6.0673607513308525e-3" pitch="-3.2537534832954407e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="210" name="F_Barrier01" s="9.0637334136498367e+1" t="1.4303200856405471e+0" zOffset="4.7368149433509643e-1" hdg="1.5813782215118408e+0" roll="-6.7880763672292233e-3" pitch="2.2345497272908688e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="39" name="F_Barrier01" s="9.1779977758817978e+1" t="-1.8380382829623468e+1" zOffset="3.8567885110137468e-1" hdg="-1.5603061914443970e+0" roll="-1.0489500127732754e-2" pitch="-1.8936848267912865e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="211" name="F_Barrier01" s="9.3676435728279685e+1" t="1.4582590774747590e+0" zOffset="4.8977537437940555e-1" hdg="1.5753027200698853e+0" roll="-6.7897797562181950e-3" pitch="2.4604753125458956e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="40" name="F_Barrier01" s="9.4561755744082760e+1" t="-1.8359590465488303e+1" zOffset="3.8728355235753043e-1" hdg="-1.5669096708297729e+0" roll="-3.2390281558036804e-4" pitch="2.7777256444096565e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="212" name="F_Barrier01" s="9.6718486058493966e+1" t="1.4677701850189413e+0" zOffset="4.9833370374295782e-1" hdg="1.5692212581634521e+0" roll="-1.1207839706912637e-3" pitch="2.6776960585266352e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="41" name="F_Barrier01" s="9.7345986849957370e+1" t="-1.8354827615433322e+1" zOffset="3.7647735820422668e-1" hdg="-1.5722181797027588e+0" roll="-2.0300678908824921e-2" pitch="1.1025172658264637e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="213" name="F_Barrier01" s="9.9761917437896358e+1" t="1.4588523358630612e+0" zOffset="4.8661049277325219e-1" hdg="1.5631370544433594e+0" roll="5.6248400360345840e-3" pitch="2.8177942149341106e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="42" name="F_Barrier01" s="1.0012565085267785e+2" t="-1.8366098929189313e+1" zOffset="3.4854346544818782e-1" hdg="-1.5780305862426758e+0" roll="-1.2653577141463757e-2" pitch="2.7462739497423172e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="214" name="F_Barrier01" s="1.0280543584900734e+2" t="1.4352487453420579e+0" zOffset="4.5464306569709834e-1" hdg="1.5607309341430664e+0" roll="1.2362272478640079e-2" pitch="2.9215139802545309e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="43" name="F_Barrier01" s="1.0291009292128138e+2" t="-1.8388417458679527e+1" zOffset="3.0535256201744687e-1" hdg="-1.5799194574356079e+0" roll="-1.8928276374936104e-2" pitch="2.7351766824722290e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="44" name="F_Barrier01" s="1.0569332871421861e+2" t="-1.8418195712956706e+1" zOffset="2.4868561954627921e-1" hdg="-1.5781282186508179e+0" roll="-2.5301190093159676e-2" pitch="2.7183732017874718e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="215" name="F_Barrier01" s="1.0584845231903986e+2" t="1.4032590759752130e+0" zOffset="4.1119642112153088e-1" hdg="1.5620040893554688e+0" roll="1.9088193774223328e-2" pitch="3.0627097003161907e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="45" name="F_Barrier01" s="1.0856294528874787e+2" t="-1.8438986577090240e+1" zOffset="1.7855882238256982e-1" hdg="-1.5785778760910034e+0" roll="-3.6413282155990601e-2" pitch="2.7265036478638649e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="216" name="F_Barrier01" s="1.0888309185055766e+2" t="1.3813462371736058e+0" zOffset="3.6416700829687443e-1" hdg="1.5618304014205933e+0" roll="1.4749039895832539e-2" pitch="1.4497272204607725e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="46" name="F_Barrier01" s="1.1144701649540970e+2" t="-1.8445913794165012e+1" zOffset="9.8297119140568157e-2" hdg="-1.5724182128906250e+0" roll="-2.1920334547758102e-2" pitch="2.8701113536953926e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="217" name="F_Barrier01" s="1.1191624491338766e+2" t="1.3776894828326460e+0" zOffset="2.9171752929681816e-1" hdg="1.5721932649612427e+0" roll="3.1997371464967728e-2" pitch="-1.1869770474731922e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="47" name="F_Barrier01" s="1.1433063829420291e+2" t="-1.8434631106873184e+1" zOffset="1.4312744140568157e-2" hdg="-1.5658142566680908e+0" roll="-3.5974144935607910e-2" pitch="1.6046419739723206e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="218" name="F_Barrier01" s="1.1494819718925388e+2" t="1.3931001513450747e+0" zOffset="2.1459960937494316e-1" hdg="1.5768587589263916e+0" roll="1.6902890056371689e-2" pitch="-1.3462295755743980e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="48" name="F_Barrier01" s="1.1721458577420243e+2" t="-1.8407570450474982e+1" zOffset="-6.1431884765681843e-2" hdg="-1.5612722635269165e+0" roll="-3.6653719842433929e-2" pitch="1.5897538512945175e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="219" name="F_Barrier01" s="1.1798051693502937e+2" t="1.4257812690149851e+0" zOffset="1.4804077148431816e-1" hdg="1.5816167593002319e+0" roll="3.0290925875306129e-2" pitch="3.5898250062018633e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <road name="Road 3" length="4.8835968316352989e+1" id="3" junction="-1">
+        <link>
+            <predecessor elementType="junction" elementId="7"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="1.7837078593886730e+1" y="-1.1489397250919438e+2" hdg="-1.4244455859152243e+0" length="3.8170087673626885e+0">
+                <line/>
+            </geometry>
+            <geometry s="3.8170087673627222e+0" x="1.8393708644662503e+1" y="-1.1867017680937425e+2" hdg="-1.4244455859152243e+0" length="5.9835352419779220e+0">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="9.8005440093406264e+0" x="1.9301679496765900e+1" y="-1.2458438475703130e+2" hdg="-1.4124785154312667e+0" length="9.8842258677201560e+0">
+                <line/>
+            </geometry>
+            <geometry s="1.9684769877060774e+1" x="2.0859999656677246e+1" y="-1.3434499740600586e+2" hdg="-1.4124785154312667e+0" length="2.5745371110800640e+1">
+                <arc curvature="2.1681975835279805e-3"/>
+            </geometry>
+            <geometry s="4.5430140987861421e+1" x="2.5626233346193672e+1" y="-1.5964193506961414e+2" hdg="-1.3566574640017972e+0" length="3.4058273284915686e+0">
+                <line/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="5.7337460468855852e+0" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="5.7337570332137489e+0" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="-1.6444786288016544e-3" d="0.0000000000000000e+0"/>
+            <elevation s="1.6993746046885633e+1" a="2.8944150090826668e+2" b="-3.7033622587050403e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="shoulder" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                    <lane id="-2" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-3" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-4" type="driving" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0121221677630331e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-5" type="border" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.9032486020545978e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="235" name="F_Barrier01" s="6.9718811044664664e-1" t="1.3572042817957286e+0" zOffset="-5.6843418860808015e-14" hdg="1.5808856487274170e+0" roll="0.0000000000000000e+0" pitch="-6.3143546867650002e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="236" name="F_Barrier01" s="3.7282217731326317e+0" t="1.4028055788802807e+0" zOffset="-5.6843418860808015e-14" hdg="1.5855551958084106e+0" roll="0.0000000000000000e+0" pitch="-6.8924935476388782e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="237" name="F_Barrier01" s="6.7666497515275754e+0" t="1.4590832122600965e+0" zOffset="-8.9404794957204103e-3" hdg="1.5889950990676880e+0" roll="-3.3965643960982561e-3" pitch="-1.4231112436391413e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="238" name="F_Barrier01" s="9.8053969047904062e+0" t="1.5129163777168433e+0" zOffset="-3.0124052159408166e-5" hdg="1.5852812528610229e+0" roll="1.3675714842975140e-2" pitch="2.5156156625598669e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="239" name="F_Barrier01" s="1.2835184053722241e+1" t="1.5620314081073539e+0" zOffset="-1.1297583304212822e-3" hdg="1.5853391885757446e+0" roll="2.7690978720784187e-2" pitch="5.1152477972209454e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="240" name="F_Barrier01" s="1.5864022149752273e+1" t="1.6111375617146293e+0" zOffset="-1.2225379279584558e-3" hdg="1.5853388309478760e+0" roll="2.6683252304792404e-2" pitch="5.1005859859287739e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="241" name="F_Barrier01" s="1.8892309007946448e+1" t="1.6602400601711182e+0" zOffset="5.8312424926043605e-5" hdg="1.5853383541107178e+0" roll="2.6307387277483940e-2" pitch="5.0906464457511902e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="242" name="F_Barrier01" s="2.1927797051674087e+1" t="1.7039010162816914e+0" zOffset="-3.2735791529603375e-4" hdg="1.5802167654037476e+0" roll="1.0665667243301868e-2" pitch="-7.6119359582662582e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="243" name="F_Barrier01" s="2.4967530111144047e+1" t="1.7282945830510601e+0" zOffset="-2.9748419649422431e-4" hdg="1.5738844871520996e+0" roll="-6.9628157652914524e-3" pitch="5.0308154895901680e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="244" name="F_Barrier01" s="2.8007446807354050e+1" t="1.7327233066805960e+0" zOffset="1.9122673808169566e-4" hdg="1.5672961473464966e+0" roll="-6.9627664051949978e-3" pitch="5.2747474983334541e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="245" name="F_Barrier01" s="3.1047267813636083e+1" t="1.7171925849445104e+0" zOffset="1.1373301434218774e-3" hdg="1.5604652166366577e+0" roll="1.0666000656783581e-2" pitch="-6.8801492452621460e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="246" name="F_Barrier01" s="3.4086790519243664e+1" t="1.6817028949448982e+0" zOffset="1.7165551170705839e-3" hdg="1.5538821220397949e+0" roll="1.0669322684407234e-2" pitch="-6.6362633369863033e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="247" name="F_Barrier01" s="3.7125751588159751e+1" t="1.6262563413773927e+0" zOffset="1.4407118969756993e-3" hdg="1.5473001003265381e+0" roll="1.0674250312149525e-2" pitch="-6.3924496062099934e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="248" name="F_Barrier01" s="4.0163848774449150e+1" t="1.5508686191104379e+0" zOffset="1.0111277393889395e-3" hdg="1.5409499406814575e+0" roll="-6.9465041160583496e-3" pitch="6.2500517815351486e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="249" name="F_Barrier01" s="4.3200844061546952e+1" t="1.4555351478187344e+0" zOffset="6.4283414036481190e-4" hdg="1.5341423749923706e+0" roll="1.0688908398151398e-2" pitch="-5.9051732532680035e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="250" name="F_Barrier01" s="4.6234730538147204e+1" t="1.3409864327719729e+0" zOffset="5.4009930522624927e-5" hdg="1.5292882919311523e+0" roll="3.6816924810409546e-2" pitch="-6.8112118169665337e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <road name="Road 4" length="1.2735696473821595e+2" id="4" junction="-1">
+        <link>
+            <predecessor elementType="junction" elementId="19"/>
+            <successor elementType="road" elementId="5" contactPoint="start"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-1.4905304530200336e+1" y="7.4136341948407093e+1" hdg="2.3722514202104721e+0" length="5.3125773334470026e+0">
+                <arc curvature="5.8467565794715758e-2"/>
+            </geometry>
+            <geometry s="5.3125773334470026e+0" x="-1.9229999542236328e+1" y="7.7184997558593750e+1" hdg="2.6828648849932959e+0" length="1.5332392261087566e+0">
+                <line/>
+            </geometry>
+            <geometry s="6.8458165595557574e+0" x="-2.0604727248769965e+1" y="7.7863927788711209e+1" hdg="2.6828648849933003e+0" length="1.4641150497869519e+1">
+                <arc curvature="4.1674979542256435e-2"/>
+            </geometry>
+            <geometry s="2.1486967057425282e+1" x="-3.4849999427795410e+1" y="8.0069999694824219e+1" hdg="3.2930345324671100e+0" length="1.4458574244025096e+1">
+                <arc curvature="4.9640107453011582e-2"/>
+            </geometry>
+            <geometry s="3.5945541301450376e+1" x="-4.7197432491294201e+1" y="7.3158418900246261e+1" hdg="-2.2724255956217236e+0" length="5.5426373320403721e+0">
+                <line/>
+            </geometry>
+            <geometry s="4.1488178633490747e+1" x="-5.0774999618530273e+1" y="6.8924999237060547e+1" hdg="-2.2724255956217241e+0" length="3.0824873830056303e+0">
+                <line/>
+            </geometry>
+            <geometry s="4.4570666016496375e+1" x="-5.2764631064883865e+1" y="6.6570621362956686e+1" hdg="4.0107597115578617e+0" length="2.0029610901092195e+1">
+                <arc curvature="2.3388692496238020e-3"/>
+            </geometry>
+            <geometry s="6.4600276917588573e+1" x="-6.5329999923706055e+1" y="5.0974998474121094e+1" hdg="-2.2255789546032281e+0" length="4.8617233757306524e+0">
+                <line/>
+            </geometry>
+            <geometry s="6.9462000293319235e+1" x="-6.8290725490783032e+1" y="4.7118775153489551e+1" hdg="4.0576063525763582e+0" length="1.0309462786007639e+1">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="7.9771463079326878e+1" x="-7.4484307625207578e+1" y="3.8877367638292782e+1" hdg="-2.2049600290312097e+0" length="1.0802780067223193e+1">
+                <line/>
+            </geometry>
+            <geometry s="9.0574243146550060e+1" x="-8.0884998321533203e+1" y="3.0174999237060547e+1" hdg="-2.2049600290312119e+0" length="2.6105363339870795e+0">
+                <line/>
+            </geometry>
+            <geometry s="9.3184779480537131e+1" x="-8.2431751612944623e+1" y="2.8072036040384333e+1" hdg="4.0782252781483770e+0" length="2.5844315413387665e+1">
+                <arc curvature="2.3842041900661654e-2"/>
+            </geometry>
+            <geometry s="1.1902909489392481e+2" x="-9.0579998016357422e+1" y="3.9749999046325684e+0" hdg="-1.5887787780513039e+0" length="3.1866150573152221e+0">
+                <line/>
+            </geometry>
+            <geometry s="1.2221570995124002e+2" x="-9.0637298078009010e+1" y="7.8890005898384441e-1" hdg="-1.5887787780513052e+0" length="5.1412547869759351e+0">
+                <arc curvature="2.9936700684357758e-2"/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9347000000000003e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="9.8768020614600758e+0" a="2.9347000000000003e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="5.9896628136238107e+1" a="2.9347000000000003e+2" b="-2.9881611256046549e-18" c="-2.8036419441241928e-4" d="0.0000000000000000e+0"/>
+            <elevation s="8.5297301340193783e+1" a="2.9328911064809779e+2" b="-1.4242878560720524e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="1.2659662813623810e+2" a="2.9270088935190222e+2" b="-1.4242878560720313e-2" c="-4.2495232416071268e-4" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="-5.5845622652041405e-1" b="2.0377517592435417e-3" c="2.4924958152280425e-5" d="-1.0621196846021079e-7"/>
+            <laneSection s="0.0000000000000000e+0">
+                <left>
+                    <lane id="1" type="driving" level="false">
+                        <link>
+                            <successor id="2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="6.6632690851140559e+0" b="1.5701006924117595e-2" c="-1.4993726126512671e-2" d="-4.5857759453458644e-4"/>
+                        <width sOffset="5.3169647382159511e+0" a="6.2539470897256262e+0" b="-1.8263334195790712e-1" c="5.8637780132953475e-3" d="-2.6896554569996619e-5"/>
+                        <width sOffset="3.0876964738215946e+1" a="4.9675874148648438e+0" b="6.4407335400588156e-2" c="-1.1525769027873258e-3" d="5.0107856036391693e-6"/>
+                        <width sOffset="1.2459696473821596e+2" a="5.0050524306469679e+0" b="-1.9595899202353856e-2" c="5.9749836279554937e-3" d="-1.5676789293378414e-4"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <roadMark sOffset="7.5166964738215938e+1" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <roadMark sOffset="4.6976964738215941e+1" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0696999999999998e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                    </lane>
+                </center>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="262" name="Metal_CylinderPost_10ft" s="1.0568839854784926e+1" t="-4.6779507694663351e+0" zOffset="4.4860839843750000e-2" hdg="-1.6093100309371948e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="260" name="Metal_CylinderPost_10ft" s="2.1971031552017465e+1" t="-3.9087801726898306e+0" zOffset="5.0964355468806843e-2" hdg="-2.0883517265319824e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="78" name="F_Barrier01" s="2.6914205109025040e+1" t="-4.9173637181683461e+0" zOffset="1.4523315429687500e-1" hdg="-1.0930776596069336e+0" roll="-4.2785953730344772e-2" pitch="9.0242870151996613e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="77" name="F_Barrier01" s="2.9057612757972510e+1" t="-3.6617276022717533e+0" zOffset="7.0098876953125000e-2" hdg="-1.1986372470855713e+0" roll="-2.6342850178480148e-2" pitch="5.9351015836000443e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="76" name="F_Barrier01" s="3.1491384337508290e+1" t="-2.7914117270211847e+0" zOffset="1.3580322265568157e-2" hdg="-1.3183794021606445e+0" roll="7.2728157974779606e-3" pitch="8.5697531700134277e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="75" name="F_Barrier01" s="3.4028621403767808e+1" t="-2.1906939781364514e+0" zOffset="-6.2255859375000000e-3" hdg="-1.4451054334640503e+0" roll="-1.0435765609145164e-2" pitch="3.3380027860403061e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="74" name="F_Barrier01" s="3.6744892534339698e+1" t="-1.9484521773832881e+0" zOffset="-2.0141601562500000e-2" hdg="-1.5096615552902222e+0" roll="3.7549380795098841e-4" pitch="2.1349815651774406e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="73" name="F_Barrier01" s="3.9663127174330974e+1" t="-1.8069491086146456e+0" zOffset="-3.7414550781250000e-2" hdg="-1.5096615552902222e+0" roll="3.7549380795098841e-4" pitch="1.8878629431128502e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="72" name="F_Barrier01" s="4.2581359045973571e+1" t="-1.6654411153542981e+0" zOffset="-5.4290771484375000e-2" hdg="-1.5097029209136963e+0" roll="-6.9813169538974762e-3" pitch="0.0000000000000000e+0" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="71" name="F_Barrier01" s="4.5495412228695571e+1" t="-1.5249315622452286e+0" zOffset="-7.4096679687500000e-2" hdg="-1.5118657350540161e+0" roll="6.9813169538974762e-3" pitch="-2.4711862206459045e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="70" name="F_Barrier01" s="4.8404533411336331e+1" t="-1.3996690646721959e+0" zOffset="-9.6984863281193157e-2" hdg="-1.5186994075775146e+0" roll="-2.1373066119849682e-3" pitch="-1.4704220928251743e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="69" name="F_Barrier01" s="5.1316677406456762e+1" t="-1.2942755547620379e+0" zOffset="-1.2191772460931816e-1" hdg="-1.5253397226333618e+0" roll="-1.6098896041512489e-2" pitch="-2.7518612332642078e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="68" name="F_Barrier01" s="5.4227114925569701e+1" t="-1.2087653429956191e+0" zOffset="-1.5069580078125000e-1" hdg="-1.5322880744934082e+0" roll="-6.9813169538974762e-3" pitch="0.0000000000000000e+0" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="67" name="F_Barrier01" s="5.7140081702523396e+1" t="-1.1431476842627575e+0" zOffset="-1.8054199218750000e-1" hdg="-1.5388318300247192e+0" roll="-2.6570087298750877e-2" pitch="-1.2237326242029667e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="66" name="F_Barrier01" s="6.0053839934949323e+1" t="-1.0974348833069740e+0" zOffset="-2.1505732073825357e-1" hdg="-1.5456466674804688e+0" roll="-2.6481961831450462e-2" pitch="-1.2235108762979507e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="65" name="F_Barrier01" s="6.2968746257576235e+1" t="-1.0716343046214405e+0" zOffset="-2.4603264942061287e-1" hdg="-1.5527335405349731e+0" roll="-2.2988162527326494e-5" pitch="2.1465051919221878e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="64" name="F_Barrier01" s="6.5887157833507800e+1" t="-1.0638180601947624e+0" zOffset="-2.7587953710883539e-1" hdg="-1.5565454959869385e+0" roll="2.0602873992174864e-3" pitch="-2.3762297350913286e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="63" name="F_Barrier01" s="6.8809282143289806e+1" t="-1.0591240457366951e+0" zOffset="-3.0066053633549927e-1" hdg="-1.5562841892242432e+0" roll="-1.8947567790746689e-2" pitch="6.4611225388944149e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="62" name="F_Barrier01" s="7.1726328238992807e+1" t="-1.0595568010948853e+0" zOffset="-3.1729525888221133e-1" hdg="-1.5610738992691040e+0" roll="8.0022765323519707e-3" pitch="9.6250437200069427e-3" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="61" name="F_Barrier01" s="7.4642345875398050e+1" t="-1.0766009225576312e+0" zOffset="-3.3130637257306716e-1" hdg="-1.5666450262069702e+0" roll="-1.1707318015396595e-2" pitch="1.8418343737721443e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="60" name="F_Barrier01" s="7.7558032466798892e+1" t="-1.1106789062934865e+0" zOffset="-3.3646828199977108e-1" hdg="-1.5829428434371948e+0" roll="-1.6795512288808823e-2" pitch="3.0586702749133110e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="59" name="F_Barrier01" s="8.0475454453741037e+1" t="-1.1612987289802987e+0" zOffset="-3.3939015388688176e-1" hdg="-1.5873719453811646e+0" roll="-2.5629691779613495e-2" pitch="3.0689315870404243e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="58" name="F_Barrier01" s="8.3397138540953577e+1" t="-1.2168418289982839e+0" zOffset="-3.3734668825388781e-1" hdg="-1.5876548290252686e+0" roll="-4.4537233188748360e-3" pitch="3.7470031529664993e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="57" name="F_Barrier01" s="8.6318399345221181e+1" t="-1.2723865866683184e+0" zOffset="-3.2620838033818700e-1" hdg="-1.5876497030258179e+0" roll="-6.1004296876490116e-3" pitch="4.9396749585866928e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="56" name="F_Barrier01" s="8.9239417598609137e+1" t="-1.3279317167937279e+0" zOffset="-3.1818210894419963e-1" hdg="-1.5877751111984253e+0" roll="7.7793574891984463e-3" pitch="3.0688710510730743e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="55" name="F_Barrier01" s="9.2160366487353144e+1" t="-1.3834736735458506e+0" zOffset="-3.0507343507480300e-1" hdg="-1.5875556468963623e+0" roll="-3.3379383385181427e-2" pitch="3.9863873273134232e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="54" name="F_Barrier01" s="9.5015686180777479e+1" t="-1.4802684284814092e+0" zOffset="-2.9749290707718501e-1" hdg="-1.6311842203140259e+0" roll="-2.4618536233901978e-2" pitch="3.9095241576433182e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="53" name="F_Barrier01" s="9.7814975852488132e+1" t="-1.7604425127919541e+0" zOffset="-2.5048198774987895e-1" hdg="-1.6841328144073486e+0" roll="-1.0008536279201508e-1" pitch="6.5312705934047699e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="52" name="F_Barrier01" s="1.0053834008210625e+2" t="-2.1109112332142246e+0" zOffset="-1.6435673539979234e-1" hdg="-1.7662274837493896e+0" roll="6.0729518532752991e-2" pitch="-6.9283209741115570e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="258" name="Metal_CylinderPost_10ft" s="1.0435140775947885e+2" t="-1.3269755639642398e+0" zOffset="-2.1452466216504718e-1" hdg="-1.5501862764358521e+0" roll="1.4238891191780567e-2" pitch="2.9349629767239094e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="264" name="Double_Light_Post_30ft" s="1.1285590970767977e+2" t="-4.2605299273690491e+0" zOffset="-3.8728165423185601e-1" hdg="2.9978475570678711e+0" roll="-2.0402979571372271e-3" pitch="-1.4095019549131393e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="256" name="Metal_CylinderPost_10ft" s="1.1689966583590804e+2" t="-1.7105950563318686e+0" zOffset="-8.2556571633574549e-2" hdg="-1.8493912220001221e+0" roll="1.3692855834960938e-2" pitch="-3.9164759218692780e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+        <signals>
+            <signal name="Sign_ChevronRight" id="263" s="1.0570282706521120e+1" t="-4.6298866165780197e+0" zOffset="1.8370848577880565e+0" hOffset="-1.6093702316284180e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="+" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="1.0000000000000000e+0" width="7.5195312500000000e-1"/>
+            <signal name="Sign_ChevronRight" id="261" s="2.1990670737962919e+1" t="-3.8669879135854615e+0" zOffset="1.8431883734130565e+0" hOffset="-2.0893266201019287e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="+" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="1.0000000000000000e+0" width="7.5195312500000000e-1"/>
+            <signal name="Sign_ChevronRight" id="259" s="1.0432565607989834e+2" t="-1.2788781555938584e+0" zOffset="1.5775151766913496e+0" hOffset="-1.5495722293853760e+0" roll="1.4238707721233368e-2" pitch="3.0223897192627192e-4" orientation="-" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="1.0000000000000000e+0" width="7.5195312500000000e-1"/>
+            <signal name="Sign_ChevronRight" id="257" s="1.1688737849140921e+2" t="-1.6643342461144215e+0" zOffset="1.7096728621701800e+0" hOffset="-1.8490983247756958e+0" roll="1.3694003224372864e-2" pitch="-3.9124637842178345e-3" orientation="+" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="1.0000000000000000e+0" width="7.5195312500000000e-1"/>
+        </signals>
+    </road>
+    <road name="Road 5" length="2.5500000000000000e+1" id="5" junction="-1">
+        <link>
+            <predecessor elementType="road" elementId="4" contactPoint="end"/>
+            <successor elementType="road" elementId="6" contactPoint="start"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-9.0334574234724570e+1" y="-4.3383526515911193e+0" hdg="-1.4348665723515852e+0" length="1.4585764716426798e+1">
+                <arc curvature="2.9936700684357758e-2"/>
+            </geometry>
+            <geometry s="1.4585764716426809e+1" x="-8.5314998626708984e+1" y="-1.7909999370574951e+1" hdg="-9.9821689978344752e-1" length="2.1540127365462873e+0">
+                <line/>
+            </geometry>
+            <geometry s="1.6739777452973101e+1" x="-8.4147950491070972e+1" y="-1.9720460504735932e+1" hdg="-9.9821689978344930e-1" length="8.7602225470268991e+0">
+                <arc curvature="3.2184715127149974e-2"/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9268981430008392e+2" b="-1.4889092173030210e-2" c="-4.2495232416071268e-4" d="0.0000000000000000e+0"/>
+            <elevation s="2.4640336601977850e+1" a="2.9206493387360666e+2" b="-3.5831028787255387e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="-7.4905909244810132e-1" b="3.2182762597888622e-3" c="-1.5655543613610295e-5" d="-1.0621196846021120e-7"/>
+            <laneSection s="0.0000000000000000e+0">
+                <left>
+                    <lane id="2" type="driving" level="false">
+                        <link>
+                            <predecessor id="1"/>
+                            <successor id="1"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="4.9931868056534388e+0" b="9.8034251203232021e-3" c="4.6769454744638997e-3" d="-1.5676789293375131e-4"/>
+                        <width sOffset="2.2759999999999991e+1" a="5.7907467419859762e+0" b="-2.0927599845876482e-2" c="-3.2213901072753516e-3" d="7.7044153389161374e-5"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="1" type="shoulder" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="6.3500000000000001e-1" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="curb" material="standard" width="1.5239999999999998e-1" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="curb" material="standard" width="1.5239999999999998e-1" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="254" name="Metal_CylinderPost_10ft" s="1.0521090386173894e+1" t="-1.1975602467606166e+0" zOffset="1.0470988154440874e-1" hdg="-2.3691551685333252e+0" roll="1.6629727557301521e-2" pitch="-1.7064036801457405e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="252" name="SignPost_10ft" s="1.4373609510605327e+1" t="-5.0543031005949217e+0" zOffset="-3.8734325056412899e-1" hdg="-2.1424276828765869e+0" roll="2.2792132571339607e-2" pitch="-1.4659229665994644e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="251" name="SignPost_10ft" s="1.5373853979309368e+1" t="-5.7292023619091168e+0" zOffset="-3.5993694613728167e-1" hdg="-2.1486504077911377e+0" roll="1.0870665311813354e-2" pitch="-7.0885624736547470e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+        <signals>
+            <signal name="Sign_ChevronRight" id="255" s="1.0513159760349780e+1" t="-1.1639748038606257e+0" zOffset="1.8972278293879299e+0" hOffset="-2.3689177036285400e+0" roll="1.6629075631499290e-2" pitch="-1.7055263742804527e-2" orientation="+" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="1.0000000000000000e+0" width="7.5195312500000000e-1"/>
+            <signal name="Green_Sign" id="253" s="1.4778876620070841e+1" t="-5.3598378570497118e+0" zOffset="2.6723849671126914e+0" hOffset="-2.1486487388610840e+0" roll="1.0674054734408855e-2" pitch="-6.9603440351784229e-3" orientation="+" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="2.0000000000000000e+0" width="3.0000000000000000e+0"/>
+        </signals>
+    </road>
+    <road name="Road 6" length="3.7233964382270955e+1" id="6" junction="-1">
+        <link>
+            <predecessor elementType="road" elementId="5" contactPoint="end"/>
+        </link>
+        <type s="0.0000000000000000e+0" type="town">
+            <speed max="65" unit="mph"/>
+        </type>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-7.8433152452699460e+1" y="-2.6321639117951051e+1" hdg="-7.1627163265695248e-1" length="6.9118832299763167e+0">
+                <arc curvature="3.2184715127149974e-2"/>
+            </geometry>
+            <geometry s="6.9118832299763255e+0" x="-7.2759998321533203e+1" y="-3.0244999885559082e+1" hdg="-4.9381463990803898e-1" length="1.5820984693063108e+1">
+                <arc curvature="2.3951614422193186e-2"/>
+            </geometry>
+            <geometry s="2.2732867923039436e+1" x="-5.7756240589989794e+1" y="-3.4957741549615328e+1" hdg="-1.1487651476037097e-1" length="1.4501096459231519e+1">
+                <line/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9203413124964476e+2" b="-3.5831028787255387e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="-4.3934205536762416e-2" b="2.2126505380209794e-3" c="-2.3780759200816210e-5" d="-1.0621196846021408e-7"/>
+            <laneSection s="0.0000000000000000e+0">
+                <left>
+                    <lane id="1" type="driving" level="false">
+                        <link>
+                            <predecessor id="2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="5.7108050717584913e+0" b="-3.6845567575792056e-2" c="-2.5880871664165366e-3" d="7.7044153389137522e-5"/>
+                        <width sOffset="2.2529999999999973e+1" a="4.4480551257738608e+0" b="-3.6141730494328582e-2" c="-1.1972876617061552e-2" d="5.9856219255212536e-4"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0696999999999998e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <roadMark sOffset="1.0899999999999750e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.6143964382270980e+1" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                    </lane>
+                </center>
+            </laneSection>
+        </lanes>
+    </road>
+    <road name="Road 8" length="4.7638807975055663e+1" id="8" junction="7">
+        <link>
+            <predecessor elementType="road" elementId="2" contactPoint="end"/>
+            <successor elementType="road" elementId="0" contactPoint="start"/>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="1.0099375984835817e+0" y="-6.9809643063699454e+1" hdg="-1.4621866713100928e+0" length="4.0463202938788019e+0">
+                <line/>
+            </geometry>
+            <geometry s="4.0463202938788019e+0" x="1.4485435598910463e+0" y="-7.3832121495123701e+1" hdg="-1.4621866713100928e+0" length="1.8336073034025070e+1">
+                <arc curvature="3.0055667522708445e-3"/>
+            </geometry>
+            <geometry s="2.2382393327903870e+1" x="3.9372482375998095e+0" y="-9.1996174962444144e+1" hdg="-1.4070763798318153e+0" length="1.8078522186275290e+1">
+                <arc curvature="-2.2877544587500950e-2"/>
+            </geometry>
+            <geometry s="4.0460915514179156e+1" x="3.1642728327503225e+0" y="-1.0992946786800159e+2" hdg="-1.8206685772244540e+0" length="4.0461853965930885e+0">
+                <line/>
+            </geometry>
+            <geometry s="4.4507100910772245e+1" x="2.1637165791538613e+0" y="-1.1385005301819412e+2" hdg="-1.8206666916449730e+0" length="3.1317070642834213e+0">
+                <arc curvature="-2.5131051198598250e-2"/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="7.8016483704064346e+0" a="2.8964999999999998e+2" b="-3.4466820483184945e-21" c="7.7612379942358748e-6" d="0.0000000000000000e+0"/>
+            <elevation s="9.8983516295935683e+0" a="2.8965003411967939e+2" b="3.2546025994744554e-5" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="4.2413435816841123e+1" a="2.8965109235645457e+2" b="3.2546025995684233e-5" c="-3.2288443527344913e-4" d="0.0000000000000000e+0"/>
+            <elevation s="4.4506564183158879e+1" a="2.8964974586258182e+2" b="-1.3191311486212796e-3" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="4.4507100910772245e+1" a="2.8964974515456771e+2" b="-1.2577602493663389e-3" c="-1.5518826752412120e-3" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="0.0000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneOffset s="4.4507100910772245e+1" a="-4.4408920985006262e-16" b="3.6955212846843707e-2" c="-3.2277198879965394e-4" d="-9.3128124842734044e-6"/>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="driving" level="false">
+                        <link>
+                            <predecessor id="-5"/>
+                            <successor id="-1"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.9032486020545978e+0" b="0.0000000000000000e+0" c="2.7168029582533442e-3" d="-4.0694674222883910e-5"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+            <laneSection s="4.4507100910772245e+1">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="driving" level="false">
+                        <link>
+                            <predecessor id="-1"/>
+                            <successor id="-1"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="5.6971373230813569e+0" b="3.6821709461088065e-2" c="-8.2161776616918806e-4" d="-1.5984445346185610e-5"/>
+                        <width sOffset="2.5060855469013155e+0" a="5.7840039502493790e+0" b="3.2402451405823360e-2" c="-1.7517270210701773e-3" d="2.0049303583685426e-5"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="49" name="F_Barrier01" s="8.8876034652472402e-1" t="-7.6002558266819165e+0" zOffset="-1.3006591796880684e-1" hdg="-1.5579110383987427e+0" roll="-2.2021431475877762e-2" pitch="1.7651122063398361e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="50" name="F_Barrier01" s="3.7720800739670253e+0" t="-7.5575465358748986e+0" zOffset="-1.9073486328130684e-1" hdg="-1.5548874139785767e+0" roll="-2.4304481223225594e-2" pitch="1.3192444108426571e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="51" name="F_Barrier01" s="6.5948506787579415e+0" t="-7.5248549828269065e+0" zOffset="-2.4032592773437500e-1" hdg="-1.5631577968597412e+0" roll="-9.2136412858963013e-3" pitch="1.5063551254570484e-2" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="144" name="Guard_Rail" s="7.6951946000017735e+0" t="-7.2569466928037833e+0" zOffset="-2.3144531250005684e-1" hdg="1.5511364936828613e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="270" name="SignPost_8ft" s="9.2951473004395897e+0" t="-8.5894432079757213e+0" zOffset="-3.3453382711780932e-1" hdg="-1.6585297584533691e+0" roll="-2.3093638446880504e-5" pitch="2.0312993456172990e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="143" name="Guard_Rail" s="9.6183541759015920e+0" t="-7.3028912498325003e+0" zOffset="-2.4557509831385005e-1" hdg="1.5369309186935425e+0" roll="2.8183603717479855e-5" pitch="-9.5481289008603198e-7" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="142" name="Guard_Rail" s="1.1560674833990078e+1" t="-7.3817777312761379e+0" zOffset="-2.4786360360559456e-1" hdg="1.5226715803146362e+0" roll="3.2508345611859113e-5" pitch="-1.5656661389584769e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="141" name="Guard_Rail" s="1.3487593751983322e+1" t="-7.4962181473836811e+0" zOffset="-2.4862664459021744e-1" hdg="1.5000420808792114e+0" roll="3.2464595278725028e-5" pitch="-2.3008485641184961e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="140" name="Guard_Rail" s="1.5407364896464735e+1" t="-7.6456642593737385e+0" zOffset="-2.4240129740286420e-1" hdg="1.4858527183532715e+0" roll="3.2428681151941419e-5" pitch="-2.7612543362920405e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="139" name="Guard_Rail" s="1.7341209572390436e+1" t="-7.8283890374052145e+0" zOffset="-2.2665387457601582e-1" hdg="1.4631935358047485e+0" roll="3.2357795134885237e-5" pitch="-3.4952902296936372e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="138" name="Guard_Rail" s="1.9252543865163787e+1" t="-8.0420022516600529e+0" zOffset="-2.1145637983835286e-1" hdg="1.4588114023208618e+0" roll="3.2342166377929971e-5" pitch="-3.6370508951222291e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="137" name="Guard_Rail" s="2.1166347731680816e+1" t="-8.2608664699027727e+0" zOffset="-1.8557759114497685e-1" hdg="1.4592518806457520e+0" roll="3.2343767088605091e-5" pitch="-3.6228038879926316e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="136" name="Guard_Rail" s="2.3284443841269560e+1" t="-8.4758434187997373e+0" zOffset="-1.6424548912408454e-1" hdg="1.4750157594680786e+0" roll="3.2396856113336980e-5" pitch="-3.1125130135478685e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="135" name="Guard_Rail" s="2.5731174680629234e+1" t="-8.6133640550716741e+0" zOffset="-1.3595580752354408e-1" hdg="1.5223683118820190e+0" roll="3.2507869036635384e-5" pitch="-1.5755236972836428e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="134" name="Guard_Rail" s="2.8205240586118496e+1" t="-8.6637981949791669e+0" zOffset="-1.1645477911991975e-1" hdg="1.5629162788391113e+0" roll="3.2545016438234597e-5" pitch="-2.5646230028542050e-7" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="133" name="Guard_Rail" s="3.0664676789281405e+1" t="-8.6360957824038955e+0" zOffset="-1.0473614994253921e-1" hdg="1.5773561000823975e+0" roll="3.2545329304412007e-5" pitch="2.1349327994357736e-7" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="132" name="Guard_Rail" s="3.3118622518442045e+1" t="-8.5568273569302242e+0" zOffset="-1.0687250100636447e-1" hdg="1.6055711507797241e+0" roll="1.0504500940442085e-2" pitch="1.1316153631923953e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="131" name="Guard_Rail" s="3.5555887338246023e+1" t="-8.4384932027526443e+0" zOffset="-1.3162256948152162e-1" hdg="1.6019885540008545e+0" roll="1.9231151789426804e-2" pitch="1.0152060667678597e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="130" name="Guard_Rail" s="3.8015428869028312e+1" t="-8.3131510564878148e+0" zOffset="-1.8008396045308928e-1" hdg="1.6122072935104370e+0" roll="3.4939099103212357e-2" pitch="1.3481978839990916e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="129" name="Guard_Rail" s="4.0428565310013546e+1" t="-8.2283575087503600e+0" zOffset="-2.4594148081069989e-1" hdg="1.6064184904098511e+0" roll="2.9703121632337570e-2" pitch="1.1596235935940058e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="128" name="Guard_Rail" s="4.2420147630654675e+1" t="-8.1813441561289899e+0" zOffset="-3.1259155281577478e-1" hdg="1.5658504962921143e+0" roll="4.0149543434381485e-2" pitch="-3.4512389390783937e-8" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="127" name="Guard_Rail" s="4.4397030926586787e+1" t="-8.2001427366805970e+0" zOffset="-3.8687201871368870e-1" hdg="1.5222175121307373e+0" roll="1.7145117744803429e-2" pitch="1.4984757399361115e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="126" name="Guard_Rail" s="4.6851275165622013e+1" t="-8.2232608806723988e+0" zOffset="-4.1049273489846883e-1" hdg="1.5427361726760864e+0" roll="2.2885970771312714e-2" pitch="2.3952995252329856e-4" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+        <signals>
+            <signal name="Sign_AdvisorySpeed" id="271" s="9.2670562397592100e+0" t="-8.5848013126459559e+0" zOffset="2.0824661760404410e+0" hOffset="-1.5920758247375488e-1" roll="-3.6061769606021699e-6" pitch="-2.2459085812442936e-5" orientation="-" dynamic="no" country="OpenDRIVE" type="-1" subtype="-1" value="-1.0000000000000000e+0" text="" height="1.0000000000000000e+0" width="1.0000000000000000e+0"/>
+        </signals>
+    </road>
+    <road name="Road 16" length="4.6660701623400797e+1" id="16" junction="7">
+        <link>
+            <predecessor elementType="road" elementId="2" contactPoint="end"/>
+            <successor elementType="road" elementId="3" contactPoint="start"/>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="1.1714482515932739e+1" y="-6.8642423197127613e+1" hdg="-1.4621866713100928e+0" length="8.7885655382663277e+0">
+                <line/>
+            </geometry>
+            <geometry s="8.7885655382663401e+0" x="1.2667130096287453e+1" y="-7.7379204458441578e+1" hdg="-1.4621866713100928e+0" length="1.8870542697432491e+1">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="2.7659108235698824e+1" x="1.5066097824166054e+1" y="-9.6095509358037617e+1" hdg="-1.4244455859152243e+0" length="7.7253449277516211e+0">
+                <line/>
+            </geometry>
+            <geometry s="3.5384453163450445e+1" x="1.6192676095655305e+1" y="-1.0373826904619646e+2" hdg="-1.4244455859152243e+0" length="4.6166207938469306e-1">
+                <line/>
+            </geometry>
+            <geometry s="3.5846115242835111e+1" x="1.6259999752044678e+1" y="-1.0419499588012695e+2" hdg="-1.4244455859152243e+0" length="7.5364453376884057e+0">
+                <line/>
+            </geometry>
+            <geometry s="4.3382560580523517e+1" x="1.7359031010986442e+1" y="-1.1165087534668449e+2" hdg="-1.4244455859152243e+0" length="3.2781410428772801e+0">
+                <line/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="8.4894522479230830e+0" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="3.5384453163450445e+1" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="4.1134458656614498e+1" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="4.3382560580523517e+1" a="2.8964999999999998e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneOffset s="3.5384453163450445e+1" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneOffset s="4.3382560580523517e+1" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="none" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                    <lane id="-2" type="driving" level="false">
+                        <link>
+                            <predecessor id="-2"/>
+                            <successor id="-2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-3" type="driving" level="false">
+                        <link>
+                            <predecessor id="-3"/>
+                            <successor id="-3"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-4" type="driving" level="false">
+                        <link>
+                            <predecessor id="-4"/>
+                            <successor id="-4"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0121221677630331e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+            <laneSection s="3.5384453163450445e+1">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="none" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                    <lane id="-2" type="driving" level="false">
+                        <link>
+                            <predecessor id="-2"/>
+                            <successor id="-2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-3" type="driving" level="false">
+                        <link>
+                            <predecessor id="-3"/>
+                            <successor id="-3"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-4" type="driving" level="false">
+                        <link>
+                            <predecessor id="-4"/>
+                            <successor id="-4"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0121221677630331e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+            <laneSection s="4.3382560580523517e+1">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="none" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                    <lane id="-2" type="driving" level="false">
+                        <link>
+                            <predecessor id="-2"/>
+                            <successor id="-2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-3" type="driving" level="false">
+                        <link>
+                            <predecessor id="-3"/>
+                            <successor id="-3"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                    <lane id="-4" type="driving" level="false">
+                        <link>
+                            <predecessor id="-4"/>
+                            <successor id="-4"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.0121221677630331e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="forward"/>
+                        </userData>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="220" name="F_Barrier01" s="1.8032033712799369e+0" t="1.4697332838174830e+0" zOffset="9.7351074218693157e-2" hdg="1.5837438106536865e+0" roll="1.6994807869195938e-2" pitch="-1.3324852101504803e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="221" name="F_Barrier01" s="4.8361811570048072e+0" t="1.5146431565658913e+0" zOffset="5.6671142578068157e-2" hdg="1.5838710069656372e+0" roll="1.5144801698625088e-2" pitch="1.8308787839487195e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="222" name="F_Barrier01" s="7.8693254052905628e+0" t="1.5595539773693323e+0" zOffset="2.9052734374943157e-2" hdg="1.5838570594787598e+0" roll="-1.0471975430846214e-2" pitch="-7.0275737016345374e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="223" name="F_Barrier01" s="1.0910164843870561e+1" t="1.5999852141057986e+0" zOffset="1.2847900390625000e-2" hdg="1.5796139240264893e+0" roll="-1.0471975430846214e-2" pitch="-7.0275737016345374e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="224" name="F_Barrier01" s="1.3951938148855218e+1" t="1.6228020480030549e+0" zOffset="4.2724609375000000e-3" hdg="1.5735249519348145e+0" roll="4.6728444285690784e-3" pitch="1.8517720745876431e-3" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="225" name="F_Barrier01" s="1.6997056862770258e+1" t="1.6271533561399814e+0" zOffset="-4.7912597656250000e-3" hdg="1.5674401521682739e+0" roll="-1.0471975430846214e-2" pitch="0.0000000000000000e+0" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="226" name="F_Barrier01" s="2.0038932502192367e+1" t="1.6130384388706007e+0" zOffset="-4.2724609375000000e-3" hdg="1.5613564252853394e+0" roll="-1.0471975430846214e-2" pitch="0.0000000000000000e+0" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="227" name="F_Barrier01" s="2.3083672151435223e+1" t="1.5804587862297543e+0" zOffset="-1.2817382812500000e-2" hdg="1.5552668571472168e+0" roll="-1.0471975430846214e-2" pitch="-5.0417506827216130e-6" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="228" name="F_Barrier01" s="2.6124794350367441e+1" t="1.5294208369285796e+0" zOffset="-1.8646240234318157e-2" hdg="1.5491845607757568e+0" roll="0.0000000000000000e+0" pitch="-1.5113725567061920e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="229" name="F_Barrier01" s="2.9162962131868102e+1" t="1.4621981835218971e+0" zOffset="-5.6843418860808015e-14" hdg="1.5461158752441406e+0" roll="0.0000000000000000e+0" pitch="-1.5113725567061920e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="230" name="F_Barrier01" s="3.2195720115721898e+1" t="1.4010498441454162e+0" zOffset="-5.6843418860808015e-14" hdg="1.5494811534881592e+0" roll="0.0000000000000000e+0" pitch="-2.4256089091068134e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="231" name="F_Barrier01" s="3.5228547006281055e+1" t="1.3562207937129558e+0" zOffset="-5.6843418860808015e-14" hdg="1.5562119483947754e+0" roll="0.0000000000000000e+0" pitch="-3.2589545298833400e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="232" name="F_Barrier01" s="3.8261328298101589e+1" t="1.3294990143642527e+0" zOffset="-5.6843418860808015e-14" hdg="1.5629426240921021e+0" roll="1.5707964077591896e-2" pitch="-4.0923412598203868e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="233" name="F_Barrier01" s="4.1293916410120964e+1" t="1.3208750713056676e+0" zOffset="-5.6843418860808015e-14" hdg="1.5696731805801392e+0" roll="1.5707964077591896e-2" pitch="-4.9258684157393873e-5" orientation="-" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="234" name="F_Barrier01" s="4.4326170967111636e+1" t="1.3296608566550119e+0" zOffset="-5.6843418860808015e-14" hdg="1.5757946968078613e+0" roll="1.5707964077591896e-2" pitch="-5.6836703151930124e-5" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <road name="Road 26" length="2.5838590570228149e+1" id="26" junction="19">
+        <link>
+            <predecessor elementType="road" elementId="2" contactPoint="start"/>
+            <successor elementType="road" elementId="1" contactPoint="end"/>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="3.2591458500445132e+0" y="5.0248435269654401e+1" hdg="1.6264109430325862e+0" length="3.8525204031665226e+0">
+                <line/>
+            </geometry>
+            <geometry s="3.8525204031665226e+0" x="3.0449998378753600e+0" y="5.4094999313354492e+1" hdg="1.6264109430325862e+0" length="1.9447140317742921e+1">
+                <line/>
+            </geometry>
+            <geometry s="2.3299660720909444e+1" x="1.9640120399351737e+0" y="7.3512072520166242e+1" hdg="1.6264109430325786e+0" length="3.3594497796947742e-1">
+                <arc curvature="-2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="2.3635605698878919e+1" x="1.9454509046313615e+0" y="7.3847504343691426e+1" hdg="1.6257390530766396e+0" length="1.4186688035865558e+0">
+                <arc curvature="-2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="2.5054274502465475e+1" x="1.8695542700579861e+0" y="7.5264141038442702e+1" hdg="1.6229017154694665e+0" length="7.8431606776267415e-1">
+                <arc curvature="-2.0000000000000000e-3"/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9332760712313188e+2" b="1.8790786682803720e-2" c="-6.1992859461214691e-4" d="0.0000000000000000e+0"/>
+            <elevation s="1.5155605698878929e+1" a="2.9347000000000003e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="1.5775605698878920e+1" a="2.9346999999999997e+2" b="1.7347234759768071e-18" c="7.2296126879781749e-4" d="0.0000000000000000e+0"/>
+            <elevation s="2.3635605698878919e+1" a="2.9351466425800180e+2" b="1.1364951145501692e-2" c="7.2296126879781749e-4" d="0.0000000000000000e+0"/>
+            <elevation s="2.5054274502465475e+1" a="2.9353224240680396e+2" b="1.3416236341991329e-2" c="7.2296126879781749e-4" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="-3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneOffset s="2.3635605698878919e+1" a="-3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneOffset s="2.5054274502465475e+1" a="-3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneSection s="0.0000000000000000e+0">
+                <left>
+                    <lane id="4" type="driving" level="false">
+                        <link>
+                            <predecessor id="-4"/>
+                            <successor id="4"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.1883000000000000e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="3" type="driving" level="false">
+                        <link>
+                            <predecessor id="-3"/>
+                            <successor id="3"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="2" type="driving" level="false">
+                        <link>
+                            <predecessor id="-2"/>
+                            <successor id="2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="1" type="none" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+            </laneSection>
+            <laneSection s="2.3635605698878919e+1">
+                <left>
+                    <lane id="4" type="driving" level="false">
+                        <link>
+                            <predecessor id="4"/>
+                            <successor id="4"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.1883000000000000e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="3" type="driving" level="false">
+                        <link>
+                            <predecessor id="3"/>
+                            <successor id="3"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="2" type="driving" level="false">
+                        <link>
+                            <predecessor id="2"/>
+                            <successor id="2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="1" type="none" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+            </laneSection>
+            <laneSection s="2.5054274502465475e+1">
+                <left>
+                    <lane id="4" type="driving" level="false">
+                        <link>
+                            <predecessor id="4"/>
+                            <successor id="-4"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000009e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="white" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="1.1883000000000000e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="3" type="driving" level="false">
+                        <link>
+                            <predecessor id="3"/>
+                            <successor id="-3"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.7679935042008657e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="2" type="driving" level="false">
+                        <link>
+                            <predecessor id="2"/>
+                            <successor id="-2"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="broken" material="standard" color="white" width="1.2500000000000000e-1" laneChange="both">
+                            <type name="broken">
+                                <line length="3.6600000858306885e+0" space="1.0979999542236328e+1" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                    <lane id="1" type="none" level="false">
+                        <width sOffset="0.0000000000000000e+0" a="3.5000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="solid" material="standard" color="yellow" width="1.2500000000000000e-1" laneChange="none">
+                            <type name="solid">
+                                <line length="3.2324221677630334e+2" space="0.0000000000000000e+0" width="1.2500000000000000e-1" sOffset="0.0000000000000000e+0" tOffset="0.0000000000000000e+0"/>
+                            </type>
+                        </roadMark>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="undirected"/>
+                        </userData>
+                    </lane>
+                </center>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="180" name="F_Barrier01" s="3.3115431401397899e-1" t="-1.4230430855572873e+0" zOffset="1.8007023752772966e-2" hdg="-1.5724585056304932e+0" roll="1.0464495047926903e-2" pitch="8.3068356616422534e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="179" name="F_Barrier01" s="3.3646879082754562e+0" t="-1.4228103886995500e+0" zOffset="1.1506139066398191e-2" hdg="-1.5724585056304932e+0" roll="1.1440757662057877e-2" pitch="8.2906079478561878e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="178" name="F_Barrier01" s="6.3980952499435677e+0" t="-1.4270360134173874e+0" zOffset="2.7469675319480302e-4" hdg="-1.5754985809326172e+0" roll="1.4679507352411747e-2" pitch="7.7905989019200206e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="177" name="F_Barrier01" s="9.4316013939805270e+0" t="-1.4404339590283959e+0" zOffset="-6.9885327998235880e-3" hdg="-1.5785443782806396e+0" roll="-3.6492431536316872e-4" pitch="2.8275185286474880e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="176" name="F_Barrier01" s="1.2465159401304744e+1" t="-1.4586439224847032e+0" zOffset="-1.3580329294995863e-2" hdg="-1.5784285068511963e+0" roll="1.4336811378598213e-2" pitch="1.5971370041370392e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="175" name="F_Barrier01" s="1.5498778324555603e+1" t="-1.4768540899996490e+0" zOffset="-1.1047363281250000e-2" hdg="-1.5785443782806396e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="174" name="F_Barrier01" s="1.8532376390324110e+1" t="-1.4950638634262363e+0" zOffset="4.0893594929229948e-3" hdg="-1.5785443782806396e+0" roll="-2.0496366778388619e-4" pitch="1.5881062154221581e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="173" name="F_Barrier01" s="2.1566018957123422e+1" t="-1.5132739489293865e+0" zOffset="6.9885622780816448e-3" hdg="-1.5785443782806396e+0" roll="-4.3051250395365059e-4" pitch="-2.3172287910711020e-6" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+            <object id="172" name="F_Barrier01" s="2.4604299589514348e+1" t="-1.5297889507592615e+0" zOffset="8.0414491242208896e-4" hdg="-1.5759289264678955e+0" roll="2.4753815960139036e-3" pitch="7.7867042273283005e-4" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <road name="Road 29" length="2.6782892667981969e+1" id="29" junction="19">
+        <link>
+            <predecessor elementType="road" elementId="2" contactPoint="start"/>
+            <successor elementType="road" elementId="4" contactPoint="start"/>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-7.4922109990239072e+0" y="4.9650095855415437e+1" hdg="1.6264109430325866e+0" length="2.1770857206988765e+0">
+                <line/>
+            </geometry>
+            <geometry s="2.1770857206988765e+0" x="-7.6132263802415938e+0" y="5.1823815596499756e+1" hdg="1.6264109430325844e+0" length="1.0783638828216306e+1">
+                <arc curvature="2.0000000000000000e-3"/>
+            </geometry>
+            <geometry s="1.2960724548915181e+1" x="-8.3287013116317929e+0" y="6.2583483552564097e+1" hdg="1.6479782206890188e+0" length="2.9197177924229695e-1">
+                <line/>
+            </geometry>
+            <geometry s="1.3252696328157477e+1" x="-8.3512138795778590e+0" y="6.2874586118953310e+1" hdg="1.6479782206890170e+0" length="1.0922129728184300e+1">
+                <arc curvature="6.2566709683717123e-2"/>
+            </geometry>
+            <geometry s="2.4174826056341775e+1" x="-1.2707549074526264e+1" y="7.2659503526530813e+1" hdg="2.3313399405202215e+0" length="1.8853247437907066e+0">
+                <line/>
+            </geometry>
+            <geometry s="2.6060150800132483e+1" x="-1.4007058462907937e+1" y="7.4025270810019521e+1" hdg="2.3313338674949460e+0" length="7.2274186784948469e-1">
+                <arc curvature="5.6614338446002208e-2"/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+0" a="2.9332760712313188e+2" b="1.8790788652449968e-2" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="4.8173578014948824e+0" a="2.9341812907544301e+2" b="1.8790788652446256e-2" c="-1.5991057880318429e-3" d="0.0000000000000000e+0"/>
+            <elevation s="1.0802943996796333e+1" a="2.9347331141038637e+2" b="-3.5238240689889033e-4" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="1.7207357801494883e+1" a="2.9347105460763510e+2" b="-3.5238240689383984e-4" c="2.9435914494928834e-5" d="0.0000000000000000e+0"/>
+            <elevation s="2.3192943996796334e+1" a="2.9347000000000003e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <elevation s="2.6060150800132483e+1" a="2.9347000000000003e+2" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+        </elevationProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+0" a="0.0000000000000000e+0" b="0.0000000000000000e+0" c="0.0000000000000000e+0" d="0.0000000000000000e+0"/>
+            <laneOffset s="2.6060150800132483e+1" a="-3.9968028886505635e-15" b="1.9392298521949648e-3" c="2.3579003070314445e-5" d="-9.6429014878070505e-8"/>
+            <laneSection s="0.0000000000000000e+0">
+                <left>
+                    <lane id="1" type="driving" level="false">
+                        <link>
+                            <predecessor id="-5"/>
+                            <successor id="1"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="3.9032486020545987e+0" b="0.0000000000000000e+0" c="1.2111850101114595e-2" d="-3.0984343858959359e-4"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                    </lane>
+                </center>
+            </laneSection>
+            <laneSection s="2.6060150800132483e+1">
+                <left>
+                    <lane id="1" type="driving" level="false">
+                        <link>
+                            <predecessor id="1"/>
+                            <successor id="1"/>
+                        </link>
+                        <width sOffset="0.0000000000000000e+0" a="6.6450947484373213e+0" b="3.4871931904035335e-2" c="-1.3155570626900176e-2" d="-4.1633900814549464e-4"/>
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                        <userData>
+                            <vectorLane travelDir="backward"/>
+                        </userData>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <roadMark sOffset="0.0000000000000000e+0" type="none" material="standard" color="white" laneChange="none"/>
+                    </lane>
+                </center>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="266" name="YieldSign" s="4.6204799201844686e+0" t="8.9601591293201004e+0" zOffset="-1.2372447082157123e-2" hdg="2.9188137054443359e+0" roll="4.1516260243952274e-3" pitch="1.8324205651879311e-2" orientation="+" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <road name="OriginReferenceRoad" length="1.0000000000000000e+2" id="274" junction="-1">
+        <planView>
+            <geometry s="0.0000000000000000e+0" x="-1.1107666542561151e+2" y="5.0000000000000000e+1" hdg="-1.5707963267948966e+0" length="1.0000000000000000e+2">
+                <line/>
+            </geometry>
+        </planView>
+        <lanes>
+            <laneSection s="0.0000000000000000e+0">
+                <center>
+                    <lane id="0" type="none" level="false"/>
+                </center>
+            </laneSection>
+        </lanes>
+        <objects>
+            <object id="275" name="OriginReference" s="5.0000000000000000e+1" t="1.1107666542561151e+2" zOffset="0.0000000000000000e+0" hdg="0.0000000000000000e+0" roll="0.0000000000000000e+0" pitch="0.0000000000000000e+0" orientation="none" type="-1" height="0.0000000000000000e+0" width="0.0000000000000000e+0" radius="0.0000000000000000e+0" length="0.0000000000000000e+0" validLength="0.0000000000000000e+0"/>
+        </objects>
+    </road>
+    <junction id="7" name="junction7">
+        <connection id="0" incomingRoad="2" connectingRoad="8" contactPoint="start">
+            <laneLink from="-5" to="-1"/>
+        </connection>
+        <connection id="1" incomingRoad="0" connectingRoad="8" contactPoint="end">
+            <laneLink from="-1" to="-1"/>
+        </connection>
+        <connection id="2" incomingRoad="2" connectingRoad="16" contactPoint="start">
+            <laneLink from="-2" to="-2"/>
+            <laneLink from="-3" to="-3"/>
+            <laneLink from="-4" to="-4"/>
+        </connection>
+        <connection id="3" incomingRoad="3" connectingRoad="16" contactPoint="end">
+            <laneLink from="-2" to="-2"/>
+            <laneLink from="-3" to="-3"/>
+            <laneLink from="-4" to="-4"/>
+        </connection>
+    </junction>
+    <junction id="19" name="junction19">
+        <connection id="0" incomingRoad="2" connectingRoad="26" contactPoint="start">
+            <laneLink from="-4" to="4"/>
+            <laneLink from="-3" to="3"/>
+            <laneLink from="-2" to="2"/>
+        </connection>
+        <connection id="1" incomingRoad="1" connectingRoad="26" contactPoint="end">
+            <laneLink from="-4" to="4"/>
+            <laneLink from="-3" to="3"/>
+            <laneLink from="-2" to="2"/>
+        </connection>
+        <connection id="2" incomingRoad="2" connectingRoad="29" contactPoint="start">
+            <laneLink from="-5" to="1"/>
+        </connection>
+        <connection id="3" incomingRoad="4" connectingRoad="29" contactPoint="end">
+            <laneLink from="1" to="1"/>
+        </connection>
+    </junction>
+</OpenDRIVE>
