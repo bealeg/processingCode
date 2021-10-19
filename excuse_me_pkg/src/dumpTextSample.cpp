@@ -33,11 +33,6 @@
  * All outputs are written to a csv file.
  * */
 
-
-/* callback for the objectArray message
- * Loops through each objectArray (autoware custom message) and outputs
- * the tracking information from each frame
- */
  
 class dumpResultsNode
 {
@@ -61,9 +56,12 @@ private:
   std::string result_file_path_;
   std::string result_file_path_objs;
   std::string result_file_path_ego;
+  std::string ego_header;
+  std::string objs_header;
   
   std::string fixed_frame;
   std::string earth_frame;
+  std::string objects_topic;
   
   std::ofstream outputfile;
   
@@ -73,10 +71,12 @@ private:
 	}
 	*/
 	
+	// cb to store curent vehicle velocity
 	void velCB(const geometry_msgs::TwistStamped &curr_veh_velo){
 		veh_velo = curr_veh_velo;
 	}
 	
+	// transform pose based on given tf
 	geometry_msgs::Pose getTransformedPose(const geometry_msgs::Pose& in_pose,const tf::StampedTransform& tf_stamp)
 	{
 		tf::Transform transform;
@@ -89,6 +89,7 @@ private:
 		return out_pose.pose;
 	}
 	
+	// transform detected object array into global fixed frame
 	void transformPoseToGlobal(const autoware_msgs::DetectedObjectArray& input,
                                       autoware_msgs::DetectedObjectArray& transformed_input)
 	{
@@ -107,9 +108,10 @@ private:
 		}
 	}
 	
+	// cb to write detected object information to its own csv file
 	void detectedObjectCB(const autoware_msgs::DetectedObjectArray& detected_objects)
 	{
-		// look up the transform from base link to map, map to earth, and base_link_ground to earth
+		// look up the transform from base_link_ground to map_veh, map_veh to earth, and base_link_ground to earth
 		try
 		{
 			//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
@@ -124,22 +126,23 @@ private:
 		}
 		//ROS_INFO("vehicle pose in ecef x: %f y: %f z: %f",veh_ecef_pose.position.x, veh_ecef_pose.position.y, veh_ecef_pose.position.z);
 		
+		//transform detected ibjects from tracker to map frame
 		autoware_msgs::DetectedObjectArray transformed_input;
-		transformPoseToGlobal(detected_objects, transformed_input); //transform to map frame
+		transformPoseToGlobal(detected_objects, transformed_input); 
 		
-		
+		//instanitate the geocentric object from geographic library
 		GeographicLib::Geocentric earth = GeographicLib::Geocentric::WGS84();
 		
-		std::ofstream outputfile(result_file_path_objs, std::ofstream::out | std::ofstream::app);
-		// loop through each object in the object array
+		//set up file to write to
+		std::ofstream outputfile(result_file_path_objs, std::ofstream::out | std::ios::app);
 		
+		// loop through each object in the object array
 		for (size_t i = 0; i < detected_objects.objects.size(); i++)
 		{
 			double yaw = tf::getYaw(detected_objects.objects[i].pose.orientation); // gets yaw fom quaternion
 			
-			//write information to csv
 			// << std::to_string(detected_objects.objects[i].header.frame_id) << ","
-			
+			// add information to string for detected objects info in the base_link_ground frame
 			std::string originalStr = 
 									std::to_string(detected_objects.header.stamp.toSec()) + "," 
 								+ std::to_string(detected_objects.objects[i].id) + ","
@@ -158,6 +161,7 @@ private:
 								+ std::to_string(detected_objects.objects[i].velocity.angular.y) + ","
 								+ std::to_string(detected_objects.objects[i].velocity.angular.z);
 			
+			// add information to string for detected objects info in the map_veh frame
 			double yawTF = tf::getYaw(transformed_input.objects[i].pose.orientation); // gets yaw fom quaternion
 			std::string transformedStr = 
 									std::to_string(transformed_input.header.stamp.toSec()) + ","
@@ -170,19 +174,22 @@ private:
 								+ std::to_string(transformed_input.objects[i].pose.position.y) + ","
 								+ std::to_string(transformed_input.objects[i].pose.position.z) + ","
 								+ std::to_string(yawTF);
-								
-			geometry_msgs::Pose obj_ecef_pose = getTransformedPose(detected_objects.objects[i].pose, local2llh_);
 			
+			// transform object pose to ecef
+			geometry_msgs::Pose obj_ecef_pose = getTransformedPose(detected_objects.objects[i].pose, local2llh_);
+			// transform object pose from ecef to lat,lon,height
 			double obj_lat, obj_long, obj_height;
 			earth.Reverse(obj_ecef_pose.position.x, obj_ecef_pose.position.y, obj_ecef_pose.position.z, obj_lat, obj_long, obj_height);
-			
+			// write to string for lat lon height
 			std::string latlongStr = 
 									std::to_string(detected_objects.objects[i].id)+ "," + std::to_string(obj_lat) + "," + std::to_string(obj_long) + "," + std::to_string(obj_height);
-								
+			
+			// write the strings to the file for the detected objects		
 			outputfile << originalStr << "," << "," << transformedStr << "," << "," << latlongStr << "\n";
 		}
 	}
-		
+	
+	// cb to write the ego vehicle pose to a csv
 	void poseCB(const geometry_msgs::PoseStamped &curr_veh_pose){
 		
 		veh_pose = curr_veh_pose;
@@ -190,7 +197,7 @@ private:
 		try
 		{
 			//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-			tf_listener_ptr_->lookupTransform(earth_frame, fixed_frame, ros::Time(0), map2llh_);
+			tf_listener_ptr_->lookupTransform(earth_frame, fixed_frame, ros::Time(0), map2llh_); // check fixed_frame map variable
 			
 		}
 		catch (tf::TransformException ex)
@@ -198,15 +205,16 @@ private:
 			ROS_ERROR("%s", ex.what());
 		}
 		
+		//transform vehicle pose to global fixed frame
 		geometry_msgs::Pose veh_ecef_pose = getTransformedPose(veh_pose.pose, map2llh_);
-		
+		// instantiate geocentric object from geographic library
 		GeographicLib::Geocentric earth = GeographicLib::Geocentric::WGS84();
 		
-    // Convert ECEF to LLA
+    // Convert ego vehicle positio to ECEF to lat,lon,height
     double v_lat, v_long, v_height;
     earth.Reverse(veh_ecef_pose.position.x, veh_ecef_pose.position.y, veh_ecef_pose.position.z, v_lat, v_long, v_height);
-		
-		std::ofstream outputfileEgoVehicle(result_file_path_ego, std::ofstream::out | std::ofstream::app);
+		// set up ofstream to write to file
+		std::ofstream outputfileEgoVehicle(result_file_path_ego, std::ofstream::out | std::ios::app);
 		
 		double yaw_veh = tf::getYaw(veh_pose.pose.orientation); // gets yaw fom quaternion
 		
@@ -226,40 +234,51 @@ private:
 								+ std::to_string(veh_velo.twist.angular.x) + ","
 								+ std::to_string(veh_velo.twist.angular.y) + ","
 								+ std::to_string(veh_velo.twist.angular.z);
-								
+		
+		// write vehicle information in map_veh frame and lat,lon,height information to csv		
 		outputfileEgoVehicle << veh_info << "\n";
 		
-		// set up output file and ofstream
-		// std::string result_file_path_ = "/home/gbeale/autoware.ai/src/excuse_me_addon/excuse_me_pkg/trackingResult.csv";
-		
-		
 	}
+	
 public:
 
   dumpResultsNode(tf::TransformListener* in_tf_listener_ptr):n("~"), private_n("~")
   {
-    tf_listener_ptr_ = in_tf_listener_ptr;
+    tf_listener_ptr_ = in_tf_listener_ptr; // constructor takes a tf_listener as arg
   }
   
   void Run()
   {
+		// read in params for the save path, the fixed_frame name, earth frame name, and object topic (can choose from filtered or non filtered)
 		if (!private_n.getParam("save_path", result_file_path_)) {
 			result_file_path_ = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/";
 		}
-		
 		if (!private_n.getParam("fixed_frame", fixed_frame)) {
 			fixed_frame = "map_veh"; // using default as map_veh since we will leave all the vector map stuff as "map" frame
 		}
-		
 		if (!private_n.getParam("earth_frame", earth_frame)) {
 			earth_frame = "earth"; // using default as map_veh since we will leave all the vector map stuff as "map" frame
 		}
+		if (!private_n.getParam("objects_topic", objects_topic)) {
+			objects_topic = "/detection/object_tracker/objects_filtered"; // using filtered objects as default
+		}
 		
+		// create file paths from input
 		result_file_path_objs = result_file_path_ + "_trackingResult.csv";
 		result_file_path_ego = result_file_path_ + "_trackingResultEgoVeh.csv";
 		
+		
 		std::ofstream outputfileEgoVehicle(result_file_path_ego, std::ofstream::out | std::ofstream::app);
-		outputfileEgoVehicle << "a, b, c" << "\n";
+		std::string ego_header = "timestamp,frame_id,x_pos,y_pos,z_pos,lat,lon,alt,yaw,vx,vy,vz,x_ang,y_ang,z_ang";
+		outputfileEgoVehicle << ego_header << std::endl;
+		outputfileEgoVehicle.close();
+		
+		std::ofstream outputfile(result_file_path_objs, std::ofstream::out | std::ios::app);
+		std::string objs_header = "timestamp_1,obj_id_1,frame_id_1,box_x_rel,box_y_rel,box_z_rel,x_pos_rel,y_pos_rel,z_pos_rel,yaw_rel,vx,vy,vz,x_ang,y_ang,z_ang," 
+		"blank_1,timestamp_2,frame_id_2,obj_id2,box_x_fixed,box_y_fixed,box_z_fixed,x_pos_fixed,y_pos_fixed,z_pos_fixed,yaw_fixed,blank_2," 
+		"obj_id_3,lat,lon,alt";
+		outputfile << objs_header << std::endl;
+		outputfile.close();
 		
 		ROS_INFO("Ready");
 		ROS_INFO("%s", result_file_path_objs.c_str());
@@ -267,7 +286,7 @@ public:
 		
 		ros::Subscriber veh_vel_sub = n.subscribe("/current_pose", 1000, &dumpResultsNode::poseCB, this);	
 		ros::Subscriber obj_detected_sub = n.subscribe("/current_velocity", 1000, &dumpResultsNode::velCB, this);
-		ros::Subscriber veh_pos_sub = n.subscribe("/detection/object_tracker/objects", 1000, &dumpResultsNode::detectedObjectCB, this);		
+		ros::Subscriber veh_pos_sub = n.subscribe(objects_topic, 1000, &dumpResultsNode::detectedObjectCB, this);		
 		
 		ros::spin();
   }

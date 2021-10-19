@@ -192,6 +192,7 @@
 		<param name="save_path" value="/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/" />
 		<param name="fixed_frame" value="map_veh" />
 		<param name="earth_frame" value="earth" />
+		<param name="objects_topic" value="/detection/object_tracker/objects_filtered" />
 	</node> -->
 	
 	<!--

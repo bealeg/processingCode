@@ -6,52 +6,6 @@
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 	
-	<!-- lidar_euclidean_cluster_detect -->
-	<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch" >
-		<arg name="points_node" value="/points_no_ground" />		<!-- ray ground filter should be running, takes in raw poitns and publishes points_no_ground and points_lane (second one doesnt use difference of normals, is sometimes better) -->
-		<arg name="remove_ground" value="false" />						<!-- for our case, we don't need to filter the ground because the ray ground filter should already be doing it -->
-		<arg name="downsample_cloud" value="true" /> 					<!-- Apply VoxelGrid Filter with the value given by "leaf_size"-->
-		<arg name="leaf_size" value="0.15" />									<!-- Voxel Grid Filter leaf size-->
-		<arg name="cluster_size_min" value="15" />						<!-- Minimum number of points to consider a cluster as valid-->
-		<arg name="cluster_size_max" value="15000" />					<!-- Maximum number of points to allow inside a cluster-->
-		<arg name="sync" value="false" />
-		<arg name="use_diffnormals" value="true" />						<!-- not sure if this should be on or off, removes points that belong to smooth planes -->
-		<arg name="pose_estimation" value="true" />
-		<arg name="clip_min_height" value="-5" />						<!-- not sure if this needs to be the same as the height from velodyne to baselink or not -->
-		<arg name="clip_max_height" value="10" />						<!-- max height above velodyne i think -->
-
-		<arg name="keep_lanes" value="true" />								<!-- only if we have a vector map -->
-		<arg name="keep_lane_left_distance" value="60" />
-		<arg name="keep_lane_right_distance" value="60" />
-		<arg name="cluster_merge_threshold" value="1.0" />
-		<arg name="clustering_distance" value="0.75" /> 			<!-- should be distance between points to be considered part of the cluster -->
-
-		<arg name="use_vector_map" value="false" />
-		<arg name="wayarea_gridmap_layer" value="wayarea" />
-
-		<arg name="output_frame" value="/base_link_ground" />	 				<!-- not sure best frame to output in, default is velodyne, here I've changed to world -->
-
-		<arg name="remove_points_upto" value="3.0" />  				<!-- remove points closer than this value from clustering -->
-
-		<arg name="use_gpu" value="false" />					 			<!-- i think this only works if you installed with CUDA -->
-
-		<arg name="use_multiple_thres" value="false"/>						<!-- not sure if this will make clustering more accurate, can try toggling on and off for comparison -->
-		<arg name="clustering_ranges" value="[15,30,45,60]"/>				<!-- Distances to segment pointcloud -->
-		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	<!-- Euclidean Clustering threshold distance for each segment -->
-	</include>
-	
-	<!-- launch csv generator to record subject vehicle and tracked object data -->
-	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
-		<param name="save_path" value="/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/" />
-	</node>
-	
-	<!-- Tracking node that outputs objects-->
-	<!--rosrun lidar_tracker lidar_euclidean_track -->
-	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
-		<param name="threshold_dist" value="3.0" />
-		<param name="color_val" value="2" />  <!-- 1 for blue, anything else green-->
-	</node>
-	
 	<!-- changed the urdf because a lidar positioned changed -->
 	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
 	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
@@ -91,6 +45,13 @@
 	<!-- gps localization node -->
 	<node pkg="gpsins_localizer" type="gpsins_localizer_node" name="gpsins_localizer" output="screen">
         <rosparam command="load" file="$(find gpsins_localizer)/config/params.yaml" />
+	</node>
+	
+	<node pkg="hd_map_stf" type="hd_map_stf" name="hd_map_stf" output="screen">
+		<param name="map_origin_lat" value="37.28266805642265" />
+		<param name="map_origin_lon" value="-79.93856309724196" /> <!-- -79.93853309724196" -->
+		<param name="map_origin_h" value="265.88" /> <!-- using heignt - undulation for now: 296.28 - 33.4 --> <!-- 262.88 -->
+		<param name="fixed_frame" value="map" />
 	</node>
 	
 	<!-- ray ground filter for top lidar -->
@@ -155,23 +116,66 @@
 		</node>
 	</include>
 	
+	<!-- lidar_euclidean_cluster_detect -->
+	<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch" >
+		<arg name="points_node" value="/points_no_ground" />		<!-- ray ground filter should be running, takes in raw poitns and publishes points_no_ground and points_lane (second one doesnt use difference of normals, is sometimes better) -->
+		<arg name="remove_ground" value="false" />						<!-- for our case, we don't need to filter the ground because the ray ground filter should already be doing it -->
+		<arg name="downsample_cloud" value="true" /> 					<!-- Apply VoxelGrid Filter with the value given by "leaf_size"-->
+		<arg name="leaf_size" value="0.15" />									<!-- Voxel Grid Filter leaf size-->
+		<arg name="cluster_size_min" value="15" />						<!-- Minimum number of points to consider a cluster as valid-->
+		<arg name="cluster_size_max" value="15000" />					<!-- Maximum number of points to allow inside a cluster-->
+		<arg name="sync" value="false" />
+		<arg name="use_diffnormals" value="true" />						<!-- not sure if this should be on or off, removes points that belong to smooth planes -->
+		<arg name="pose_estimation" value="true" />
+		<arg name="clip_min_height" value="-5" />						<!-- not sure if this needs to be the same as the height from velodyne to baselink or not -->
+		<arg name="clip_max_height" value="10" />						<!-- max height above velodyne i think -->
+
+		<arg name="keep_lanes" value="true" />								<!-- only if we have a vector map -->
+		<arg name="keep_lane_left_distance" value="60" />
+		<arg name="keep_lane_right_distance" value="60" />
+		<arg name="cluster_merge_threshold" value="1.0" />
+		<arg name="clustering_distance" value="0.75" /> 			<!-- should be distance between points to be considered part of the cluster -->
+
+		<arg name="use_vector_map" value="false" />
+		<arg name="wayarea_gridmap_layer" value="wayarea" />
+
+		<arg name="output_frame" value="/base_link_ground" />	 				<!-- not sure best frame to output in, default is velodyne, here I've changed to world -->
+
+		<arg name="remove_points_upto" value="3.0" />  				<!-- remove points closer than this value from clustering -->
+
+		<arg name="use_gpu" value="false" />					 			<!-- i think this only works if you installed with CUDA -->
+
+		<arg name="use_multiple_thres" value="false"/>						<!-- not sure if this will make clustering more accurate, can try toggling on and off for comparison -->
+		<arg name="clustering_ranges" value="[15,30,45,60]"/>				<!-- Distances to segment pointcloud -->
+		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	<!-- Euclidean Clustering threshold distance for each segment -->
+	</include>
+	
 	<!--launch vector map loader-->
 	<node pkg="map_file" type="vector_map_loader" name="vector_map_loader" output="screen">
     <param name="load_mode" value="directory" />
-    <param name="map_dir" value="/home/gbeale/Downloads/Maps/VectorMapFolders/RS/" />  <!-- change director when creating docker code -->
+    <param name="map_dir" value="/home/gbeale/autoware.ai/src/processingCode/Maps/VectorMapFolders/RS1/" />  <!-- change director when creating docker code -->
 	</node>
 	
 	<!-- launch way area node -->
 	<include file="$(find object_map)/launch/wayarea2grid.launch" >
-		<arg name="sensor_frame" default="map" />  <!-- change name as we implement transform -->
+		<arg name="sensor_frame" default="map_veh" />  <!-- change name as we implement transform -->
 		<arg name="grid_frame" default="map" />   <!-- change name as we implement transform -->
 		<arg name="grid_resolution" default="0.3" />
 		<arg name="grid_length_x" default="500" />
 		<arg name="grid_length_y" default="500" />
 		<arg name="grid_position_x" default="0" />
 		<arg name="grid_position_y" default="0" />
-		<arg name="grid_position_z" default="-2" />
+		<arg name="grid_position_z" default="0" />
 	</include>
+	
+	<!-- Tracking node that outputs objects-->
+	<!--rosrun lidar_tracker lidar_euclidean_track -->
+	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
+		<param name="threshold_dist" value="3.0" />
+		<param name="color_val" value="2" />  <!-- 1 for blue, anything else green-->
+		<param name="fixed_frame" value="map_veh" />
+		<param name="earth_frame" value="earth" />
+	</node>
 	
 	<!-- launch roi object filter -->
 	<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter" output="screen" ns="/detection/object_tracker"/>
@@ -179,6 +183,14 @@
 	<!-- filtered objects visualizer -->
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="filtered_objects_viz" output="screen" ns="/detection/object_tracker">
 		<param name="objects_src_topic" value="/objects_filtered" />
+	</node>
+	
+	<!-- launch csv generator to record subject vehicle and tracked object data -->
+	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
+		<param name="save_path" value="/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/OldTrackingResults/" />
+		<param name="fixed_frame" value="map_veh" />
+		<param name="earth_frame" value="earth" />
+		<param name="objects_topic" value="/detection/object_tracker/objects_filtered" />
 	</node>
 	
 	<!--
