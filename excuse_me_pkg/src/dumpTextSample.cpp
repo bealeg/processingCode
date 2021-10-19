@@ -61,6 +61,10 @@ private:
   std::string result_file_path_;
   std::string result_file_path_objs;
   std::string result_file_path_ego;
+  
+  std::string fixed_frame;
+  std::string earth_frame;
+  
   std::ofstream outputfile;
   
   /*
@@ -89,7 +93,7 @@ private:
                                       autoware_msgs::DetectedObjectArray& transformed_input)
 	{
 		transformed_input.header.stamp = input.header.stamp;
-		transformed_input.header.frame_id = "map";
+		transformed_input.header.frame_id = fixed_frame; // check fixed frame variable
 		for (auto const &object: input.objects)
 		{
 			geometry_msgs::Pose out_pose = getTransformedPose(object.pose, local2global_);
@@ -109,9 +113,9 @@ private:
 		try
 		{
 			//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-			tf_listener_ptr_->lookupTransform("map", "base_link_ground", ros::Time(0), local2global_);
-			tf_listener_ptr_->lookupTransform("earth", "map", ros::Time(0), map2llh_);
-			tf_listener_ptr_->lookupTransform("earth", "base_link_ground", ros::Time(0), local2llh_);
+			tf_listener_ptr_->lookupTransform(fixed_frame, "base_link_ground", ros::Time(0), local2global_);
+			tf_listener_ptr_->lookupTransform(earth_frame, fixed_frame, ros::Time(0), map2llh_);
+			tf_listener_ptr_->lookupTransform(earth_frame, "base_link_ground", ros::Time(0), local2llh_);
 			
 		}
 		catch (tf::TransformException ex)
@@ -186,7 +190,7 @@ private:
 		try
 		{
 			//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-			tf_listener_ptr_->lookupTransform("earth", "map", ros::Time(0), map2llh_);
+			tf_listener_ptr_->lookupTransform(earth_frame, fixed_frame, ros::Time(0), map2llh_);
 			
 		}
 		catch (tf::TransformException ex)
@@ -241,6 +245,14 @@ public:
   {
 		if (!private_n.getParam("save_path", result_file_path_)) {
 			result_file_path_ = "/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/";
+		}
+		
+		if (!private_n.getParam("fixed_frame", fixed_frame)) {
+			fixed_frame = "map_veh"; // using default as map_veh since we will leave all the vector map stuff as "map" frame
+		}
+		
+		if (!private_n.getParam("earth_frame", earth_frame)) {
+			earth_frame = "earth"; // using default as map_veh since we will leave all the vector map stuff as "map" frame
 		}
 		
 		result_file_path_objs = result_file_path_ + "_trackingResult.csv";

@@ -39,33 +39,38 @@ private:
 
   tf::TransformListener *tf_listener_ptr_;
   
+  std::string fixed_frame;
+  std::string earth_frame;
+  
   int color_val;
   double threshold_dist;
   std::vector<autoware_msgs::CloudCluster> v_pre_cloud_cluster;
-
+	
+	// method to calculate 2D euclid distanace from two geometry point messages
 	double euclid_distance(const geometry_msgs::Point pos1, const geometry_msgs::Point pos2) {
 		
 		return sqrt(pow(pos1.x - pos2.x, 2) + pow(pos1.y - pos2.y, 2) +
               pow(pos1.z - pos2.z, 2));
 	}
 	
+	// method to calculate 2D euclid distanace from two stamped geometry point messages
 	double euclid_distance(const geometry_msgs::PointStamped& pos1, const geometry_msgs::PointStamped& pos2) {
 		
 		return sqrt(pow(pos1.point.x - pos2.point.x, 2) + pow(pos1.point.y - pos2.point.y, 2) +
               pow(pos1.point.z - pos2.point.z, 2));
 	}
-
+	
+	// method to transform a geometry stamped point to just a geometry point
 	void pos_stamped2pos(geometry_msgs::PointStamped in_pos, geometry_msgs::Point &out_pos) {
 		
 		out_pos = in_pos.point;
 	}
 	
+	// callback for each autoware cluster message
 	void cluster_cb(const autoware_msgs::CloudClusterArray::Ptr &cloud_cluster_array_ptr) {
 	
 		tf::StampedTransform local2global_;
 		
-		
-		//input_header_ = cloud_cluster_array_ptr.header;
 		autoware_msgs::CloudClusterArray base_msg = *cloud_cluster_array_ptr;
 		
 		autoware_msgs::CloudClusterArray transformed_input;
@@ -131,7 +136,7 @@ private:
 			
 			geometry_msgs::PointStamped out_point;
 			out_point.header = base_msg.header;
-			out_point.header.frame_id = "map";
+			out_point.header.frame_id = fixed_frame; // check fixed frame variable
 			
 			for (int j(0); j < (int)v_pre_cloud_cluster.size(); ++j){
 				double dist;
@@ -141,13 +146,13 @@ private:
 					
 					geometry_msgs::PointStamped pre_out_point;
 					out_point.header = v_pre_cloud_cluster.at(j).header;
-					out_point.header.frame_id = "map";
+					out_point.header.frame_id = fixed_frame; // check fixed frame variable
 					
 					try
 					{
 						//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-						tf_listener_ptr_->lookupTransform("map", "base_link_ground", base_msg.header.stamp, local2global_);
-						tf_listener_ptr_->transformPoint("map", base_msg.header.stamp, base_msg.clusters.at(i).centroid_point, "map", out_point);
+						tf_listener_ptr_->lookupTransform(fixed_frame, "base_link_ground", base_msg.header.stamp, local2global_); // check fixed frame variable
+						tf_listener_ptr_->transformPoint(fixed_frame, base_msg.header.stamp, base_msg.clusters.at(i).centroid_point, fixed_frame, out_point); // check fixed frame variable
 					}
 					catch (tf::TransformException ex)
 					{
@@ -158,8 +163,8 @@ private:
 					try
 					{
 						//tf_listener_.waitForTransform("base_link", "map", ros::Time(0), ros::Duration(1.0));
-						tf_listener_ptr_->lookupTransform("map", "base_link_ground", ros::Time::now()-ros::Duration(0.1), local2global_);
-						tf_listener_ptr_->transformPoint("map", v_pre_cloud_cluster.at(j).header.stamp, v_pre_cloud_cluster.at(j).centroid_point, "map", pre_out_point);
+						tf_listener_ptr_->lookupTransform(fixed_frame, "base_link_ground", ros::Time::now()-ros::Duration(0.1), local2global_); // check fixed frame variable
+						tf_listener_ptr_->transformPoint(fixed_frame, v_pre_cloud_cluster.at(j).header.stamp, v_pre_cloud_cluster.at(j).centroid_point, fixed_frame, pre_out_point); // check fixed frame variable
 					}
 					catch (tf::TransformException ex)
 					{
@@ -232,9 +237,11 @@ private:
 		detected_object.color = color; //assign color
 			detected_objects_msg.objects.push_back(detected_object);
 		}
-
+		
+		//publish the tracked objects array
 		tracked_pub.publish(detected_objects_msg);
-
+		
+		// bounding box stuff we don't really use
 		jsk_recognition_msgs::BoundingBoxArray pub_bb_msg;
 		pub_bb_msg.header = base_msg.header;
 		for (int i(0); i < (int)base_msg.clusters.size(); ++i) {
@@ -242,7 +249,8 @@ private:
 			pub_bb_msg.boxes.at(i).value = base_msg.clusters.at(i).id;
 		}
 		tracked_bba_pub.publish(pub_bb_msg);
-
+		
+		// text labels for the visualized tracked objects
 		visualization_msgs::MarkerArray pub_textlabel_msg;
 		std_msgs::ColorRGBA color_white;
 		color_white.r = 1.0f;
@@ -290,6 +298,13 @@ public:
 		if (!private_n.getParam("color_val", color_val)) {
 			color_val = 1;
 		}
+		if (!private_n.getParam("fixed_frame", fixed_frame)) {
+			fixed_frame = "map_veh";
+		}
+		if (!private_n.getParam("earth_frame", earth_frame)) {
+			earth_frame = "earth";
+		}
+		
 		ros::Subscriber cluster_centroids_sub =
 				n.subscribe("/detection/lidar_detector/cloud_clusters", 3, &lidarEuclideanTrackerNode::cluster_cb, this);
 		tracked_pub =

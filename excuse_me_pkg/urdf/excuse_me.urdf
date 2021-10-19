@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="origins">
 
-  <link name="map">
+  <link name="map_veh">
     <visual>
       <geometry>
         <box size="0 0 0"/>
@@ -20,8 +20,8 @@
       <origin rpy="0 0 0" xyz="1.398 0 0.49743"/> <!-- (height / 2) - tire radius -->
     </visual>
   </link>
-  <joint name="base_link_to_mapVeh" type="fixed">
-    <parent link="map"/>
+  <joint name="base_link_to_map_veh" type="fixed">
+    <parent link="map_veh"/>
     <child link="base_link"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint> -->

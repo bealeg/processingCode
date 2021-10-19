@@ -47,6 +47,13 @@
         <rosparam command="load" file="$(find gpsins_localizer)/config/params.yaml" />
 	</node>
 	
+	<node pkg="hd_map_stf" type="hd_map_stf" name="hd_map_stf" output="screen">
+		<param name="map_origin_lat" value="37.28266805642265" />
+		<param name="map_origin_lon" value="-79.93856309724196" /> <!-- -79.93853309724196" -->
+		<param name="map_origin_h" value="265.88" /> <!-- using heignt - undulation for now: 296.28 - 33.4 --> <!-- 262.88 -->
+		<param name="fixed_frame" value="map" />
+	</node>
+	
 	<!-- ray ground filter for top lidar -->
 	<include ns="top" file="$(find points_preprocessor)/launch/ray_ground_filter.launch">
 		<arg name="input_point_topic" value="/lidar_top/velodyne_points_transformed" />    								<!--  -->
@@ -146,19 +153,19 @@
 	<!--launch vector map loader-->
 	<node pkg="map_file" type="vector_map_loader" name="vector_map_loader" output="screen">
     <param name="load_mode" value="directory" />
-    <param name="map_dir" value="/home/gbeale/autoware.ai/src/processingCode/Maps/VectorMapFolders/RS/" />  <!-- change director when creating docker code -->
+    <param name="map_dir" value="/home/gbeale/autoware.ai/src/processingCode/Maps/VectorMapFolders/RS1/" />  <!-- change director when creating docker code -->
 	</node>
 	
 	<!-- launch way area node -->
 	<include file="$(find object_map)/launch/wayarea2grid.launch" >
-		<arg name="sensor_frame" default="map" />  <!-- change name as we implement transform -->
+		<arg name="sensor_frame" default="map_veh" />  <!-- change name as we implement transform -->
 		<arg name="grid_frame" default="map" />   <!-- change name as we implement transform -->
 		<arg name="grid_resolution" default="0.3" />
 		<arg name="grid_length_x" default="500" />
 		<arg name="grid_length_y" default="500" />
 		<arg name="grid_position_x" default="0" />
 		<arg name="grid_position_y" default="0" />
-		<arg name="grid_position_z" default="-2" />
+		<arg name="grid_position_z" default="0" />
 	</include>
 	
 	<!-- Tracking node that outputs objects-->
@@ -166,6 +173,8 @@
 	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
 		<param name="threshold_dist" value="3.0" />
 		<param name="color_val" value="2" />  <!-- 1 for blue, anything else green-->
+		<param name="fixed_frame" value="map_veh" />
+		<param name="earth_frame" value="earth" />
 	</node>
 	
 	<!-- launch roi object filter -->
@@ -175,6 +184,15 @@
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="filtered_objects_viz" output="screen" ns="/detection/object_tracker">
 		<param name="objects_src_topic" value="/objects_filtered" />
 	</node>
+	
+	
+	<!-- launch csv generator to record subject vehicle and tracked object data -->
+	<!--
+	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
+		<param name="save_path" value="/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/" />
+		<param name="fixed_frame" value="map_veh" />
+		<param name="earth_frame" value="earth" />
+	</node> -->
 	
 	<!--
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="euclidean_track_viz" output="screen" ns="/detection/object_tracker">

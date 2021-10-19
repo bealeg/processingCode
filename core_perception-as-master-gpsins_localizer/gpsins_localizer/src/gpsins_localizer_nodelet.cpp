@@ -61,6 +61,9 @@ void GpsInsLocalizerNl::loadParams()
     this->pnh.param("no_solution_init", this->no_solution_init, false);
     this->pnh.param("msl_height", this->msl_height, false);
     this->pnh.param("mgrs_mode", this->mgrs_mode, false);
+    
+    // added this myself
+    this->pnh.param<std::string>("map_frame_name",this->map_frame_name,"map_veh");
 
     // Simplified MGRS mode
     if (this->mgrs_mode)
@@ -177,7 +180,7 @@ void GpsInsLocalizerNl::oem7BestposCb(const novatel_oem7_msgs::BESTPOS::ConstPtr
 void GpsInsLocalizerNl::broadcastTf(tf2::Transform transform, ros::Time stamp)
 {
     geometry_msgs::TransformStamped map_baselink_tf;
-    map_baselink_tf.header.frame_id = "map";
+    map_baselink_tf.header.frame_id = map_frame_name; // check map name variable
     map_baselink_tf.child_frame_id = "base_link";
     map_baselink_tf.header.stamp = stamp;
     tf2::convert(transform, map_baselink_tf.transform);
@@ -189,7 +192,7 @@ void GpsInsLocalizerNl::publishPose(tf2::Transform pose, ros::Time stamp)
     // Publish pose in the map frame
     geometry_msgs::PoseStamped pose_stamped;
     pose_stamped.header.stamp = stamp;
-    pose_stamped.header.frame_id = "map";
+    pose_stamped.header.frame_id = map_frame_name; // check map name variable
     tf2::toMsg(pose, pose_stamped.pose);
     this->pose_pub.publish(pose_stamped);
 }
@@ -223,7 +226,7 @@ void GpsInsLocalizerNl::createMapFrame(const novatel_oem7_msgs::INSPVA::ConstPtr
     geometry_msgs::TransformStamped earth_map_tfs_msg;
     earth_map_tfs_msg.header.stamp = inspva_msg->header.stamp;
     earth_map_tfs_msg.header.frame_id = "earth";
-    earth_map_tfs_msg.child_frame_id = "map";
+    earth_map_tfs_msg.child_frame_id = map_frame_name; // check map name variable
     tf2::convert(new_earth_map_tf, earth_map_tfs_msg.transform);
     this->stf_bc.sendTransform(earth_map_tfs_msg);
     this->create_map_frame = false;
@@ -284,7 +287,7 @@ void GpsInsLocalizerNl::checkInitialize(uint32_t ins_status)
         try
         {
             geometry_msgs::TransformStamped tf_msg =
-                this->tf_buffer.lookupTransform("map", "earth", ros::Time(0));
+                this->tf_buffer.lookupTransform(map_frame_name, "earth", ros::Time(0)); // check map name variable
             tf2::convert(tf_msg.transform, this->earth_map_tf);
         }
         catch (tf2::TransformException &ex)

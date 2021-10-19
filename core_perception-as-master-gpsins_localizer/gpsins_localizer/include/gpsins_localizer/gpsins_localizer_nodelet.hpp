@@ -108,6 +108,7 @@ class GpsInsLocalizerNl : public nodelet::Nodelet {
     bool no_solution_init = false;
     bool msl_height = false;
     bool mgrs_mode = false;
+    std::string map_frame_name = "map_veh"; //supplying this as default
 };
 
 }  // namespace gpsins_localizer
