@@ -1,0 +1,19 @@
+<package format="2">
+  <name>hd_map_stf</name>
+  <version>1.12.0</version>
+  <description>static transformer for hd map</description>
+  <maintainer email="gbeale@todo.todo">gbeale</maintainer>
+  <license>TODO</license>
+	
+	<buildtool_depend>autoware_build_flags</buildtool_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <depend>roscpp</depend>
+  <depend>roslib</depend>
+  <depend>geographiclib</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>roslint</depend>
+	<depend>geometry_msgs</depend>
+
+</package>
