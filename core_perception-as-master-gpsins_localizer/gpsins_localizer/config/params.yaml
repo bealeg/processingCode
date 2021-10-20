@@ -8,10 +8,12 @@ broadcast_tfs: true
 # position. If an existing map frame is defined, this should not be set.
 create_map_frame: true
 
+# Name of the map frame we want to create (sometimes map is already created).
 map_frame_name: map_veh
 
 # Enable if you want to directly publish the measured earth -> gps TF
 publish_earth_gpsm_tf: false
+
 # The name of the measured GPS frame
 measured_gps_frame: gps
 

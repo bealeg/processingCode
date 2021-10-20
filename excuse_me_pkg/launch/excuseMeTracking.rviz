@@ -349,7 +349,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.03999999910593033
+      Size (m): 0.07999999821186066
       Style: Flat Squares
       Topic: /points_cluster
       Unreliable: false
@@ -365,17 +365,13 @@ Visualization Manager:
       Queue Size: 100
       Value: false
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /detection/object_tracker/objects_markers
-      Name: ObjectTrackMarkers
+      Name: AllObjects
       Namespaces:
-        /detection/object_tracker/arrow_markers: true
-        /detection/object_tracker/box_markers: true
-        /detection/object_tracker/centroid_markers: true
-        /detection/object_tracker/label_markers: true
-        /detection/object_tracker/model_markers: true
+        {}
       Queue Size: 100
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -671,6 +667,18 @@ Visualization Manager:
       Unreliable: false
       Use Timestamp: false
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /detection/object_tracker/objects_filtered_markers
+      Name: FilteredObjs
+      Namespaces:
+        /detection/object_tracker/arrow_markers: true
+        /detection/object_tracker/box_markers: true
+        /detection/object_tracker/centroid_markers: true
+        /detection/object_tracker/label_markers: true
+        /detection/object_tracker/model_markers: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -699,25 +707,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 121.60836791992188
+      Distance: 79.49661254882812
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -37.666324615478516
-        Y: 59.757469177246094
-        Z: 22.276554107666016
+        X: -207.14674377441406
+        Y: -147.70391845703125
+        Z: 70.17225646972656
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4397964477539062
+      Pitch: 0.7947970628738403
       Target Frame: map_veh
       Value: Orbit (rviz)
-      Yaw: 4.013174533843994
+      Yaw: 5.6063551902771
     Saved: ~
 Window Geometry:
   Displays:
