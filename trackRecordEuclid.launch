@@ -51,7 +51,7 @@
 		<param name="map_origin_lat" value="37.268866667532" /> <!--37.28266805642265-->
 		<param name="map_origin_lon" value="-79.9365594337049" /> <!-- -79.93853309724196" -->
 		<param name="map_origin_h" value="249" />  <!--using heignt - undulation for now: 296.28 - 33.4, 262.88 -->
-		<param name="fixed_frame" value="map" />
+		<param name="map_frame" value="map" />
 	</node>
 	
 	<!-- ray ground filter for top lidar -->

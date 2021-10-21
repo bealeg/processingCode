@@ -234,9 +234,9 @@ void GpsInsLocalizerNl::createMapFrame(const novatel_oem7_msgs::INSPVA::ConstPtr
     // Also save internally, no need to wait for tf listener
     this->earth_map_tf = new_earth_map_tf.inverse();
     this->map_frame_established = true;
-    ROS_INFO("lat: %15.10f", inspva_msg->latitude);
-    ROS_INFO("lon: %15.10f", inspva_msg->longitude);
-    ROS_INFO("height: %15.10f", inspva_msg->height);
+    ROS_INFO("\n[GPSINS_LOCALIZER] first lat: %15.10f", inspva_msg->latitude);
+    ROS_INFO("[GPSINS_LOCALIZER] first lon: %15.10f", inspva_msg->longitude);
+    ROS_INFO("[GPSINS_LOCALIZER] first height: %15.10f\n", inspva_msg->height);
 }
 
 tf2::Transform GpsInsLocalizerNl::calculateBaselinkPose(const novatel_oem7_msgs::INSPVA::ConstPtr& inspva_msg)

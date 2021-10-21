@@ -1,34 +1,34 @@
-﻿Roanoke 1:
+﻿roanoke_:
 
 	lat: 37.28268805642265
 	lon: -79.93856609724196
 	h: 265.88
 
-Roanoke 2: 
+roanoke_2: 
 	
 	lat: 37.268866667532
 	lon: -79.9365594337049
 	h: 249
 
-Charlotte 1:
+charlotte_1:
 
 	lat: 35.27768402841451
 	lon: -80.81067547979933
 	h: 200
 
-Charlotte 2:
+charlotte_2:
 
 	lat: 35.27448813897137
 	lon: -80.8299064623742
 	h: 200
 
-DC 1:
+dc_1:
 
 	lat: 38.87682084686699 (need to fix still)
 	lon: -76.97034236117101 (need to fix still)
 	h: ??
 
-DC 2:
+dc_2:
 
 	lat: 38.89844236697333 (need to fix still)
 	lon: -76.94933333339094 (need to fix still)
