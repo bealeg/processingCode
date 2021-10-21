@@ -168,7 +168,6 @@
 	</include>
 	
 	<!-- Tracking node that outputs objects-->
-	<!--rosrun lidar_tracker lidar_euclidean_track -->
 	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
 		<param name="threshold_dist" value="3.0" />
 		<param name="color_val" value="2" />  <!-- 1 for blue, anything else green-->
