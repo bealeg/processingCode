@@ -25,8 +25,8 @@ int main(int argc, char **argv)
   std::vector<double>   roanoke_2{37.268866667532,   -79.9365594337049,  249};
   std::vector<double> charlotte_1{35.27768402841451, -80.81067547979933, 200}; // charrlotte llh
   std::vector<double> charlotte_2{35.27448813897137, -80.8299064623742, 200};
-  std::vector<double>        dc_1{38.87682084686699, -76.97034236117101, 1}; // NEED TO FIX
-  std::vector<double>        dc_2{38.89844236697333, -76.94933333339094, 1}; // NEED TO FIX
+  std::vector<double>        dc_1{38.87684084686699, -76.97034236117101, -30}; // NEED TO FIX. orig. 38.87682084686699, -76.97034236117101
+  std::vector<double>        dc_2{38.89844236697333, -76.94935333339094, -24}; // NEED TO FIX orig. 38.89844236697333, -76.94933333339094
   
   
   ros::init(argc, argv, "hd_map_stf");

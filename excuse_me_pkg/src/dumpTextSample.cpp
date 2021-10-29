@@ -65,6 +65,8 @@ private:
   
   std::ofstream outputfile;
   
+  std::vector<std::vector<double> >  prev_id_list; // going to store time, id, x,y,z
+  
   /*
 	void poseCB(const geometry_msgs::PoseStamped &curr_veh_pose){
 		veh_pose = curr_veh_pose;
@@ -139,6 +141,8 @@ private:
 		// loop through each object in the object array
 		for (size_t i = 0; i < detected_objects.objects.size(); i++)
 		{
+			bool found = false;
+			
 			double yaw = tf::getYaw(detected_objects.objects[i].pose.orientation); // gets yaw fom quaternion
 			
 			// << std::to_string(detected_objects.objects[i].header.frame_id) << ","
@@ -174,6 +178,43 @@ private:
 								+ std::to_string(transformed_input.objects[i].pose.position.y) + ","
 								+ std::to_string(transformed_input.objects[i].pose.position.z) + ","
 								+ std::to_string(yawTF);
+			/*
+			double velo;
+			
+			// loop through the previous ids and positions to calc a velo
+			for (size_t j = 0; i < prev_id_list.size(); i++) {
+				
+				if (prev_id_list[j][1] == transformed_input.objects[i].id) {
+					
+					found = true;
+					
+					double curr_x = transformed_input.objects[i].pose.position.x;
+					double curr_y = transformed_input.objects[i].pose.position.y;
+					double curr_z = transformed_input.objects[i].pose.position.z;
+					
+					double prev_x = prev_id_list[j][2];
+					double prev_y = prev_id_list[j][3];
+					double prev_z = prev_id_list[j][4];
+					
+					double dt = transformed_input.header.stamp.toSec() - prev_id_list[j][0];
+					
+					double pos_change = sqrt(pow(curr_x - prev_x, 2) + pow(curr_y - prev_y, 2) + pow(curr_z - prev_z, 2));
+					
+					velo = pos_change / dt;
+					
+					//ROS_INFO("[DUMP TEXT] time diff for obj id %d:        %f", transformed_input.objects[i].id,dt);
+					//ROS_INFO("[DUMP TEXT] position diff for id obj id %d: %f", transformed_input.objects[i].id,pos_change);
+					//ROS_INFO("[DUMP TEXT] velo est for id obj id %d:      %f", transformed_input.objects[i].id,velo);
+					break;
+				}
+			}
+			
+			if (found) {
+				transformedStr = transformedStr + "," + std::to_string(velo);
+			} else {
+				//ROS_INFO("[DUMP TEXT] no match for obj id %d", transformed_input.objects[i].id);
+				transformedStr = transformedStr + "," + "nan";
+			}*/
 			
 			// transform object pose to ecef
 			geometry_msgs::Pose obj_ecef_pose = getTransformedPose(detected_objects.objects[i].pose, local2llh_);
@@ -186,7 +227,22 @@ private:
 			
 			// write the strings to the file for the detected objects		
 			outputfile << originalStr << "," << "," << transformedStr << "," << "," << latlongStr << "\n";
+			
 		}
+		
+		// clear and write the previous time, id, and position values to the id list
+		/*
+		prev_id_list.clear();
+		//ROS_INFO("[DUMP TEXT] prev list size %d", prev_id_list.size());
+		for (size_t j = 0; j < transformed_input.objects.size(); j++) {
+			
+			std::vector<double> input = { transformed_input.header.stamp.toSec(), static_cast<double> (transformed_input.objects[j].id) ,transformed_input.objects[j].pose.position.x,
+				transformed_input.objects[j].pose.position.y, transformed_input.objects[j].pose.position.z};
+			
+			prev_id_list.push_back(input);
+			
+		}*/
+		//ROS_INFO("[DUMP TEXT] prev list size %d", prev_id_list.size());
 	}
 	
 	// cb to write the ego vehicle pose to a csv
@@ -283,6 +339,7 @@ public:
 		ROS_INFO("Ready");
 		ROS_INFO("%s", result_file_path_objs.c_str());
 		ROS_INFO("%s", result_file_path_ego.c_str());
+		ROS_INFO("%s", objects_topic.c_str());
 		
 		ros::Subscriber veh_vel_sub = n.subscribe("/current_pose", 1000, &dumpResultsNode::poseCB, this);	
 		ros::Subscriber obj_detected_sub = n.subscribe("/current_velocity", 1000, &dumpResultsNode::velCB, this);

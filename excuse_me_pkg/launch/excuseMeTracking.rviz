@@ -8,7 +8,8 @@ Panels:
         - /Status1
         - /TF1/Frames1
         - /RobotModel1/Links1
-      Splitter Ratio: 0.5
+        - /FiltShapeEst1/Namespaces1
+      Splitter Ratio: 0.6470588445663452
     Tree Height: 728
   - Class: rviz/Selection
     Name: Selection
@@ -466,7 +467,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 255; 0; 0
-      Color Transformer: FlatColor
+      Color Transformer: Intensity
       Decay Time: 0
       Enabled: false
       Invert Rainbow: false
@@ -494,7 +495,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 0; 255; 0
-      Color Transformer: FlatColor
+      Color Transformer: Intensity
       Decay Time: 0
       Enabled: false
       Invert Rainbow: false
@@ -668,17 +669,109 @@ Visualization Manager:
       Use Timestamp: false
       Value: true
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /detection/object_tracker/objects_filtered_markers
       Name: FilteredObjs
       Namespaces:
-        /detection/object_tracker/arrow_markers: true
-        /detection/object_tracker/box_markers: true
-        /detection/object_tracker/centroid_markers: true
-        /detection/object_tracker/label_markers: true
-        /detection/object_tracker/model_markers: true
+        {}
+      Queue Size: 100
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /detection/shape_estimation/objects_filtered_shaped_markers
+      Name: FiltShapeEst
+      Namespaces:
+        /detection/shape_estimation/arrow_markers: false
+        /detection/shape_estimation/box_markers: true
+        /detection/shape_estimation/centroid_markers: true
+        /detection/shape_estimation/hull_markers: true
+        /detection/shape_estimation/label_markers: true
       Queue Size: 100
       Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: noGroundFront
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05999999865889549
+      Style: Flat Squares
+      Topic: /points_no_ground_front
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: noGroundRear
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05999999865889549
+      Style: Flat Squares
+      Topic: /points_no_ground_rear
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: noGroundTop
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05999999865889549
+      Style: Flat Squares
+      Topic: /points_no_ground_top
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -707,25 +800,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 317.9707946777344
+      Distance: 47.14640808105469
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -6.620755672454834
-        Y: 0.7032263875007629
-        Z: 7.981148719787598
+        X: -1.0716279745101929
+        Y: 0.58189857006073
+        Z: 7.694461345672607
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7947970628738403
-      Target Frame: map_veh
+      Pitch: 0.6847971677780151
+      Target Frame: base_link_ground
       Value: Orbit (rviz)
-      Yaw: 5.6063551902771
+      Yaw: 0.7831605076789856
     Saved: ~
 Window Geometry:
   Displays:

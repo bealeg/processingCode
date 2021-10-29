@@ -10,7 +10,7 @@
 	<!-- changed the urdf because a lidar positioned changed -->
 	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
 	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
-	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.1 -s 0 -l /vtti/projects05/460966/Working/Snipped_Merges/data_roi_10217_11107.bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
+	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.1 -s 20 -l /vtti/projects05/460966/Working/Snipped_Merges/data_roi_10672_5828.bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
 
 	<arg name="rvizconfig" value="$(find excuse_me_pkg)/launch/excuseMeTracking.rviz"/>
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
@@ -166,6 +166,7 @@
 		<arg name="grid_position_y" default="0" />
 		<arg name="grid_position_z" default="0" />
 	</include>
+	
 	
 	<!-- Tracking node that outputs objects-->
 	<node pkg="lidar_euclidean_track" type="lidar_euclidean_track" name="lidar_euclidean_track" output="screen">
