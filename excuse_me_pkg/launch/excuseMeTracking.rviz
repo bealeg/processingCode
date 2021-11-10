@@ -669,25 +669,25 @@ Visualization Manager:
       Use Timestamp: false
       Value: true
     - Class: rviz/MarkerArray
-      Enabled: false
+      Enabled: true
       Marker Topic: /detection/object_tracker/objects_filtered_markers
       Name: FilteredObjs
+      Namespaces:
+        /detection/object_tracker/arrow_markers: true
+        /detection/object_tracker/box_markers: true
+        /detection/object_tracker/centroid_markers: true
+        /detection/object_tracker/hull_markers: true
+        /detection/object_tracker/label_markers: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /detection/shape_estimation/objects_filtered_shaped_markers
+      Name: FiltShapeEst
       Namespaces:
         {}
       Queue Size: 100
       Value: false
-    - Class: rviz/MarkerArray
-      Enabled: true
-      Marker Topic: /detection/shape_estimation/objects_filtered_shaped_markers
-      Name: FiltShapeEst
-      Namespaces:
-        /detection/shape_estimation/arrow_markers: false
-        /detection/shape_estimation/box_markers: true
-        /detection/shape_estimation/centroid_markers: true
-        /detection/shape_estimation/hull_markers: true
-        /detection/shape_estimation/label_markers: true
-      Queue Size: 100
-      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -772,6 +772,14 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /mobileye/Obstacles_markers
+      Name: ME_objs
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -800,25 +808,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 47.14640808105469
+      Distance: 56.8991813659668
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -1.0716279745101929
-        Y: 0.58189857006073
-        Z: 7.694461345672607
+        X: -0.3652128279209137
+        Y: 3.9657156467437744
+        Z: 16.416278839111328
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6847971677780151
+      Pitch: 0.6697973012924194
       Target Frame: base_link_ground
       Value: Orbit (rviz)
-      Yaw: 0.7831605076789856
+      Yaw: 4.559962749481201
     Saved: ~
 Window Geometry:
   Displays:

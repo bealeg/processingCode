@@ -141,7 +141,7 @@ private:
 		// loop through each object in the object array
 		for (size_t i = 0; i < detected_objects.objects.size(); i++)
 		{
-			bool found = false;
+			// bool found = false;
 			
 			double yaw = tf::getYaw(detected_objects.objects[i].pose.orientation); // gets yaw fom quaternion
 			
@@ -177,7 +177,11 @@ private:
 								+ std::to_string(transformed_input.objects[i].pose.position.x) + ","
 								+ std::to_string(transformed_input.objects[i].pose.position.y) + ","
 								+ std::to_string(transformed_input.objects[i].pose.position.z) + ","
-								+ std::to_string(yawTF);
+								+ std::to_string(transformed_input.objects[i].velocity.linear.x) + "," //overall velo
+								+ std::to_string(transformed_input.objects[i].velocity.linear.y) + "," //should always be 0
+								+ std::to_string(transformed_input.objects[i].velocity.linear.z) + ","
+								+ std::to_string(yawTF) + ","
+								+ std::to_string(transformed_input.objects[i].velocity_reliable); // + "," + std::to_string(transformed_input.objects[i].valid);
 			/*
 			double velo;
 			
@@ -323,24 +327,28 @@ public:
 		result_file_path_objs = result_file_path_ + "_trackingResult.csv";
 		result_file_path_ego = result_file_path_ + "_trackingResultEgoVeh.csv";
 		
-		
+		// write out headers for ego vehicle information. Timestamp, position, velo, lat/lon/atl, yaw angle, and angular speed
 		std::ofstream outputfileEgoVehicle(result_file_path_ego, std::ofstream::out | std::ofstream::app);
 		std::string ego_header = "timestamp,frame_id,x_pos,y_pos,z_pos,lat,lon,alt,yaw,vx,vy,vz,x_ang,y_ang,z_ang";
 		outputfileEgoVehicle << ego_header << std::endl;
 		outputfileEgoVehicle.close();
 		
+		// write out headers for detected object information. Timestamp, ID, bounding box, position, velo, yaw angle, angular speed
+		// relative to moving vehicle frame and fixed map frame. Add in lat/lon/alt as well
 		std::ofstream outputfile(result_file_path_objs, std::ofstream::out | std::ios::app);
 		std::string objs_header = "timestamp_1,obj_id_1,frame_id_1,box_x_rel,box_y_rel,box_z_rel,x_pos_rel,y_pos_rel,z_pos_rel,yaw_rel,vx,vy,vz,x_ang,y_ang,z_ang," 
-		"blank_1,timestamp_2,frame_id_2,obj_id2,box_x_fixed,box_y_fixed,box_z_fixed,x_pos_fixed,y_pos_fixed,z_pos_fixed,yaw_fixed,blank_2," 
+		"blank_1,timestamp_2,frame_id_2,obj_id_2,box_x_fixed,box_y_fixed,box_z_fixed,x_pos_fixed,y_pos_fixed,z_pos_fixed,x_velo_fixed,y_velo_fixed,z_velo_fixed,yaw_fixed,valid_velo,blank_2," 
 		"obj_id_3,lat,lon,alt";
 		outputfile << objs_header << std::endl;
 		outputfile.close();
 		
+		// log
 		ROS_INFO("Ready");
 		ROS_INFO("%s", result_file_path_objs.c_str());
 		ROS_INFO("%s", result_file_path_ego.c_str());
 		ROS_INFO("%s", objects_topic.c_str());
 		
+		// subscribers
 		ros::Subscriber veh_vel_sub = n.subscribe("/current_pose", 1000, &dumpResultsNode::poseCB, this);	
 		ros::Subscriber obj_detected_sub = n.subscribe("/current_velocity", 1000, &dumpResultsNode::velCB, this);
 		ros::Subscriber veh_pos_sub = n.subscribe(objects_topic, 1000, &dumpResultsNode::detectedObjectCB, this);		
