@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="origins">
 
-  <link name="map_veh">
+  <!--<link name="map_veh">
     <visual>
       <geometry>
         <box size="0 0 0"/>

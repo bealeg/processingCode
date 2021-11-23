@@ -220,20 +220,55 @@ void GpsInsLocalizerNl::pubishVelocity(const novatel_oem7_msgs::INSPVA::ConstPtr
 
 void GpsInsLocalizerNl::createMapFrame(const novatel_oem7_msgs::INSPVA::ConstPtr& inspva_msg)
 {
+    // returns tf2 transform
     tf2::Transform new_earth_map_tf = convertLLHtoECEF(
         inspva_msg->latitude, inspva_msg->longitude, inspva_msg->height);
-
+        
+	// create message tf from earth to specified map frame (usually map_veh)
     geometry_msgs::TransformStamped earth_map_tfs_msg;
     earth_map_tfs_msg.header.stamp = inspva_msg->header.stamp;
     earth_map_tfs_msg.header.frame_id = "earth";
     earth_map_tfs_msg.child_frame_id = map_frame_name; // check map name variable
     tf2::convert(new_earth_map_tf, earth_map_tfs_msg.transform);
     this->stf_bc.sendTransform(earth_map_tfs_msg);
+    
+    /*
+     * added code, create new frame on top of the map_veh frame that is 
+     * aligned with the direction of travel (x-axis that is) instead of 
+     * usual ENU coords
+     */
+    // create message tf from map_veh to new map name (probably map aligned)
+    tf2::Transform new_map_aligned_tf;
+    geometry_msgs::TransformStamped new_map_aligned_tfs_msg;
+    new_map_aligned_tfs_msg.header.stamp = inspva_msg->header.stamp;
+    new_map_aligned_tfs_msg.header.frame_id = "map_veh";
+    new_map_aligned_tfs_msg.child_frame_id = "map_aligned"; // check map name variable
+    
+    tf2::Quaternion q_new, q_rot;
+    tf2::Quaternion q_orig = new_earth_map_tf.getRotation();
+    
+    double r=0, p=0, y=3.14159;  // Rotate the previous pose by 180* about Z
+    q_rot.setRPY(r, p, y);
+    q_new.setRPY(0, 0, y);
+    //q_new = q_rot*q_orig;  // Calculate the new orientation
+    //q_new.normalize();
+    
+    //new_map_aligned_tf.setOrigin(new_earth_map_tf.getOrigin());
+    new_map_aligned_tf.setRotation(q_new);
+    
+    //convert from quaternion to transform
+    tf2::convert(new_map_aligned_tf, new_map_aligned_tfs_msg.transform);
+    this->stf_bc.sendTransform(new_map_aligned_tfs_msg);
+    
+    /*
+     * end added code
+     */
     this->create_map_frame = false;
 
     // Also save internally, no need to wait for tf listener
     this->earth_map_tf = new_earth_map_tf.inverse();
     this->map_frame_established = true;
+    
     ROS_INFO("\n[GPSINS_LOCALIZER] first lat: %15.10f", inspva_msg->latitude);
     ROS_INFO("[GPSINS_LOCALIZER] first lon: %15.10f", inspva_msg->longitude);
     ROS_INFO("[GPSINS_LOCALIZER] first height: %15.10f\n", inspva_msg->height);

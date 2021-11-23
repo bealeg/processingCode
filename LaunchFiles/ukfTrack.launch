@@ -1,5 +1,6 @@
 <launch>
 	<arg name="site_location" value="roanoke_2" />
+	<arg name="file_num" value="4692_10110" />
 	<!--<param name="/use_sim_time" value="true" /> -->
 	<param name="robot_description" command="$(find xacro)/xacro '$(find excuse_me_pkg)/urdf/excuse_me.urdf'" />
 
@@ -9,7 +10,7 @@
 	<!-- changed the urdf because a lidar positioned changed -->
 	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
 	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
-	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.1 -s 10 -l /vtti/projects05/460966/Working/Snipped_Merges/data_roi_4916_11911.bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
+	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.2 -s 0 -l /vtti/projects05/460966/Working/Snipped_Merges/data_roi_$(arg file_num).bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
 
 	<arg name="rvizconfig" value="$(find excuse_me_pkg)/launch/excuseMeTracking.rviz"/>
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
@@ -142,37 +143,88 @@
 	
 	<!-- lidar_euclidean_cluster_detect -->
 	<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch" >
-		<arg name="points_node" value="/points_no_ground" />		<!-- ray ground filter should be running, takes in raw poitns and publishes points_no_ground and points_lane (second one doesnt use difference of normals, is sometimes better) -->
-		<arg name="remove_ground" value="false" />						<!-- for our case, we don't need to filter the ground because the ray ground filter should already be doing it -->
-		<arg name="downsample_cloud" value="true" /> 					<!-- Apply VoxelGrid Filter with the value given by "leaf_size"-->
-		<arg name="leaf_size" value="0.15" />									<!-- Voxel Grid Filter leaf size-->
-		<arg name="cluster_size_min" value="15" />						<!-- Minimum number of points to consider a cluster as valid-->
-		<arg name="cluster_size_max" value="5000" />					<!-- Maximum number of points to allow inside a cluster-->
+		<arg name="points_node" value="/points_no_ground" />
+		<arg name="remove_ground" value="false" />
+		<arg name="downsample_cloud" value="true" /> 	
+		<arg name="leaf_size" value="0.15" />		
+		<arg name="cluster_size_min" value="15" />	
+		<arg name="cluster_size_max" value="8000" />	
 		<arg name="sync" value="false" />
-		<arg name="use_diffnormals" value="true" />						<!-- not sure if this should be on or off, removes points that belong to smooth planes -->
+		<arg name="use_diffnormals" value="true" />	
 		<arg name="pose_estimation" value="true" />
-		<arg name="clip_min_height" value="-5" />						<!-- not sure if this needs to be the same as the height from velodyne to baselink or not -->
-		<arg name="clip_max_height" value="4" />						<!-- max height above velodyne i think -->
-
-		<arg name="keep_lanes" value="true" />								<!-- only if we have a vector map -->
+		<arg name="clip_min_height" value="-5" />	
+		<arg name="clip_max_height" value="4" />
+		<arg name="keep_lanes" value="true" />	
 		<arg name="keep_lane_left_distance" value="60" />
 		<arg name="keep_lane_right_distance" value="60" />
 		<arg name="cluster_merge_threshold" value="0.75" />
-		<arg name="clustering_distance" value="0.7" /> 			<!-- should be distance between points to be considered part of the cluster -->
-
-		<arg name="use_vector_map" value="false" />
+		<arg name="clustering_distance" value="0.7" /> 
+		<arg name="use_vector_map" value="true" />
 		<arg name="wayarea_gridmap_layer" value="wayarea" />
-
-		<arg name="output_frame" value="/base_link_ground" />	 				<!-- not sure best frame to output in, default is velodyne, here I've changed to world -->
-
-		<arg name="remove_points_upto" value="3.0" />  				<!-- remove points closer than this value from clustering -->
-
-		<arg name="use_gpu" value="false" />					 			<!-- i think this only works if you installed with CUDA -->
-
-		<arg name="use_multiple_thres" value="false"/>						<!-- not sure if this will make clustering more accurate, can try toggling on and off for comparison -->
-		<arg name="clustering_ranges" value="[15,30,45,60]"/>				<!-- Distances to segment pointcloud -->
-		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	<!-- Euclidean Clustering threshold distance for each segment -->
+		<arg name="output_frame" value="/base_link_ground" />	
+		<arg name="remove_points_upto" value="3.0" />
+		<arg name="use_gpu" value="false" />
+		<arg name="use_multiple_thres" value="false"/>	
+		<arg name="clustering_ranges" value="[15,30,45,60]"/>	
+		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	
 	</include>
+	
+	<!-- lidar_euclidean_cluster_detect -->
+	<!--<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch" > -->
+	<!--<arg name="use_vector_map" value="true" />
+	<node pkg="lidar_euclidean_cluster_detect" type="lidar_euclidean_cluster_detect" name="lidar_euclidean_cluster_detect" output="screen">
+    <param name="points_node" value="/points_no_ground" />
+		<param name="remove_ground" value="false" />	
+		<param name="downsample_cloud" value="true" /> 
+		<param name="leaf_size" value="0.15" />	
+		<param name="cluster_size_min" value="15" />	
+		<param name="cluster_size_max" value="5000" />	
+		<param name="sync" value="false" />
+		<param name="use_diffnormals" value="true" />	
+		<param name="pose_estimation" value="true" />
+		<param name="clip_min_height" value="-5" />		
+		<param name="clip_max_height" value="4" />	
+
+		<param name="keep_lanes" value="true" />	
+		<param name="keep_lane_left_distance" value="60" />
+		<param name="keep_lane_right_distance" value="60" />
+		<param name="cluster_merge_threshold" value="0.75" />
+		<param name="clustering_distance" value="0.7" /> 
+
+		<param name="use_vector_map" value="false" />
+		<param name="wayarea_gridmap_layer" value="wayarea" />
+
+		<param name="output_frame" value="/base_link_ground" />
+
+		<param name="remove_points_upto" value="3.0" /> 
+
+		<param name="use_gpu" value="false" />		
+
+		<param name="use_multiple_thres" value="false"/>	
+		<param name="clustering_ranges" value="[15,30,45,60]"/>	
+		<param name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	
+	</node>
+	
+	<group if="$(arg use_vector_map)">
+    <node name="object_roi_filter_clustering" pkg="roi_object_filter" type="roi_object_filter"
+          output="screen" ns="/detection/lidar_detector">
+      <param name="objects_src_topic" value="/objects"/>
+      <param name="wayarea_gridmap_layer" value="wayarea"/>
+      <param name="sync_topics" value="false"/>
+      <param name="exception_list" value="[person, bicycle]"/>
+    </node>
+    <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="cluster_detect_visualization_01"
+          output="screen" ns="/detection/lidar_detector">
+      <param name="objects_src_topic" value="/objects_filtered"/>
+    </node>
+  </group>
+  <group unless="$(arg use_vector_map)">
+    <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="cluster_detect_visualization_01"
+          output="screen" ns="/detection/lidar_detector">
+      <param name="objects_src_topic" value="/objects"/>
+    </node>
+  </group> -->
+    
 	
 	<!-- Tracking node -->
 	<!--<include file="$(find imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch" >
@@ -209,8 +261,9 @@
   </node>
 	
 	<node pkg="imm_ukf_pda_track" type="imm_ukf_pda" name="imm_ukf_pda_01" output="screen">
-		
-		<remap from="detection/fusion_tools/objects" to="/detection/lidar_detector/objects" /> <!-- input topic, if from clusterer: "/detection/lidar_detector/objects", if from l shape: "/detection/shape_estimation/objects" -->
+		<!-- input topic, if from clusterer: "/detection/lidar_detector/objects", if from l shape: "/detection/shape_estimation/objects" -->
+		<!-- if from filtered clusterer: "/detection/lidar_detector/objects_filtered" -->
+		<remap from="detection/fusion_tools/objects" to="/detection/lidar_detector/objects_filtered" /> 
 		<remap from="detection/objects" to="/detection/object_tracker/objects" />
 		<param name="tracking_frame" value="/map" />
 		
@@ -228,11 +281,11 @@
 		<param name="lane_direction_chi_threshold" value="2.71" />
 		<param name="nearest_lane_distance_threshold" value="1.0" />
 		
-		<param name="use_sukf" value="false" />		
+		<param name="use_sukf" value="true" />		
 	</node>
-	
+
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="ukf_track_visualization_01"
-        output="screen" ns="/detection/object_tracker"/>
+		output="screen" ns="/detection/object_tracker"/>
 
   <node pkg="topic_tools" type="relay" name="ukf_track_relay_01"
         output="screen" args="/detection/object_tracker/objects /detection/objects"/>
@@ -245,7 +298,7 @@
 	
 	<!-- launch way area node -->
 	<include file="$(find object_map)/launch/wayarea2grid.launch" >
-		<arg name="sensor_frame" default="base_link" />   <!--change name as we implement transform -->
+		<arg name="sensor_frame" default="map" />   <!--change name as we implement transform -->
 		<arg name="grid_frame" default="map" />    <!-- centered on vehicle: base_link_ground, centered on map origin: map -->
 		<arg name="grid_resolution" default="0.4" />
 		<arg name="grid_length_x" default="500" />
@@ -275,13 +328,12 @@
 
 	
 	<!-- launch csv generator to record subject vehicle and tracked object data -->
-	<!--
-	<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
+	<!--<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
 		<param name="save_path" value="/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/OldTrackingResults/" />
 		<param name="fixed_frame" value="map_veh" />
 		<param name="earth_frame" value="earth" />
 		<param name="objects_topic" value="/detection/object_tracker/objects_filtered" /> 
-	</node> --> <!-- for objects from tracker: /detection/object_tracker/objects_filtered, objects from L shape: /detection/shape_estimation/objects_filtered -->
+	</node>-->  <!-- for objects from tracker: /detection/object_tracker/objects_filtered, objects from L shape: /detection/shape_estimation/objects_filtered -->
 	
 	<!--
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="euclidean_track_viz" output="screen" ns="/detection/object_tracker">

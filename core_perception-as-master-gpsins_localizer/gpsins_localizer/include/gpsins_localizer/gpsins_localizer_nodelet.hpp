@@ -72,6 +72,7 @@ class GpsInsLocalizerNl : public nodelet::Nodelet {
     ros::Publisher velocity_pub;
     tf2_ros::TransformBroadcaster tf_bc;
     tf2_ros::StaticTransformBroadcaster stf_bc;
+    tf2_ros::StaticTransformBroadcaster stf_bc_map_aligned; // added this publisher for added frame
 
     // Subscribers
     ros::Subscriber swri_bestpos_sub;

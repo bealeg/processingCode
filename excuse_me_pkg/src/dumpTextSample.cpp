@@ -181,7 +181,9 @@ private:
 								+ std::to_string(transformed_input.objects[i].velocity.linear.y) + "," //should always be 0
 								+ std::to_string(transformed_input.objects[i].velocity.linear.z) + ","
 								+ std::to_string(yawTF) + ","
-								+ std::to_string(transformed_input.objects[i].velocity_reliable); // + "," + std::to_string(transformed_input.objects[i].valid);
+								+ std::to_string(transformed_input.objects[i].valid) + ","
+								+ std::to_string(transformed_input.objects[i].velocity_reliable) + ","
+								+ std::to_string(transformed_input.objects[i].behavior_state); // + "," + std::to_string(transformed_input.objects[i].valid);
 			/*
 			double velo;
 			
@@ -337,7 +339,7 @@ public:
 		// relative to moving vehicle frame and fixed map frame. Add in lat/lon/alt as well
 		std::ofstream outputfile(result_file_path_objs, std::ofstream::out | std::ios::app);
 		std::string objs_header = "timestamp_1,obj_id_1,frame_id_1,box_x_rel,box_y_rel,box_z_rel,x_pos_rel,y_pos_rel,z_pos_rel,yaw_rel,vx,vy,vz,x_ang,y_ang,z_ang," 
-		"blank_1,timestamp_2,frame_id_2,obj_id_2,box_x_fixed,box_y_fixed,box_z_fixed,x_pos_fixed,y_pos_fixed,z_pos_fixed,x_velo_fixed,y_velo_fixed,z_velo_fixed,yaw_fixed,valid_velo,blank_2," 
+		"blank_1,timestamp_2,frame_id_2,obj_id_2,box_x_fixed,box_y_fixed,box_z_fixed,x_pos_fixed,y_pos_fixed,z_pos_fixed,x_velo_fixed,y_velo_fixed,z_velo_fixed,yaw_fixed,obj_valid,valid_velo,bhv_state,blank_2," 
 		"obj_id_3,lat,lon,alt";
 		outputfile << objs_header << std::endl;
 		outputfile.close();

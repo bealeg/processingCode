@@ -119,7 +119,7 @@ int main(int argc, char **argv)
   
   ros::Rate loop_rate(10);
   
-  while (ros::ok()) {
+  // while (ros::ok()) {
 		
 		geometry_msgs::TransformStamped earth_hdmap_tfs_msg;
 		earth_hdmap_tfs_msg.header.stamp = ros::Time::now();
@@ -128,10 +128,14 @@ int main(int argc, char **argv)
 		tf2::convert(earth_hdmap_tf, earth_hdmap_tfs_msg.transform);
 		stf_bc.sendTransform(earth_hdmap_tfs_msg);
 	
-    //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", "map"));
+    // br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", "map"));
     
-    loop_rate.sleep();
-  }
+    // loop_rate.sleep();
+  //}
+  
+  while (ros::ok()) {
+		loop_rate.sleep();
+	}
 	
   return 0;
 
