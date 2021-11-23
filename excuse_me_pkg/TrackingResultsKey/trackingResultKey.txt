@@ -4,62 +4,69 @@ ego vehicle file:
 
 	15 columns pertain to ego vehicle information	
 
-	-(1) timestamp
-	-(2) frame_id (should be 'map1')
-	-(3) x position relative to stationary map frame
-	-(4) y position relative to stationary map frame
-	-(5) z position relative to stationary map frame
-	-(6) lattitude coordinates
-	-(7) longitude coordinates
-	-(8) height above geoid (m)
-	-(9) yaw angle (should be in radians)
-	-(10) linear x velocity (used as overall speed m/s)
-	-(11) linear y velocity (should always be 0)
-	-(12) linear z velocity (should be 0)
-	-(13) angular x velocity
-	-(14) angular y velocity
-	-(15) angular z velocity
+	- timestamp:
+	- frame_id: (should be 'map_veh')
+	- x_pos: position relative to stationary map_veh frame
+	- y_pos: position relative to stationary map_veh frame
+	- z_pos: position relative to stationary map_veh frame
+	- lat: lattitude coordinates
+	- lon: longitude coordinates
+	- alt: height above geoid (m)
+	- yaw: yaw angle (should be in radians)
+	- vx: linear x velocity (however, in this case used as overall speed in m/s)
+	- vy: linear y velocity (should always be 0, not populated)
+	- vz: linear z velocity (should always be 0, not populated)
+	- x_ang: angular x velocity
+	- y_ang: angular y velocity
+	- z_ang: angular z velocity
 
 tracked object file:
-	
-	16 + blank column + 10 + blank column + 4 = 32 columns that pertain to tracked object information
 
-	- relative to base_link_ground frame (ego vehicle)
-	-(1) timestamp
- 	-(2) id
-	-(3) frame_id (should be base_link_ground)
-	-(4) bounding box dimension x
-	-(5) bounding box dimension y
-	-(6) bounding box dimension z
-	-(7) centroid position x
-	-(8) centroid position y
-	-(9) centroid position z
-	-(10) yaw (should be radians)
-	-(11) linear x velocity (should be overall speed, m/s, not reliable as of right now)
-	-(12) linear y velocity (should always be 0)
-	-(13) linear z velocity
-	-(14) angular x velo (should always be 0)
-	-(15) angular y velo (should always be 0)
-	-(16) angular z velo (should always be 0)
-	-(17) blank
+	relative to base_link_ground frame (moving ego vehicle frame):
 
-	- relative to the map1 frame
-	-(18) timestamp (again, for redundancy)
-	-(19) frame_id (should be map)
-	-(20) object_id (should be same as in column 2)
-	-(21) bounding box dimensions x (should be same as 4)
-	-(22) bounding box dimensions y (should be same as 5)
-	-(23) bounding box dimensions z (should be same as 6)
-	-(24) centroid position x
-	-(25) centroid position y
-	-(26) centroid position z
-	-(27) yaw (in radians)
-	-(28) blank
+	- timestamp_1:
+ 	- obj_id_1:
+	- frame_id_1: (should be base_link_ground)
+	- box_x_rel: bounding box dimension x
+	- box_y_rel: bounding box dimension y
+	- box_z_rel: bounding box dimension z
+	- x_pos_rel: centroid position x
+	- y_pos_rel: centroid position y
+	- z_pos_rel: centroid position z
+	- yaw_rel: yaw angle (should be radians)
+	- vx: linear x velocity (however, in this case used as overall speed relative to stationary framein m/s, should be same as x_velo_fixed in next section)
+	- vy: linear y velocity (should always be 0, not populated)
+	- vz: linear z velocity (should always be 0, not populated)
+	- x_ang: angular x velo (should always be 0, not populated)
+	- y_ang: angular y velo (should always be 0, not populated)
+	- z_ang: angular z velo (should always be 0, not populated)
+	- blank_1:
+
+	relative to the stationary map_veh frame:
+
+	- timestamp_2: (should be same as timestamp_1, included for redundancy)
+	- frame_id_d: (should be map_veh)
+	- object_id_2 (should be same as in column 2, included for redundancy)
+	- box_x_fixed: bounding box dimensions x (should be same as 4)
+	- box_y_fixed: bounding box dimensions y (should be same as 5)
+	- box_z_fixed: bounding box dimensions z (should be same as 6)
+	- x_pos_fixed: centroid position x
+	- y_pos_fixed: centroid position y
+	- z_pos_fixed: centroid position z
+	- x_velo_fixed: overall velocity of object
+	- y_velo_fixed: not populated, should always be 0
+	- z_velo_fixed: not populated, should always be 0
+	- yaw_fixed: yaw angle (in radians)
+	- obj_valid: tracker debug parameter, can be ignored
+	- valid_velo: tracker debug parameter can be ignored
+	- bhv_state: tracker debug paramtert can bi ignored
+	- blank_2
 	
-	- lattitude and longitude coordinates
-	-(29) object id (should be same as 20 and 2)
-	-(30) lattitude coordinate
-	-(31) longitude coordinate
-	-(32) height above geoid (m)
+	lattitude and longitude coordinates:
+
+	- obj_id_3: object id (should be same as obj_id_1 and obj_id_2)
+	- lat: lattitude coordinate
+	- lon: longitude coordinate
+	- alt: height above geoid (m)
 
 
