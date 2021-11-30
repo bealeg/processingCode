@@ -1,0 +1,7 @@
+<!-- Launch file for Euclidean Tracker -->
+<launch>
+	<!-- rosrun lidar_tracker -->
+	<node pkg="visualize_subject_vehicle_velo" type="visualize_subject_vehicle_velo" name="visualize_subject_vehicle_velo">
+  </node>
+
+</launch>

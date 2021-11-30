@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>visualize_subject_vehicle_velo</name>
+    <version>1.7.0</version>
+    <description>visualize_subject_vehicle_velo package</description>
+
+    <maintainer email="gbeale@todo.todo">gbeale</maintainer>
+    <license>TODO</license>
+
+    <buildtool_depend>autoware_build_flags</buildtool_depend>
+	<buildtool_depend>catkin</buildtool_depend>
+  
+    <build_depend>roscpp</build_depend>
+    <build_depend>geometry_msgs</build_depend>
+    <build_depend>std_msgs</build_depend>
+
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>pcl_ros</exec_depend>
+    <exec_depend>geometry_msgs</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+
+</package>

@@ -1,6 +1,6 @@
 <launch>
-	<arg name="site_location" value="roanoke_1" />
-	<arg name="file_num" value="5205_131" />
+	<arg name="site_location" value="charlotte_1" />
+	<arg name="file_num" value="10236_8655" />
 	<!--<param name="/use_sim_time" value="false" /> -->
 	<param name="robot_description" command="$(find xacro)/xacro '$(find excuse_me_pkg)/urdf/excuse_me.urdf'" />
 
@@ -66,9 +66,9 @@
 		<arg name="downsample_cloud" value="true" /> 	
 		<arg name="leaf_size" value="0.15" />		
 		<arg name="cluster_size_min" value="15" />	
-		<arg name="cluster_size_max" value="8000" />	
+		<arg name="cluster_size_max" value="10000" />	
 		<arg name="sync" value="false" />
-		<arg name="use_diffnormals" value="true" />	
+		<arg name="use_diffnormals" value="false" />	
 		<arg name="pose_estimation" value="true" />
 		<arg name="clip_min_height" value="-5" />	
 		<arg name="clip_max_height" value="4" />
@@ -103,6 +103,11 @@
 		<remap from="detection/fusion_tools/objects" to="/detection/lidar_detector/objects_filtered" /> 
 		<remap from="detection/objects" to="/detection/object_tracker/objects" />
 		<param name="tracking_frame" value="/map" />
+		
+		<param name="long_term_prevent_explosion_threshold" value="0.00005" />
+		<param name="det_s_prevent_explosion_threshold" value="5.0" />
+		<param name="det_s_consec_timesteps_thresh" value="3" />
+		<param name="long_term_prevent_explosion_threshold_age_requirement" value="20" />
 		
 		<param name="gating_threshold" value="10" />
 		<param name="gate_probability" value="0.8" />
@@ -167,6 +172,8 @@
 		<param name="objects_src_topic" value="/extras" />
 		<param name="markers_out_topic" value="/extras_markers" />
 	</node>
+	
+	<node pkg="visualize_subject_vehicle_velo" type="visualize_subject_vehicle_velo" name="visualize_subject_vehicle_velo" output="screen" />
 	
 	<!-- launch csv generator to record subject vehicle and tracked object data -->
 	<!--<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
