@@ -1,6 +1,6 @@
 <launch>
-	<arg name="site_location" value="roanoke_2" />
-	<arg name="file_num" value="4692_10110" />
+	<arg name="site_location" value="roanoke_1" />
+	<arg name="file_num" value="4692_9931" />
 	<!--<param name="/use_sim_time" value="true" /> -->
 	<param name="robot_description" command="$(find xacro)/xacro '$(find excuse_me_pkg)/urdf/excuse_me.urdf'" />
 
@@ -10,7 +10,7 @@
 	<!-- changed the urdf because a lidar positioned changed -->
 	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
 	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
-	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.2 -s 0 -l /vtti/projects05/460966/Working/Snipped_Merges/data_roi_$(arg file_num).bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
+	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.1 -s 22 -l /vtti/projects05/460966/Working/Snipped_Merges/data_roi_$(arg file_num).bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
 
 	<arg name="rvizconfig" value="$(find excuse_me_pkg)/launch/excuseMeTracking.rviz"/>
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
@@ -148,9 +148,9 @@
 		<arg name="downsample_cloud" value="true" /> 	
 		<arg name="leaf_size" value="0.15" />		
 		<arg name="cluster_size_min" value="15" />	
-		<arg name="cluster_size_max" value="8000" />	
+		<arg name="cluster_size_max" value="10000" />	
 		<arg name="sync" value="false" />
-		<arg name="use_diffnormals" value="true" />	
+		<arg name="use_diffnormals" value="false" />	
 		<arg name="pose_estimation" value="true" />
 		<arg name="clip_min_height" value="-5" />	
 		<arg name="clip_max_height" value="4" />
@@ -169,90 +169,9 @@
 		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	
 	</include>
 	
-	<!-- lidar_euclidean_cluster_detect -->
-	<!--<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch" > -->
-	<!--<arg name="use_vector_map" value="true" />
-	<node pkg="lidar_euclidean_cluster_detect" type="lidar_euclidean_cluster_detect" name="lidar_euclidean_cluster_detect" output="screen">
-    <param name="points_node" value="/points_no_ground" />
-		<param name="remove_ground" value="false" />	
-		<param name="downsample_cloud" value="true" /> 
-		<param name="leaf_size" value="0.15" />	
-		<param name="cluster_size_min" value="15" />	
-		<param name="cluster_size_max" value="5000" />	
-		<param name="sync" value="false" />
-		<param name="use_diffnormals" value="true" />	
-		<param name="pose_estimation" value="true" />
-		<param name="clip_min_height" value="-5" />		
-		<param name="clip_max_height" value="4" />	
-
-		<param name="keep_lanes" value="true" />	
-		<param name="keep_lane_left_distance" value="60" />
-		<param name="keep_lane_right_distance" value="60" />
-		<param name="cluster_merge_threshold" value="0.75" />
-		<param name="clustering_distance" value="0.7" /> 
-
-		<param name="use_vector_map" value="false" />
-		<param name="wayarea_gridmap_layer" value="wayarea" />
-
-		<param name="output_frame" value="/base_link_ground" />
-
-		<param name="remove_points_upto" value="3.0" /> 
-
-		<param name="use_gpu" value="false" />		
-
-		<param name="use_multiple_thres" value="false"/>	
-		<param name="clustering_ranges" value="[15,30,45,60]"/>	
-		<param name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>	
-	</node>
-	
-	<group if="$(arg use_vector_map)">
-    <node name="object_roi_filter_clustering" pkg="roi_object_filter" type="roi_object_filter"
-          output="screen" ns="/detection/lidar_detector">
-      <param name="objects_src_topic" value="/objects"/>
-      <param name="wayarea_gridmap_layer" value="wayarea"/>
-      <param name="sync_topics" value="false"/>
-      <param name="exception_list" value="[person, bicycle]"/>
-    </node>
-    <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="cluster_detect_visualization_01"
-          output="screen" ns="/detection/lidar_detector">
-      <param name="objects_src_topic" value="/objects_filtered"/>
-    </node>
-  </group>
-  <group unless="$(arg use_vector_map)">
-    <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="cluster_detect_visualization_01"
-          output="screen" ns="/detection/lidar_detector">
-      <param name="objects_src_topic" value="/objects"/>
-    </node>
-  </group> -->
-    
-	
-	<!-- Tracking node -->
-	<!--<include file="$(find imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch" >
-		<arg name="namespace" value="/detection/object_tracker"/>
-		<arg name="tracker_input_topic" value="/detection/lidar_detector/objects" />
-		<arg name="tracker_output_topic" value="/detection/object_tracker/objects" />
-
-
-		<arg name="tracking_frame" value="/base_link" />  
-		<arg name="gating_threshold" value="5" />
-		<arg name="gate_probability" value="0.9" />
-		<arg name="detection_probability" value="0.99" />
-		<arg name="life_time_threshold" value="8" />
-		<arg name="static_velocity_threshold" value="0.2" />
-		<arg name="static_num_history_threshold" value="3" />
-		<arg name="prevent_explosion_threshold" value="1000" />
-		<arg name="merge_distance_threshold" value="0.5"/>
-		<arg name="use_sukf" value="false" />
-
-		<arg name="use_map_info" value="false" />
-		<arg name="lane_direction_chi_threshold" value="2.71" />
-		<arg name="nearest_lane_distance_threshold" value="1.0" />
-		<arg name="vectormap_frame" value="/map" />
-	</include> -->
-	
 	<arg name="namespace" default="detection"/>
   <arg name="packagename" default="shape_estimation"/>
-  <arg name="input" default="/$(arg namespace)/object_tracker/objects"/> <!-- if using output from clusters: "/$(arg namespace)/lidar_detector/objects", output from ukf: "/$(arg namespace)/object_tracker/objects" -->
+  <arg name="input" default="/$(arg namespace)/lidar_detector/objects_objects_filtered"/> <!-- if using output from clusters: "/$(arg namespace)/lidar_detector/objects", output from ukf: "/$(arg namespace)/object_tracker/objects" -->
   <arg name="output" default="/$(arg namespace)/$(arg packagename)/objects"/>
 
   <node pkg="lidar_shape_estimation" type="lidar_shape_estimation" name="lidar_shape_estimation" output="screen">
@@ -267,21 +186,27 @@
 		<remap from="detection/objects" to="/detection/object_tracker/objects" />
 		<param name="tracking_frame" value="/map" />
 		
-		<param name="gating_threshold" value="3" />
+		<param name="long_term_prevent_explosion_threshold" value="0.00005" />
+		<param name="det_s_prevent_explosion_threshold" value="5.0" />
+		<param name="det_s_consec_timesteps_thresh" value="3" />
+		<param name="long_term_prevent_explosion_threshold_age_requirement" value="20" />
+		
+		<param name="gating_threshold" value="10" />
 		<param name="gate_probability" value="0.8" />
 		<param name="detection_probability" value="0.9" />
 		<param name="life_time_threshold" value="5" />
 		<param name="static_velocity_threshold" value="0.1" />
 		<param name="static_num_history_threshold" value="0" />
-		<param name="prevent_explosion_threshold" value="15000" />
-		<param name="merge_distance_threshold" value="0.5" />
+		<param name="prevent_explosion_threshold" value="125000" />
+		<param name="merge_distance_threshold" value="1.0" />
 		
-		<param name="use_vectormap" value="true" />
+		<param name="use_vectormap" value="false" />
 		<param name="vectormap_frame" value="/map" />
-		<param name="lane_direction_chi_threshold" value="2.71" />
+		<param name="lane_direction_chi_threshold" value="1.0" />
 		<param name="nearest_lane_distance_threshold" value="1.0" />
 		
-		<param name="use_sukf" value="true" />		
+		<param name="use_sukf" value="true" />
+		<param name="print_debug" value="false" />
 	</node>
 
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="ukf_track_visualization_01"
@@ -298,7 +223,7 @@
 	
 	<!-- launch way area node -->
 	<include file="$(find object_map)/launch/wayarea2grid.launch" >
-		<arg name="sensor_frame" default="map" />   <!--change name as we implement transform -->
+		<arg name="sensor_frame" default="base_link" />   <!--change name as we implement transform -->
 		<arg name="grid_frame" default="map" />    <!-- centered on vehicle: base_link_ground, centered on map origin: map -->
 		<arg name="grid_resolution" default="0.4" />
 		<arg name="grid_length_x" default="500" />
@@ -310,9 +235,9 @@
 	
 	
 	<!-- launch roi object filter -->
-	<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter" output="screen" ns="/detection/object_tracker" />
+	<!--<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter" output="screen" ns="/detection/object_tracker" />-->
 	
-	<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter_shape_estimation" output="screen" ns="/detection/shape_estimation" />
+	<!--<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter_shape_estimation" output="screen" ns="/detection/shape_estimation" />-->
 	
 	<!-- filtered objects visualizer -->
 	<!-- IMPORTANT****** this second parameter won't work with default installations of Autoware becuase I changed the visualize detected objects code in autoware -->
@@ -326,7 +251,8 @@
 		<param name="markers_out_topic" value="/objects_filtered_shaped_markers" />
 	</node>
 
-	
+	<node pkg="visualize_subject_vehicle_velo" type="visualize_subject_vehicle_velo" name="visualize_subject_vehicle_velo" output="screen" />
+		
 	<!-- launch csv generator to record subject vehicle and tracked object data -->
 	<!--<node pkg="excuse_me_pkg" type="dumpTextSample" name="trackRecorder" output="screen">
 		<param name="save_path" value="/home/gbeale/autoware.ai/src/processingCode/excuse_me_pkg/OldTrackingResults/" />
