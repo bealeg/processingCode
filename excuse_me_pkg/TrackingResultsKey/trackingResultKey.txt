@@ -47,9 +47,9 @@ tracked object file:
 	- timestamp_2: (should be same as timestamp_1, included for redundancy)
 	- frame_id_d: (should be map_veh)
 	- object_id_2 (should be same as in column 2, included for redundancy)
-	- box_x_fixed: bounding box dimensions x (should be same as 4)
-	- box_y_fixed: bounding box dimensions y (should be same as 5)
-	- box_z_fixed: bounding box dimensions z (should be same as 6)
+	- box_x_fixed: bounding box dimensions x (should be same as box_x_rel)
+	- box_y_fixed: bounding box dimensions y (should be same as box_y_rel)
+	- box_z_fixed: bounding box dimensions z (should be same as box_z_rel)
 	- x_pos_fixed: centroid position x
 	- y_pos_fixed: centroid position y
 	- z_pos_fixed: centroid position z
@@ -59,7 +59,7 @@ tracked object file:
 	- yaw_fixed: yaw angle (in radians)
 	- obj_valid: tracker debug parameter, can be ignored
 	- valid_velo: tracker debug parameter can be ignored
-	- bhv_state: tracker debug paramtert can bi ignored
+	- bhv_state: tracker debug paramtert can be ignored
 	- blank_2
 	
 	lattitude and longitude coordinates:
