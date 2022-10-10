@@ -1,0 +1,112 @@
+<launch>
+	
+	<!-- launch file for SOADS pedestrian tracking -->
+
+	
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.5 -s 0 -l --clock
+	/home/gbeale/Downloads/SOADS_lidar_ped.bag" />
+	
+	<!--<node pkg="tf" type="static_transform_publisher" name="base_link_ground_to_velodyne" args="0.7112 -0.4064 1.4478 -1.57 0.52 0 base_link_ground velodyne 50" />-->
+	<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_ground_to_velodyne" args="0.7112 -0.4064 1.4478 -1.57 0.52 0 base_link_ground velodyne" />
+	
+	<!-- *IMPORTANT: supply the path to the rviz config file here in the value variable-->
+	<arg name="rvizconfig" value="/home/gbeale/.rviz/SOADS_ped_track.rviz"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />    
+	
+	<!-- Front left lidar transformer to base_link_ground -->
+	<node name="lidar_transformer" pkg = "points_preprocessor" type="cloud_transformer" output = "screen" >         
+		<param name="input_point_topic" value="/velodyne_points"/>         
+		<param name="output_point_topic" value="/velodyne_points_transformed"/>         
+		<param name="target_frame" value="base_link_ground"/>         
+	</node>
+	
+	<!-- ground filter -->
+	<include ns="ldiar" file="$(find points_preprocessor)/launch/ray_ground_filter.launch" >         
+		<arg name="input_point_topic" value="/velodyne_points_transformed" />         
+		<arg name="base_frame" value="base_link_ground" />         
+		<arg name="clipping_height" value="5.0" />         
+		<arg name="min_point_distance" value="1.5" />         
+		<arg name="radial_divider_angle" value="0.08" />         
+		<arg name="concentric_divider_distance" value="0" />         
+		<arg name="local_max_slope" value="10" />         
+		<arg name="general_max_slope" value="10" />         
+		<arg name="min_height_threshold" value="0.10" />         
+		<arg name="reclass_distance_threshold" value="0.2" />         
+		<arg name="no_ground_point_topic" value="/points_no_ground" />         
+		<arg name="ground_point_topic" value="/points_ground" />         
+	</include>
+	
+	<!-- lidar_euclidean_cluster_detect -->
+	<include file="$(find lidar_euclidean_cluster_detect)/launch/lidar_euclidean_cluster_detect.launch">         
+		<arg name="points_node" value="/points_no_ground" />         
+		<arg name="remove_ground" value="false" />         
+		<arg name="downsample_cloud" value="true" />         
+		<arg name="leaf_size" value="0.15" />         
+		<arg name="cluster_size_min" value="15" />         
+		<arg name="cluster_size_max" value="2000" />         
+		<arg name="sync" value="false" />         
+		<arg name="use_diffnormals" value="false" />         
+		<arg name="pose_estimation" value="true" />         
+		<arg name="clip_min_height" value="-0.5" />         
+		<arg name="clip_max_height" value="4" />         
+		<arg name="keep_lanes" value="true" />         
+		<arg name="keep_lane_left_distance" value="5" />         
+		<arg name="keep_lane_right_distance" value="20" />         
+		<arg name="cluster_merge_threshold" value="0.75" />         
+		<arg name="clustering_distance" value="0.7" />         
+		<arg name="use_vector_map" value="false" />         
+		<arg name="wayarea_gridmap_layer" value="wayarea" />         
+		<arg name="output_frame" value="/base_link_ground" />         
+		<arg name="remove_points_upto" value="1.5" />         
+		<arg name="use_gpu" value="false" />         
+		<arg name="use_multiple_thres" value="false"/>         
+		<arg name="clustering_ranges" value="[15,30,45,60]"/>         
+		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>         
+	</include>
+	
+	
+	<!-- ukf tracking -->
+	<!-- best to use the simple kf here -->
+	<node pkg="imm_ukf_pda_track" type="imm_ukf_pda" name="imm_ukf_pda_01" output="screen">
+
+		<remap from="detection/fusion_tools/objects" to="/detection/lidar_detector/objects" /> 
+		<remap from="detection/objects" to="/detection/object_tracker/objects" />
+		<param name="tracking_frame" value="/base_link_ground" />
+		
+		<param name="long_term_prevent_explosion_threshold" value="0.00005" />
+		<param name="det_s_prevent_explosion_threshold" value="5.0" />
+		<param name="det_s_consec_timesteps_thresh" value="10" />
+		<param name="long_term_prevent_explosion_threshold_age_requirement" value="20" />
+		<param name="remove_long_objects" value="false" />
+		<param name="rm_long_objs_ratio" value="15" />
+		<param name="do_ped_classification" value="true" />
+		
+		<param name="gating_threshold" value="5" />
+		<param name="gate_probability" value="0.8" />
+		<param name="detection_probability" value="0.9" />
+		<param name="life_time_threshold" value="5" />
+		<param name="static_velocity_threshold" value="0.1" />
+		<param name="static_num_history_threshold" value="3" />
+		<param name="prevent_explosion_threshold" value="125000" />
+		<param name="merge_distance_threshold" value="0.75" />
+		
+		<param name="use_vectormap" value="false" />
+		<param name="vectormap_frame" value="/map" />
+		<param name="lane_direction_chi_threshold" value="1.0" />
+		<param name="nearest_lane_distance_threshold" value="1.0" />
+		
+		<param name="use_sukf" value="true" />
+		<param name="print_debug" value="false" />
+	</node>
+	
+	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="ukf_track_visualization_01"
+		output="screen" ns="/detection/object_tracker"/> 
+
+	<node pkg="topic_tools" type="relay" name="ukf_track_relay_01"
+		output="screen" args="/detection/object_tracker/objects /detection/objects"/>
+	
+	<!-- COMMENT OUT WHEN YOU DON'T WANT TO RECORD A BAG-->
+	<!--<node pkg="rosbag" type="record" name="record" output="screen" args="/lidar_front_left/velodyne_points /lidar_front_right/velodyne_points /lidar_rear/velodyne_points
+	/points_concat /tf /tf_static /now_time /rosout /rosout_agg /clock /gps/fix /gps/gps /gps/nmea_sentence" /> -->
+	
+</launch>

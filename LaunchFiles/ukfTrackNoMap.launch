@@ -1,5 +1,5 @@
 <launch>
-	<arg name="file_num" value="28897_1217" />
+	<arg name="file_num" value="13700_12558" />
 	<!--<param name="/use_sim_time" value="true" /> -->
 	<param name="robot_description" command="$(find xacro)/xacro '$(find excuse_me_pkg)/urdf/excuse_me.urdf'" />
 
@@ -9,7 +9,7 @@
 	<!-- changed the urdf because a lidar positioned changed -->
 	<!-- data location for new urdf data, /vtti/projects05/460966/Data/ssblacksburgdev2/S3YNNWAJC01846R/2021-05-19_17_18_56 -->
 	<!--<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.1 /home/gbeale/Bags/ExcuseMeData/NewURDF/slowSpeed2.bag -l /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
-	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.1 -s 20 /vtti/projects05/460966/Working/Snipped_Merges/data_roi_$(arg file_num).bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
+	<node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.5 -s 0 /vtti/projects05/460966/Working/Snipped_Merges/data_roi_$(arg file_num).bag /tf:=/tf_null /tf_static:=/tf_static_null"/>
 
 	<arg name="rvizconfig" value="$(find excuse_me_pkg)/launch/excuseMeTracking.rviz"/>
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
@@ -198,8 +198,9 @@
 		<param name="det_s_prevent_explosion_threshold" value="5.0" />
 		<param name="det_s_consec_timesteps_thresh" value="3" />
 		<param name="long_term_prevent_explosion_threshold_age_requirement" value="20" />
+		<param name="do_ped_classification" value="false" />
 		
-		<param name="gating_threshold" value="10" />
+		<param name="gating_threshold" value="5" />
 		<param name="gate_probability" value="0.8" />
 		<param name="detection_probability" value="0.9" />
 		<param name="life_time_threshold" value="5" />
@@ -213,7 +214,7 @@
 		<param name="lane_direction_chi_threshold" value="1.0" />
 		<param name="nearest_lane_distance_threshold" value="1.0" />
 		
-		<param name="use_sukf" value="true" />
+		<param name="use_sukf" value="false" />
 		<param name="print_debug" value="false" />
 	</node>
 
