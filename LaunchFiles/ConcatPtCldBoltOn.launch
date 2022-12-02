@@ -1,0 +1,63 @@
+<launch>
+	
+	<!-- launch file for bolt on tracking -->
+	<param name="/use_sim_time" value="false" />
+	
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.75
+	/vtti/projects06/451746/Data/ssgarage/S6BBNJ0T200463Y/2022-11-09_15_07_28/TBON_1171_5677_52_221102_1319_00075.bag" />
+	
+	
+	<!-- data from 11/09 -->
+	<!-- /vtti/projects06/451746/Data/ssgarage/S6BBNJ0T200463Y/2022-11-09_15_07_28/TBON_1171_5677_52_221102_1319_00075.bag -->
+	
+	<!-- data from 9/14 -->
+	<!-- /vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-09-14_14_19_02/TBON_1171_5677_52_220914_1546_00056.bag -->
+	
+	<!-- data from 9/19 --> 
+	<!-- /vtti/projects06/451746/Data/ssb2/S6BBNJ0T200463Y/2022-09-19_11_33_47/TBON_1171_5677_52_220915_1710_00002.bag" -->
+	
+	<!-- data from 10/24 -->
+	<!-- /vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-10-24_14_42_47/TBON_1171_5677_52_220930_0736_00056.bag-->
+	
+	
+	<!-- *IMPORTANT: supply the path to the rviz config file here in the value variable-->
+	<!--<arg name="rvizconfig" value="/home/gbeale/autoware.ai/src/processingCode/LaunchFiles/BoltOnConcatPoints.rviz"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />-->
+	
+	<!-- front left lidar transformer, custom package -->
+	<node name="lidar_fl_transformer" pkg="tf_pointcloud" type="tf_pointcloud.py" output="screen" >
+		<param name="input_topic" value="/lidar_front_left/velodyne_points" />
+		<param name="output_topic" value="/lidar_front_left/velodyne_points_transformed" />
+		<param name="target_frame" value="base_link_ground" />
+	</node>
+	
+	<!-- front right lidar transformer, custom package -->
+	<node name="lidar_fr_transformer" pkg="tf_pointcloud" type="tf_pointcloud.py" output="screen" >
+		<param name="input_topic" value="/lidar_front_right/velodyne_points" />
+		<param name="output_topic" value="/lidar_front_right/velodyne_points_transformed" />
+		<param name="target_frame" value="base_link_ground" />
+	</node>
+	
+	<!-- rear lidar transformer, custom package -->
+	<node name="lidar_rear_transformer" pkg="tf_pointcloud" type="tf_pointcloud.py" output="screen" >
+		<param name="input_topic" value="/lidar_rear/velodyne_points" />
+		<param name="output_topic" value="/lidar_rear/velodyne_points_transformed" />
+		<param name="target_frame" value="base_link" />
+	</node>
+	
+	<node name="concatenate_data" pkg="nodelet" type="nodelet" output="screen" args="standalone pcl/PointCloudConcatenateDataSynchronizer">
+    <rosparam>
+      output_frame: /base_link_ground
+      input_topics:
+        - /lidar_front_right/velodyne_points_transformed
+        - /lidar_front_left/velodyne_points_transformed
+      approximate_sync: true
+      </rosparam>
+	</node>
+	
+	<!-- split size=1024 -->
+	<!-- COMMENT OUT WHEN YOU DON'T WANT TO RECORD A BAG-->
+	<node pkg="rosbag" type="record" name="record" output="screen" args="-o /vtti/projects06/451746/Working/FromGreg/11_09/ -j -b 2048 /lidar_rear/velodyne_points_transformed
+	/concatenate_data/output /tf /tf_static /now_time /rosout /rosout_agg /clock /gps/fix /gps/gps /gps/nmea_sentence" />
+	
+</launch>

@@ -27,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: frontLeftLidar
+    SyncSource: customPtsConcat
   - Class: autoware_rviz_debug/DecisionMakerPanel
     Name: DecisionMakerPanel
 Preferences:
@@ -66,6 +66,8 @@ Visualization Manager:
               Value: true
             base_link_ground:
               Value: true
+            fifth_wheel:
+              Value: true
             forward_camera:
               Value: false
             gps_antenna_1:
@@ -103,21 +105,22 @@ Visualization Manager:
             base_link:
               base_link_ground:
                 {}
+              fifth_wheel:
+                kingpin:
+                  lidar_rear:
+                    {}
+                  rear_camera:
+                    {}
+                  rear_left_camera:
+                    {}
+                  rear_right_camera:
+                    {}
               forward_camera:
                 {}
               gps_antenna_1:
                 {}
               imu:
                 {}
-              kingpin:
-                lidar_rear:
-                  {}
-                rear_camera:
-                  {}
-                rear_left_camera:
-                  {}
-                rear_right_camera:
-                  {}
               lidar_front_left:
                 {}
               lidar_front_right:
@@ -809,11 +812,11 @@ Visualization Manager:
       Color: 114; 159; 207
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: Points_Concat
+      Name: AutowarePtsConcat
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -821,6 +824,118 @@ Visualization Manager:
       Size (m): 0.07999999821186066
       Style: Flat Squares
       Topic: /points_concat
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: customPtsConcat
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05000000074505806
+      Style: Flat Squares
+      Topic: /concatenate_data/output
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: ""
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: flPointsTransformed
+      Position Transformer: ""
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05000000074505806
+      Style: Flat Squares
+      Topic: /lidar_front_left/velodyne_points_transformed
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: ""
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: frPtsTransformed
+      Position Transformer: ""
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05000000074505806
+      Style: Flat Squares
+      Topic: /lidar_front_right/velodyne_points_transformed
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: rearPtsTransformed
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05000000074505806
+      Style: Flat Squares
+      Topic: /lidar_rear/velodyne_points_transformed
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -868,10 +983,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4347987771034241
+      Pitch: 0.6747986674308777
       Target Frame: base_link
       Value: XYOrbit (rviz)
-      Yaw: 5.802623748779297
+      Yaw: 5.64762544631958
     Saved: ~
 Window Geometry:
   DecisionMakerPanel:

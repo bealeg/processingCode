@@ -1,13 +1,18 @@
 <launch>
 	
 	<!-- launch file for SOADS pedestrian tracking -->
-
 	
-	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.5 -s 0 -l --clock
-	/home/gbeale/Downloads/SOADS_lidar_ped.bag" />
+	<!-- Recording from the q50: /home/gbeale/Downloads/SOADS_lidar_ped.bag -->
+	<!-- Recording from the F150: /home/gbeale/Downloads/F150_SOADS_lidar_ped.bag -->
 	
-	<!--<node pkg="tf" type="static_transform_publisher" name="base_link_ground_to_velodyne" args="0.7112 -0.4064 1.4478 -1.57 0.52 0 base_link_ground velodyne 50" />-->
-	<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_ground_to_velodyne" args="0.7112 -0.4064 1.4478 -1.57 0.52 0 base_link_ground velodyne" />
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-s 10 -l --clock
+	/home/gbeale/Downloads/Bags/SOADS/F150_SOADS_lidar_ped.bag" />
+	
+	<!-- Transform node for the q50 -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_ground_to_velodyne" args="0.7112 -0.4064 1.4478 -1.57 0.52 0 base_link_ground velodyne" /> -->
+	
+	<!-- Transform node for the F150 -->
+	<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_ground_to_velodyne" args="1.8288 -0.635 1.9812 -1.57 0.4 -0.1 base_link_ground velodyne" />
 	
 	<!-- *IMPORTANT: supply the path to the rviz config file here in the value variable-->
 	<arg name="rvizconfig" value="/home/gbeale/.rviz/SOADS_ped_track.rviz"/>
@@ -43,7 +48,7 @@
 		<arg name="downsample_cloud" value="true" />         
 		<arg name="leaf_size" value="0.15" />         
 		<arg name="cluster_size_min" value="15" />         
-		<arg name="cluster_size_max" value="2000" />         
+		<arg name="cluster_size_max" value="500" />         
 		<arg name="sync" value="false" />         
 		<arg name="use_diffnormals" value="false" />         
 		<arg name="pose_estimation" value="true" />         
@@ -57,7 +62,7 @@
 		<arg name="use_vector_map" value="false" />         
 		<arg name="wayarea_gridmap_layer" value="wayarea" />         
 		<arg name="output_frame" value="/base_link_ground" />         
-		<arg name="remove_points_upto" value="1.5" />         
+		<arg name="remove_points_upto" value="2.75" />         
 		<arg name="use_gpu" value="false" />         
 		<arg name="use_multiple_thres" value="false"/>         
 		<arg name="clustering_ranges" value="[15,30,45,60]"/>         
