@@ -1,0 +1,13 @@
+<launch>
+	
+	
+	<node pkg="tf_pointcloud" type="rosbag_work_cpp" name="bagWork" output="screen" >
+		<!--<param name="input_bag_file" value="/vtti/projects06/451746/Data/ssb2/S6BBNJ0R704334R/2022-12-01_13_30_00/TBON_1171_5677_52_221201_1642_00034.bag" />-->
+		<param name="input_bag_file" value="/home/gbeale/Downloads/Bags/BoltOn/ShortBag3.bag"/>
+		<param name="output_bag_file" value="/home/gbeale/Downloads/Bags/BoltOn/output.bag"/>
+		<param name="write_bool" value="False" />
+		<param name="target_frame" value="base_link_ground" />
+	</node>
+	
+	
+</launch>

@@ -1,0 +1,32 @@
+<launch>
+	<node pkg="imm_ukf_pda_track" type="imm_ukf_pda" name="imm_ukf_pda_01" output="screen">
+
+		<remap from="detection/fusion_tools/objects" to="/detection/lidar_detector/objects" /> 
+		<remap from="detection/objects" to="/detection/object_tracker/objects" />
+		<param name="tracking_frame" value="/base_link_ground" />
+		
+		<param name="long_term_prevent_explosion_threshold" value="0.00005" />
+		<param name="det_s_prevent_explosion_threshold" value="5.0" />
+		<param name="det_s_consec_timesteps_thresh" value="3" />
+		<param name="long_term_prevent_explosion_threshold_age_requirement" value="20" />
+		<param name="remove_long_objects" value="true" />
+		<param name="rm_long_objs_ratio" value="15" />
+		
+		<param name="gating_threshold" value="10" />
+		<param name="gate_probability" value="0.8" />
+		<param name="detection_probability" value="0.9" />
+		<param name="life_time_threshold" value="5" />
+		<param name="static_velocity_threshold" value="0.1" />
+		<param name="static_num_history_threshold" value="3" />
+		<param name="prevent_explosion_threshold" value="125000" />
+		<param name="merge_distance_threshold" value="0.75" />
+		
+		<param name="use_vectormap" value="false" />
+		<param name="vectormap_frame" value="/map" />
+		<param name="lane_direction_chi_threshold" value="1.0" />
+		<param name="nearest_lane_distance_threshold" value="1.0" />
+		
+		<param name="use_sukf" value="false" />
+		<param name="print_debug" value="false" />
+	</node>
+</launch>

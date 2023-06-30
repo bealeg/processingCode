@@ -3,21 +3,26 @@
 	<!-- launch file for bolt on tracking -->
 	<param name="/use_sim_time" value="false" />
 	
-	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.75
-	/vtti/projects06/451746/Data/ssgarage/S6BBNJ0T200463Y/2022-11-09_15_07_28/TBON_1171_5677_52_221102_1319_00075.bag" />
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.5 -u 2000
+	/vtti/projects06/451746/Data/ssb2/S6BBNJ0R704334R/2022-12-01_13_30_00/TBON_1171_5677_52_221201_1642_00034.bag" />
 	
+	<!-- 
+	data from 12/1
+	/vtti/projects06/451746/Data/ssb2/S6BBNJ0R704334R/2022-12-01_13_30_00/TBON_1171_5677_52_221201_1642_00034.bag (3599 seconds)
+	/vtti/projects06/451746/Data/ssb2/S6BBNJ0R704334R/2022-12-01_13_30_00/TBON_1171_5677_52_221201_1742_00034.bag (1130 seconds)
 	
-	<!-- data from 11/09 -->
-	<!-- /vtti/projects06/451746/Data/ssgarage/S6BBNJ0T200463Y/2022-11-09_15_07_28/TBON_1171_5677_52_221102_1319_00075.bag -->
+	data from 11/09
+	/vtti/projects06/451746/Data/ssgarage/S6BBNJ0T200463Y/2022-11-09_15_07_28/TBON_1171_5677_52_221102_1319_00075.bag
+	/vtti/projects06/451746/Data/ssgarage/S6BBNJ0T200463Y/2022-11-09_15_07_28/TBON_1171_5677_52_221102_1219_00075.bag
 	
-	<!-- data from 9/14 -->
-	<!-- /vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-09-14_14_19_02/TBON_1171_5677_52_220914_1546_00056.bag -->
+	data from 9/14 
+	/vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-09-14_14_19_02/TBON_1171_5677_52_220914_1546_00056.bag 
 	
-	<!-- data from 9/19 --> 
-	<!-- /vtti/projects06/451746/Data/ssb2/S6BBNJ0T200463Y/2022-09-19_11_33_47/TBON_1171_5677_52_220915_1710_00002.bag" -->
+	ata from 9/19 
+	vtti/projects06/451746/Data/ssb2/S6BBNJ0T200463Y/2022-09-19_11_33_47/TBON_1171_5677_52_220915_1710_00002.bag" 
 	
-	<!-- data from 10/24 -->
-	<!-- /vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-10-24_14_42_47/TBON_1171_5677_52_220930_0736_00056.bag-->
+	data from 10/24 
+	/vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-10-24_14_42_47/TBON_1171_5677_52_220930_0736_00056.bag-->
 	
 	
 	<!-- *IMPORTANT: supply the path to the rviz config file here in the value variable-->
@@ -56,8 +61,8 @@
 	</node>
 	
 	<!-- split size=1024 -->
-	<!-- COMMENT OUT WHEN YOU DON'T WANT TO RECORD A BAG-->
-	<node pkg="rosbag" type="record" name="record" output="screen" args="-o /vtti/projects06/451746/Working/FromGreg/11_09/ -j -b 2048 /lidar_rear/velodyne_points_transformed
-	/concatenate_data/output /tf /tf_static /now_time /rosout /rosout_agg /clock /gps/fix /gps/gps /gps/nmea_sentence" />
+	<!-- COMMENT OUT WHEN YOU DON'T WANT TO RECORD A BAG -->
+	<node pkg="rosbag" type="record" name="record" output="screen" args="-o /vtti/projects06/451746/Working/FromGreg/12_01/ -j -b 4096 /lidar_rear/velodyne_points_transformed
+	/concatenate_data/output /tf /tf_static /now_time /gps/fix /gps/gps" /> 
 	
 </launch>

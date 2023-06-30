@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="site_location" value="charlotte_2" />
+    
+    <!-- HD map transformer for vector map -->         
+    <node pkg="hd_map_stf" type="hd_map_stf" name="hd_map_stf" output="screen">         
+        <param name="site_location" value="$(arg site_location)" />         
+        <param name="map_frame" value="map" />         
+    </node>
+    
+</launch>

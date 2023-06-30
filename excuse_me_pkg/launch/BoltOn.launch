@@ -1,10 +1,11 @@
+<?xml version="1.0"?>
 <launch>
 	
 	<!-- launch file for bolt on tracking -->
 	<param name="/use_sim_time" value="false" />
 	<!-- <node pkg="rosbag" type="play" name="player" required="true" output="screen" args="-r 0.2 -s 0 /vtti/projects05/460966/Working/Snipped_Merges/data_roi_$(arg file_num).bag /tf:=/tf_null /tf_static:=/tf_static_null"/> -->
-	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.25 -s 160
-	-u 150 /vtti/projects06/451746/Data/ssb2/S6BBNJ0R704334R/2022-09-01_14_14_40/TBON_1171_5677_52_220901_1512_00004.bag"/>
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-r 0.25 -s 1360
+	-u 60 /vtti/projects06/451746/Data/ssb2/S6BBNJ0R704816V/2022-12-13_12_55_07/TBON_1171_5677_52_221110_1051_00016.bag"/>
 	
 	<arg name="rvizconfig" value="/home/gbeale/BoltOn.rviz"/>
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
@@ -24,7 +25,7 @@
 		<param name="target_frame" value="base_link_ground"/>         
 	</node>
 	
-	<!-- Fronr left lidar transformer to base_link_ground -->
+	<!-- Front left lidar transformer to base_link_ground -->
 	<node name="lidar_front_right_transformer" pkg="points_preprocessor" type="cloud_transformer" output="screen">         
 		<param name="input_point_topic" value="/lidar_front_right/velodyne_points" />         
 		<param name="output_point_topic" value="/lidar_front_right/velodyne_points_transformed" />         
@@ -38,10 +39,8 @@
 		<param name="target_frame" value="base_link_ground" />         
 	</node>
 	
-	<!-- don't use gps for now -->
 	<!-- GPS localizer to create map_veh frame -->  
-	<!--       
-	<node pkg="gpsins_localizer" type="gpsins_localizer_node" name="gpsins_localizer" output="screen" >         
+	<!-- <node pkg="gpsins_localizer" type="gpsins_localizer_node" name="gpsins_localizer" output="screen" >         
 		<rosparam command="load" file="$(find gpsins_localizer)/config/params.yaml" />         
 	</node> -->
 	
@@ -67,7 +66,6 @@
 		<remap from="/points_clipped" to="/lidar_front/velodyne_points_transformed/clipped" />         
 	</node> -->
 	
-	<!-- don't clip points yet -->
 	<!-- clip low points from rear lidar that ground removal has trouble with -->
 	<!--
 	<node pkg="points_preprocessor" type="space_filter" name="rear_space_filter" output="log">         
@@ -85,7 +83,7 @@
 	<include ns="front_left" file="$(find points_preprocessor)/launch/ray_ground_filter.launch" >         
 		<arg name="input_point_topic" value="/lidar_front_left/velodyne_points_transformed" />         
 		<arg name="base_frame" value="base_link_ground" />         
-		<arg name="clipping_height" value="5.0" />         
+		<arg name="clipping_height" value="2.5" />         
 		<arg name="min_point_distance" value="2.0" />         
 		<arg name="radial_divider_angle" value="0.08" />         
 		<arg name="concentric_divider_distance" value="0" />         
@@ -95,7 +93,7 @@
 		<arg name="reclass_distance_threshold" value="0.2" />         
 		<arg name="no_ground_point_topic" value="/points_no_ground_front_left" />         
 		<arg name="ground_point_topic" value="/points_ground_front_left" />         
-	</include>         
+	</include> 
 	
 	<!-- ray ground filter for front right lidar -->
 	<include ns="front_right" file="$(find points_preprocessor)/launch/ray_ground_filter.launch" >         
@@ -146,40 +144,46 @@
 		<arg name="points_node" value="/points_no_ground" />         
 		<arg name="remove_ground" value="false" />         
 		<arg name="downsample_cloud" value="true" />         
-		<arg name="leaf_size" value="0.25" />         
-		<arg name="cluster_size_min" value="15" />         
-		<arg name="cluster_size_max" value="2000" />         
+		<arg name="leaf_size" value="0.3" />         
+		<arg name="cluster_size_min" value="20" />         
+		<arg name="cluster_size_max" value="5000" />         
 		<arg name="sync" value="false" />         
 		<arg name="use_diffnormals" value="false" />         
 		<arg name="pose_estimation" value="true" />         
-		<arg name="clip_min_height" value="-5" />         
-		<arg name="clip_max_height" value="4" />         
+		<arg name="clip_min_height" value="-1.0" />         
+		<arg name="clip_max_height" value="2.5" />         
 		<arg name="keep_lanes" value="true" />         
-		<arg name="keep_lane_left_distance" value="20" />         
-		<arg name="keep_lane_right_distance" value="4" />         
+		<arg name="keep_lane_left_distance" value="8" />         
+		<arg name="keep_lane_right_distance" value="8" />         
 		<arg name="cluster_merge_threshold" value="0.75" />         
-		<arg name="clustering_distance" value="0.7" />         
+		<arg name="clustering_distance" value="1.0" />         
 		<arg name="use_vector_map" value="false" />         
 		<arg name="wayarea_gridmap_layer" value="wayarea" />         
 		<arg name="output_frame" value="/base_link_ground" />         
-		<arg name="remove_points_upto" value="3.0" />         
+		<arg name="remove_points_upto" value="2.5" />         
 		<arg name="use_gpu" value="false" />         
 		<arg name="use_multiple_thres" value="false"/>         
 		<arg name="clustering_ranges" value="[15,30,45,60]"/>         
 		<arg name="clustering_distances" value="[0.5,1.1,1.6,2.1,2.6]"/>         
-	</include> -->
+	</include>
 	
-	<!-- leave out shape estimation for now -->
-	<!-- 
+	
+	<!-- shape estimation for euclid detections-->
+	<!-- from clusters: /detection/lidar_detector/objects -->
+	
 	<arg name="namespace" default="detection"/>
 	<arg name="packagename" default="shape_estimation"/>
-	<arg name="input" default="/$(arg namespace)/lidar_detector/objects_objects_filtered"/>
+	<arg name="input" default="/detection/lidar_detector/objects"/>
 	<arg name="output" default="/$(arg namespace)/$(arg packagename)/objects"/>
-
 	<node pkg="lidar_shape_estimation" type="lidar_shape_estimation" name="lidar_shape_estimation" output="screen">
 		<remap from="input"         to="$(arg input)" />
 		<remap from="objects"       to="$(arg output)" />
-	</node> -->
+	</node>
+	
+	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="shape_estimation_viz" output="screen">
+		<param name="objects_src_topic" value="/$(arg namespace)/$(arg packagename)/objects" />
+		<param name="markers_out_topic" value="/objects_shape_est_markers" />
+	</node>
 	
 	<!-- input topic, if from clusterer: "/detection/lidar_detector/objects", if from l shape: "/detection/shape_estimation/objects" -->
 	<!-- if from filtered clusterer: "/detection/lidar_detector/objects_filtered" -->
@@ -210,9 +214,26 @@
 		<param name="lane_direction_chi_threshold" value="1.0" />
 		<param name="nearest_lane_distance_threshold" value="1.0" />
 		
-		<param name="use_sukf" value="false" />
+		<param name="use_sukf" value="true" />
 		<param name="print_debug" value="false" />
 	</node>
+	
+	<!-- shape estimation for tracked objects-->
+	<!-- from tracker: /detection/object_tracker/objects -->
+	<!--
+	<arg name="namespace" default="detection"/>
+	<arg name="packagename" default="shape_estimation"/>
+	<arg name="input" default="/detection/lidar_detector/objects"/>
+	<arg name="output" default="/$(arg namespace)/$(arg packagename)/objects"/>
+	<node pkg="lidar_shape_estimation" type="lidar_shape_estimation" name="lidar_shape_estimation" output="screen">
+		<remap from="input"         to="$(arg input)" />
+		<remap from="objects"       to="$(arg output)" />
+	</node>
+	
+	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="shape_estimation_viz" output="screen">
+		<param name="objects_src_topic" value="/detection/object_tracker/objects" />
+		<param name="markers_out_topic" value="/tracked_objects_shape_est_markers" />
+	</node> -->
 	
 	
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="ukf_track_visualization_01"
@@ -229,39 +250,12 @@
 		<param name="map_dir" value="/vtti/projects05/460966/Working/Maps/VectorMapFolders/$(arg site_location)/" />
 	</node> -->
 	
-	<!-- don't need this for now -->
-	<!-- launch way area node -->
-	<!-- 
-	<include file="$(find object_map)/launch/wayarea2grid.launch" >
-		<arg name="sensor_frame" default="base_link" />
-		<arg name="grid_frame" default="map" />
-		<arg name="grid_resolution" default="0.4" />
-		<arg name="grid_length_x" default="500" />
-		<arg name="grid_length_y" default="500" />
-		<arg name="grid_position_x" default="0" />
-		<arg name="grid_position_y" default="0" />
-		<arg name="grid_position_z" default="0" />
-	</include> -->
-	
-	
-	<!-- launch roi object filter -->
-	<!--<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter" output="screen" ns="/detection/object_tracker" />-->
-	
-	<!--<node pkg="roi_object_filter" type="roi_object_filter" name="roi_object_filter_shape_estimation" output="screen" ns="/detection/shape_estimation" />-->
-	
 	<!-- filtered objects visualizer -->
 	<!-- IMPORTANT****** this second parameter won't work with default installations of Autoware becuase I changed the visualize detected objects code in autoware -->
 	<!--
 	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="filtered_objects_viz" output="screen" ns="/detection/object_tracker">
 		<param name="objects_src_topic" value="/objects_filtered" />
 		<param name="markers_out_topic" value="/objects_filtered_markers" />
-	</node> -->
-	
-	<!-- don't need to visuaize shope estimation as we aren't using it -->
-	<!--
-	<node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="filtered_objects_shape_estimation_viz" output="screen" ns="/detection/shape_estimation">
-		<param name="objects_src_topic" value="/objects_filtered" />
-		<param name="markers_out_topic" value="/objects_filtered_shaped_markers" />
 	</node> -->
 	
 	<!-- gps stuff not implemented yet -->
