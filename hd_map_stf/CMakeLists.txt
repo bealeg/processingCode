@@ -27,7 +27,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(hd_map_stf nodes/hd_map_stf.cpp)
+add_executable(hd_map_stf src/hd_map_stf.cpp)
 target_link_libraries(hd_map_stf
     ${catkin_LIBRARIES}
     libGeographic.so
@@ -44,9 +44,9 @@ install(
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-#install(
-  #DIRECTORY launch/
-  #DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-  #PATTERN ".svn" EXCLUDE
-#)
+install(
+  DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE
+)
 
